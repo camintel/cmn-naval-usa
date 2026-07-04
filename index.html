@@ -181,12 +181,43 @@ body.menu-open{overflow:hidden}
   .hero-bottom{right:var(--margin)}
 }
 
-/* ---------- D2/D9 Bridge ---------- */
+/* ---------- D2 Mission Advantage ---------- */
+.mission-advantage{background:linear-gradient(180deg,#F7FAFD 0%,#FFFFFF 18%,#FFFFFF 82%,#F4F8FB 100%);padding:var(--s8) var(--margin)}
+.mission-panel{border:1px solid rgba(10,26,47,.16);box-shadow:0 24px 80px rgba(10,26,47,.08);display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);gap:var(--s6);max-width:1900px;margin:0 auto;padding:var(--s7);position:relative}
+.mission-panel:before{background:var(--signal);content:"";height:74%;left:0;position:absolute;top:13%;width:5px}
+.mission-copy{align-self:center;padding-left:var(--s4)}
+.mission-copy .eyebrow{color:var(--signal);margin-bottom:var(--s4)}
+.mission-title{font-family:var(--font-display);font-size:clamp(38px,4vw,68px);font-weight:800;line-height:.98;letter-spacing:0;text-transform:uppercase}
+.mission-title span{color:var(--signal);display:block}
+.mission-lede{color:var(--ink);font-size:clamp(20px,2.2vw,28px);line-height:1.48;margin-top:var(--s5);max-width:900px}
+.mission-pillars{border-top:1px solid var(--rule2);display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:var(--s6);padding-top:var(--s4)}
+.mission-pillar-num{color:var(--signal);font-size:16px;font-weight:800;letter-spacing:.16em;margin-bottom:var(--s2)}
+.mission-pillar-label{font-size:18px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.mission-visual{align-self:center;min-height:480px;position:relative}
+.mission-grid{background-image:linear-gradient(rgba(10,26,47,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(10,26,47,.06) 1px,transparent 1px);background-size:36px 36px;inset:8% 3% 8% 3%;position:absolute}
+.mission-blueprint{height:100%;left:0;position:absolute;top:0;width:100%}
+.mission-blueprint .ghost{fill:none;stroke:#C9D4E0;stroke-width:2}
+.mission-blueprint .hull{fill:#D8DEE6;opacity:.72}
+.mission-blueprint .mark{fill:none;stroke:#CFD3DB;stroke-width:8}
+.mission-blueprint .accent{fill:none;stroke:rgba(190,30,45,.36);stroke-width:3}
+.mission-blueprint .thin{fill:none;stroke:#DCE5EE;stroke-width:2}
 .bridge{min-height:70vh;display:flex;align-items:center;padding-top:var(--s8);padding-bottom:var(--s8)}
 .bridge .inner{max-width:840px;margin:0 auto;padding:0 var(--margin)}
 .bridge .h2{margin-bottom:var(--s3)}
 .bridge .pivot{color:var(--ink2);margin-top:var(--s5)}
 .bridge-sm{min-height:50vh}
+@media(max-width:1100px){
+  .mission-panel{grid-template-columns:1fr;gap:var(--s5)}
+  .mission-visual{min-height:360px}
+}
+@media(max-width:767px){
+  .mission-advantage{padding:var(--s6) var(--margin)}
+  .mission-panel{padding:var(--s5) var(--s4)}
+  .mission-panel:before{height:calc(100% - var(--s5) * 2);top:var(--s5)}
+  .mission-copy{padding-left:var(--s3)}
+  .mission-pillars{grid-template-columns:1fr;gap:var(--s3)}
+  .mission-visual{min-height:260px}
+}
 
 /* ---------- D3 Company ---------- */
 .company-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-top:var(--s6)}
@@ -433,13 +464,41 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
   <button class="sound-toggle" id="heroSoundToggle" type="button" aria-pressed="false">Sound Off</button>
 </section>
 
-<!-- ================= D2 · BRIDGE — THE DECISION ================= -->
-<section class="bridge" aria-label="The decision is made">
-  <div class="inner">
-    <h2 class="h2 rv">Maritime power.</h2>
-    <h2 class="h2 rv rv-d2">Industrial resilience.</h2>
-    <h2 class="h2 rv rv-d4">Fleet readiness.</h2>
-    <p class="body pivot rv rv-d4">The nation has chosen the direction. What it needs now is capacity — and capacity is the business we are in.</p>
+<!-- ================= D2 · OUR MISSION ================= -->
+<section class="mission-advantage" aria-label="Our mission">
+  <div class="mission-panel">
+    <div class="mission-copy">
+      <p class="eyebrow rv">Our Mission</p>
+      <h2 class="mission-title rv rv-d1">Rebuilding America’s <span>Maritime Advantage.</span></h2>
+      <p class="mission-lede rv rv-d2">America’s strength at sea begins with its industrial base. CMN Naval USA works alongside American shipyards and industry to expand capacity, accelerate production, and deliver the next generation of naval capability.</p>
+      <div class="mission-pillars rv rv-d3" aria-label="Mission pillars">
+        <div>
+          <p class="mission-pillar-num">01</p>
+          <p class="mission-pillar-label">Industrial Base</p>
+        </div>
+        <div>
+          <p class="mission-pillar-num">02</p>
+          <p class="mission-pillar-label">American Shipyards</p>
+        </div>
+        <div>
+          <p class="mission-pillar-num">03</p>
+          <p class="mission-pillar-label">Fleet Readiness</p>
+        </div>
+      </div>
+    </div>
+    <div class="mission-visual rv rv-d2" aria-hidden="true">
+      <div class="mission-grid"></div>
+      <svg class="mission-blueprint" viewBox="0 0 720 520" focusable="false">
+        <path class="ghost" d="M210 118h408l-72 314H138z"/>
+        <path class="thin" d="M512 470H318"/>
+        <path class="thin" d="M184 432h438V152"/>
+        <path class="hull" d="M92 360h390l72-30h96l-42 52H136z"/>
+        <path class="mark" d="M408 162v138"/>
+        <path class="mark" d="M356 198h104"/>
+        <path class="mark" d="M356 238h74"/>
+        <path class="accent" d="M184 398v44h250"/>
+      </svg>
+    </div>
   </div>
 </section>
 
