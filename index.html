@@ -154,6 +154,9 @@ section{position:relative;padding-top:var(--s9);padding-bottom:var(--s9)}
 .hero.has-video .eyebrow{color:var(--steel)}
 .hero.has-video .hero-bottom .body{color:var(--muted-light)}
 .hero.has-video .waterline{background:rgba(244,247,251,.4)}
+.sound-toggle{position:absolute;right:var(--margin);bottom:var(--s4);z-index:3;height:40px;padding:0 16px;border:1px solid rgba(255,255,255,.32);background:rgba(5,6,8,.32);color:var(--text-light);font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;opacity:0;pointer-events:none;transition:opacity 180ms ease,background 180ms ease,border-color 180ms ease,color 180ms ease}
+.hero.has-video .sound-toggle{opacity:1;pointer-events:auto}
+.sound-toggle:hover,.sound-toggle:focus-visible{background:var(--text-light);border-color:var(--text-light);color:var(--navy)}
 @media(prefers-reduced-motion:reduce){.hero-video{display:none}}
 .hero-inner{position:relative;z-index:2;height:100vh;height:100svh;max-width:1280px;margin:0 auto;padding:0 var(--margin)}
 .hero-top{position:absolute;left:var(--margin);right:var(--margin);bottom:calc(38% + var(--s5));max-width:1120px}
@@ -428,6 +431,7 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
       <a class="btn rv rv-d4" href="#partnership">Request Executive Briefing</a>
     </div>
   </div>
+  <button class="sound-toggle" id="heroSoundToggle" type="button" aria-pressed="false">Sound Off</button>
 </section>
 
 <!-- ================= D2 · BRIDGE — THE DECISION ================= -->
@@ -823,13 +827,27 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
 
   /* Hero video: flip to cinematic state only if footage actually plays */
   var hv = document.getElementById('heroVideo');
+  var soundToggle = document.getElementById('heroSoundToggle');
   var heroEl = document.querySelector('.hero');
   if(hv && !reduced){
     hv.addEventListener('playing', function(){ heroEl.classList.add('has-video'); }, {once:true});
-    hv.addEventListener('error', function(e){ if(e.target === hv) hv.remove(); }, true);
+    hv.addEventListener('error', function(e){ if(e.target === hv) { hv.remove(); if(soundToggle) soundToggle.remove(); } }, true);
+    if(soundToggle){
+      soundToggle.addEventListener('click', function(){
+        hv.muted = !hv.muted;
+        if(!hv.muted){ hv.volume = 0.72; }
+        soundToggle.textContent = hv.muted ? 'Sound Off' : 'Sound On';
+        soundToggle.setAttribute('aria-pressed', hv.muted ? 'false' : 'true');
+        var p2 = hv.play ? hv.play() : null;
+        if(p2 && p2.catch){ p2.catch(function(){ hv.muted = true; soundToggle.textContent = 'Sound Off'; soundToggle.setAttribute('aria-pressed','false'); }); }
+      });
+    }
     var p = hv.play ? hv.play() : null;
     if(p && p.catch){ p.catch(function(){ /* autoplay blocked or file missing — stay on light atmosphere */ }); }
-  } else if (hv) { hv.remove(); }
+  } else {
+    if(hv) { hv.remove(); }
+    if(soundToggle) { soundToggle.remove(); }
+  }
 
   /* Nav solid state */
   var nav = document.getElementById('nav');
