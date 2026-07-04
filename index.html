@@ -824,7 +824,7 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
   var heroEl = document.querySelector('.hero');
   if(hv && !reduced){
     hv.addEventListener('playing', function(){ heroEl.classList.add('has-video'); }, {once:true});
-    hv.addEventListener('error', function(){ hv.remove(); }, true);
+    hv.addEventListener('error', function(e){ if(e.target === hv) hv.remove(); }, true);
     var p = hv.play ? hv.play() : null;
     if(p && p.catch){ p.catch(function(){ /* autoplay blocked or file missing — stay on light atmosphere */ }); }
   } else if (hv) { hv.remove(); }
