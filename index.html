@@ -151,20 +151,19 @@ body.menu-open{overflow:hidden}
   radial-gradient(90% 42% at 32% 62%, rgba(10,26,47,.06), transparent 62%),
   linear-gradient(to bottom, #FFFFFF 0%, #F7F9FB 42%, #E9EEF4 61%, #E1E8F0 63%, #F4F6F9 100%)}
 .hero-grain{position:absolute;inset:0;opacity:.45;mix-blend-mode:multiply}
-.hero-scrim{position:absolute;inset:0;background:linear-gradient(to top, rgba(255,255,255,.5), transparent 55%)}
+.hero-scrim{position:absolute;inset:0;background:radial-gradient(circle at 50% 44%, rgba(5,6,8,.1), rgba(5,6,8,.72) 72%), linear-gradient(0deg, var(--ink), rgba(5,6,8,0) 52%)}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 600ms var(--ease)}
 .hero.has-video .hero-video{opacity:1}
 .hero-fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;opacity:0;z-index:1;transition:opacity 620ms ease}
 .hero-media.is-poster-visible .hero-fallback,.hero-media.is-poster-fading .hero-fallback{z-index:3}
 .hero-media.is-poster-visible .hero-fallback{opacity:1}
 .hero-media.is-poster-fading .hero-fallback{opacity:0}
-/* cmn-usa.com hero-shade treatment, applied when video is live */
-.hero.has-video .hero-scrim{background:radial-gradient(circle at 50% 44%, rgba(5,6,8,.1), rgba(5,6,8,.72) 72%), linear-gradient(0deg, var(--ink), rgba(5,6,8,0) 52%)}
-.hero.has-video .hero-atmo,.hero.has-video .hero-grain{opacity:0}
-.hero.has-video .display,.hero.has-video .eyebrow{color:var(--text-light)}
-.hero.has-video .eyebrow{color:var(--steel)}
-.hero.has-video .hero-bottom .body{color:var(--muted-light)}
-.hero.has-video .waterline{background:rgba(244,247,251,.4)}
+/* cmn-usa.com hero-shade treatment, shared by poster, fallback, and live video states */
+.hero .hero-atmo{opacity:0}
+.hero .display,.hero .eyebrow{color:var(--text-light)}
+.hero .eyebrow{color:var(--steel)}
+.hero .hero-bottom .body{color:var(--muted-light)}
+.hero .waterline{background:rgba(244,247,251,.4)}
 .sound-toggle{position:absolute;right:var(--margin);bottom:var(--s4);z-index:3;height:40px;padding:0 16px;border:1px solid rgba(255,255,255,.32);background:rgba(5,6,8,.32);color:var(--text-light);font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;opacity:0;pointer-events:none;transition:opacity 180ms ease,background 180ms ease,border-color 180ms ease,color 180ms ease}
 .hero.has-video .sound-toggle{opacity:1;pointer-events:auto}
 .sound-toggle:hover,.sound-toggle:focus-visible{background:var(--text-light);border-color:var(--text-light);color:var(--navy)}
@@ -441,8 +440,8 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
 <section class="hero" id="mission" aria-label="America has set the course">
   <div class="hero-media is-poster-visible">
     <div class="hero-atmo"></div>
-    <!-- HERO VIDEO: drop files at assets/video/hero.mp4 (+ optional hero.webm) and assets/img/hero-poster.jpg.
-         8s loop, muted, <=4MB target per spec. If files are absent, the page falls back to the light atmosphere automatically. -->
+    <!-- HERO VIDEO: drop files at assets/video/hero.mp4 and assets/img/hero-poster.jpg.
+         If video playback is delayed or blocked, the page keeps the same cinematic poster treatment. -->
     <video class="hero-video" id="heroVideo" src="assets/video/hero.mp4" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/img/hero-poster.jpg" aria-hidden="true">
       <source src="assets/video/hero.mp4" type="video/mp4">
     </video>
