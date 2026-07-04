@@ -44,13 +44,13 @@
   --margin:5.5vw;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden;width:100%}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{
   background:var(--bg);color:var(--ink);
   font-family:var(--font-body);font-size:18px;line-height:28px;
   font-variant-numeric:tabular-nums lining-nums;
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;width:100%;
 }
 img,svg{display:block;max-width:100%}
 a{color:var(--ink);text-decoration:none}
@@ -176,6 +176,7 @@ body.menu-open{overflow:hidden}
 .hero-bottom{position:absolute;left:var(--margin);top:calc(62% + var(--s5));max-width:520px}
 .hero-bottom .body{color:var(--ink2);margin-bottom:var(--s4)}
 @media(max-width:767px){
+  html,body{max-width:100%;overflow-x:hidden}
   .hero-top{bottom:calc(38% + var(--s4))}
   .hero-bottom .btn{width:100%}
   .hero-bottom{right:var(--margin)}
@@ -372,7 +373,7 @@ body.menu-open{overflow:hidden}
   .tick{position:relative;top:auto;left:auto!important;width:12px;height:2px;margin-left:calc(-1 * var(--s4) - 6px)}
   .tick.hollow{height:2px;width:12px}
   .vrow{position:relative}
-  .tick-label{position:relative;width:auto;bottom:auto!important;top:auto!important;margin-top:calc(-1 * var(--s2))}
+  .tick-label{position:relative;left:auto!important;width:auto;max-width:100%;bottom:auto!important;top:auto!important;margin-top:calc(-1 * var(--s2))}
 }
 
 /* ---------- D12 Doors ---------- */
@@ -442,8 +443,7 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
     <div class="hero-atmo"></div>
     <!-- HERO VIDEO: drop files at assets/video/hero.mp4 (+ optional hero.webm) and assets/img/hero-poster.jpg.
          8s loop, muted, <=4MB target per spec. If files are absent, the page falls back to the light atmosphere automatically. -->
-    <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-poster.jpg" aria-hidden="true">
-      <source src="assets/video/hero.webm" type="video/webm">
+    <video class="hero-video" id="heroVideo" src="assets/video/hero.mp4" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/img/hero-poster.jpg" aria-hidden="true">
       <source src="assets/video/hero.mp4" type="video/mp4">
     </video>
     <img class="hero-fallback" src="assets/img/hero-fallback.jpg" alt="CMN HSI-32 high-speed patrol vessel front view with blueprint treatment" aria-hidden="true">
@@ -889,6 +889,19 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
   var heroEl = document.querySelector('.hero');
   var heroMedia = document.querySelector('.hero-media');
   if(hv && !reduced){
+    hv.muted = true;
+    hv.defaultMuted = true;
+    hv.setAttribute('muted', '');
+    hv.setAttribute('playsinline', '');
+    hv.setAttribute('webkit-playsinline', '');
+    hv.preload = 'auto';
+    function attemptHeroPlay(){
+      if(!hv || !hv.play){ return; }
+      var playPromise = hv.play();
+      if(playPromise && playPromise.catch){
+        playPromise.catch(function(){ /* iOS may wait for first user gesture or low-power mode */ });
+      }
+    }
     hv.addEventListener('playing', function(){
       heroEl.classList.add('has-video');
       if(heroMedia){
@@ -900,6 +913,12 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
       }
     }, {once:true});
     hv.addEventListener('error', function(e){ if(e.target === hv) { hv.remove(); if(soundToggle) soundToggle.remove(); } }, true);
+    hv.addEventListener('loadeddata', attemptHeroPlay, {once:true});
+    hv.addEventListener('canplay', attemptHeroPlay, {once:true});
+    window.addEventListener('pageshow', attemptHeroPlay, {once:true});
+    window.addEventListener('touchstart', attemptHeroPlay, {once:true, passive:true});
+    window.addEventListener('pointerdown', attemptHeroPlay, {once:true, passive:true});
+    window.addEventListener('scroll', attemptHeroPlay, {once:true, passive:true});
     if(soundToggle){
       soundToggle.addEventListener('click', function(){
         hv.muted = !hv.muted;
@@ -910,8 +929,7 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
         if(p2 && p2.catch){ p2.catch(function(){ hv.muted = true; soundToggle.textContent = 'Sound Off'; soundToggle.setAttribute('aria-pressed','false'); }); }
       });
     }
-    var p = hv.play ? hv.play() : null;
-    if(p && p.catch){ p.catch(function(){ /* autoplay blocked or file missing — stay on light atmosphere */ }); }
+    attemptHeroPlay();
   } else {
     if(hv) { hv.remove(); }
     if(soundToggle) { soundToggle.remove(); }
