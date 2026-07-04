@@ -839,9 +839,11 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
     hv.addEventListener('playing', function(){
       heroEl.classList.add('has-video');
       if(heroMedia){
-        heroMedia.classList.remove('is-poster-visible');
-        heroMedia.classList.add('is-poster-fading');
-        window.setTimeout(function(){ heroMedia.classList.remove('is-poster-fading'); }, 700);
+        window.setTimeout(function(){
+          heroMedia.classList.remove('is-poster-visible');
+          heroMedia.classList.add('is-poster-fading');
+          window.setTimeout(function(){ heroMedia.classList.remove('is-poster-fading'); }, 700);
+        }, 3000);
       }
     }, {once:true});
     hv.addEventListener('error', function(e){ if(e.target === hv) { hv.remove(); if(soundToggle) soundToggle.remove(); } }, true);
