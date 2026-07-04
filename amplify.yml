@@ -1,19 +1,10 @@
 version: 1
-applications:
-  - frontend:
-      phases:
-        preBuild:
-          commands:
-            - corepack enable
-            - pnpm install --frozen-lockfile
-        build:
-          commands:
-            - pnpm build
-      artifacts:
-        baseDirectory: dist
-        files:
-          - '**/*'
-      cache:
-        paths:
-          - node_modules/**/*
-          - ~/.local/share/pnpm/store/**/*
+frontend:
+  phases:
+    build:
+      commands: []
+  artifacts:
+    baseDirectory: .
+    files:
+      - index.html
+      - assets/**/*
