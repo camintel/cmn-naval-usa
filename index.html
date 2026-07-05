@@ -156,11 +156,7 @@ body.menu-open{overflow:hidden}
 .hero-scrim{position:absolute;inset:0;background:radial-gradient(circle at 50% 44%, rgba(5,6,8,.1), rgba(5,6,8,.72) 72%), linear-gradient(0deg, var(--ink), rgba(5,6,8,0) 52%);pointer-events:none;z-index:5}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 600ms var(--ease)}
 .hero.has-video .hero-video{opacity:1}
-.hero-fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;opacity:0;z-index:1;transition:opacity 620ms ease}
-.hero-media.is-poster-visible .hero-fallback,.hero-media.is-poster-fading .hero-fallback{z-index:3}
-.hero-media.is-poster-visible .hero-fallback{opacity:1}
-.hero-media.is-poster-fading .hero-fallback{opacity:0}
-/* cmn-usa.com hero-shade treatment, shared by poster, fallback, and live video states */
+/* cmn-usa.com hero-shade treatment for the live video state */
 .hero .hero-atmo{opacity:0}
 .hero .display,.hero .eyebrow{color:var(--text-light)}
 .hero .eyebrow{color:var(--steel)}
@@ -474,14 +470,12 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
 
 <!-- ================= D1 · HERO — ACT I ================= -->
 <section class="hero" id="mission" aria-label="Rebuilding America's Maritime Advantage">
-  <div class="hero-media is-poster-visible">
+  <div class="hero-media">
     <div class="hero-atmo"></div>
-    <!-- HERO VIDEO: drop files at assets/video/hero.mp4 and assets/img/hero-poster.jpg.
-         If video playback is delayed or blocked, the page keeps the same cinematic poster treatment. -->
-    <video class="hero-video" id="heroVideo" src="assets/video/hero.mp4" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/img/hero-poster.jpg" aria-hidden="true">
+    <!-- HERO VIDEO: drop files at assets/video/hero.mp4. -->
+    <video class="hero-video" id="heroVideo" src="assets/video/hero.mp4" autoplay muted loop playsinline webkit-playsinline preload="auto" aria-hidden="true">
       <source src="assets/video/hero.mp4" type="video/mp4">
     </video>
-    <img class="hero-fallback" src="assets/img/hero-fallback.jpg" alt="CMN HSI-32 high-speed patrol vessel front view with blueprint treatment" aria-hidden="true">
     <svg class="hero-grain" width="100%" height="100%" aria-hidden="true"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.03"/></feComponentTransfer></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
     <div class="hero-scrim"></div>
   </div>
@@ -925,7 +919,6 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
   var hv = document.getElementById('heroVideo');
   var soundToggle = document.getElementById('heroSoundToggle');
   var heroEl = document.querySelector('.hero');
-  var heroMedia = document.querySelector('.hero-media');
   if(hv && !reduced){
     hv.muted = true;
     hv.defaultMuted = true;
@@ -942,13 +935,6 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
     }
     hv.addEventListener('playing', function(){
       heroEl.classList.add('has-video');
-      if(heroMedia){
-        window.setTimeout(function(){
-          heroMedia.classList.remove('is-poster-visible');
-          heroMedia.classList.add('is-poster-fading');
-          window.setTimeout(function(){ heroMedia.classList.remove('is-poster-fading'); }, 700);
-        }, 3000);
-      }
     }, {once:true});
     hv.addEventListener('error', function(e){ if(e.target === hv) { hv.remove(); if(soundToggle) soundToggle.remove(); } }, true);
     hv.addEventListener('loadeddata', attemptHeroPlay, {once:true});
