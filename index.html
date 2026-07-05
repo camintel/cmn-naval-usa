@@ -227,7 +227,7 @@ body.menu-open{overflow:hidden}
 .mission-visual:after{background:linear-gradient(110deg,transparent 0%,rgba(255,255,255,.18) 48%,transparent 62%);content:"";inset:0;opacity:0;position:absolute;transform:translateX(-35%);transition:opacity .45s ease,transform .75s ease}
 .mission-visual:hover:after{opacity:1;transform:translateX(35%)}
 .mission-grid{background-image:linear-gradient(rgba(10,26,47,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(10,26,47,.06) 1px,transparent 1px);background-size:36px 36px;inset:8% 3% 8% 3%;position:absolute}
-.mission-image{height:100%;inset:0;object-fit:cover;object-position:center;position:absolute;transition:filter .45s ease,transform .65s ease;width:100%}
+.mission-image{height:100%;inset:0;object-fit:cover;object-position:74% center;position:absolute;transition:filter .45s ease,transform .65s ease;width:100%}
 .mission-visual:hover .mission-image{filter:contrast(1.08) brightness(1.08);transform:scale(1.035)}
 .mission-blueprint{height:100%;left:0;position:absolute;top:0;width:100%}
 .mission-blueprint .ghost{fill:none;stroke:#C9D4E0;stroke-width:2}
@@ -243,6 +243,7 @@ body.menu-open{overflow:hidden}
 @media(max-width:1100px){
   .mission-panel{grid-template-columns:1fr;gap:var(--s5)}
   .mission-visual{min-height:360px}
+  .mission-image{object-position:62% center}
 }
 @media(max-width:767px){
   .mission-advantage{padding:var(--s6) var(--margin)}
