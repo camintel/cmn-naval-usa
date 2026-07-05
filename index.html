@@ -154,8 +154,7 @@ body.menu-open{overflow:hidden}
   linear-gradient(to bottom, #FFFFFF 0%, #F7F9FB 42%, #E9EEF4 61%, #E1E8F0 63%, #F4F6F9 100%)}
 .hero-grain{position:absolute;inset:0;opacity:.45;mix-blend-mode:multiply;z-index:4}
 .hero-scrim{position:absolute;inset:0;background:radial-gradient(circle at 50% 44%, rgba(5,6,8,.1), rgba(5,6,8,.72) 72%), linear-gradient(0deg, var(--ink), rgba(5,6,8,0) 52%);pointer-events:none;z-index:5}
-.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 600ms var(--ease)}
-.hero.has-video .hero-video{opacity:1}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 600ms var(--ease)}
 /* cmn-usa.com hero-shade treatment for the live video state */
 .hero .hero-atmo{opacity:0}
 .hero .display,.hero .eyebrow{color:var(--text-light)}
@@ -165,7 +164,6 @@ body.menu-open{overflow:hidden}
 .sound-toggle{position:absolute;right:var(--margin);bottom:var(--s4);z-index:3;height:40px;padding:0 16px;border:1px solid rgba(255,255,255,.32);background:rgba(5,6,8,.32);color:var(--text-light);font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;opacity:0;pointer-events:none;transition:opacity 180ms ease,background 180ms ease,border-color 180ms ease,color 180ms ease}
 .hero.has-video .sound-toggle{opacity:1;pointer-events:auto}
 .sound-toggle:hover,.sound-toggle:focus-visible{background:var(--text-light);border-color:var(--text-light);color:var(--navy)}
-@media(prefers-reduced-motion:reduce){.hero-video{display:none}}
 .hero-inner{position:relative;z-index:2;height:100vh;height:100svh;max-width:1280px;margin:0 auto;padding:0 var(--margin)}
 .hero-top{position:absolute;left:var(--margin);right:var(--margin);bottom:calc(38% + var(--s5));max-width:1120px}
 .hero-top .display{font-weight:800;max-width:none;margin-top:var(--s3)}
@@ -915,11 +913,12 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
 (function(){
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* Hero video: flip to cinematic state only if footage actually plays */
+  /* Hero video: keep the video layer visible immediately; mobile Safari may delay autoplay events. */
   var hv = document.getElementById('heroVideo');
   var soundToggle = document.getElementById('heroSoundToggle');
   var heroEl = document.querySelector('.hero');
-  if(hv && !reduced){
+  if(hv){
+    if(heroEl){ heroEl.classList.add('has-video'); }
     hv.muted = true;
     hv.defaultMuted = true;
     hv.setAttribute('muted', '');
@@ -933,9 +932,7 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
         playPromise.catch(function(){ /* iOS may wait for first user gesture or low-power mode */ });
       }
     }
-    hv.addEventListener('playing', function(){
-      heroEl.classList.add('has-video');
-    }, {once:true});
+    hv.addEventListener('playing', function(){ if(heroEl){ heroEl.classList.add('has-video'); } }, {once:true});
     hv.addEventListener('error', function(e){ if(e.target === hv) { hv.remove(); if(soundToggle) soundToggle.remove(); } }, true);
     hv.addEventListener('loadeddata', attemptHeroPlay, {once:true});
     hv.addEventListener('canplay', attemptHeroPlay, {once:true});
