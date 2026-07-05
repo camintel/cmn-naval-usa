@@ -172,7 +172,8 @@ body.menu-open{overflow:hidden}
 @media(prefers-reduced-motion:reduce){.hero-video{display:none}}
 .hero-inner{position:relative;z-index:2;height:100vh;height:100svh;max-width:1280px;margin:0 auto;padding:0 var(--margin)}
 .hero-top{position:absolute;left:var(--margin);right:var(--margin);bottom:calc(38% + var(--s5));max-width:1120px}
-.hero-top .display{max-width:14ch;margin-top:var(--s3)}
+.hero-top .display{max-width:none;margin-top:var(--s3)}
+.hero-title-line{display:block;white-space:nowrap}
 .hero-wl{position:absolute;left:var(--margin);right:var(--margin);top:62%}
 .hero-bottom{position:absolute;left:var(--margin);top:calc(62% + var(--s5));max-width:520px}
 .hero-bottom .body{color:var(--ink2);margin-bottom:var(--s4)}
@@ -207,6 +208,7 @@ body.menu-open{overflow:hidden}
     linear-gradient(180deg, rgba(5,6,8,.06) 0%, rgba(5,6,8,.22) 42%, rgba(5,6,8,.44) 100%);
   }
   .hero-top{bottom:calc(38% + var(--s4))}
+  .hero-top .display{font-size:clamp(34px,9.2vw,64px)}
   .hero-bottom{right:var(--margin)}
   .hero-ctas{gap:10px}
   .hero-cta{font-size:10px;gap:10px;letter-spacing:.06em;padding:0 12px}
@@ -485,7 +487,7 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
   <div class="hero-inner">
     <div class="hero-top">
       <p class="eyebrow rv">CMN Naval USA — American Naval Industrialization</p>
-      <h1 class="display rv rv-d1">Rebuilding America&#8217;s<br>Maritime Advantage</h1>
+      <h1 class="display rv rv-d1"><span class="hero-title-line">Rebuilding America&#8217;s</span><span class="hero-title-line">Maritime Advantage</span></h1>
     </div>
     <div class="hero-wl"><div class="waterline draw" data-draw></div></div>
     <div class="hero-bottom">
