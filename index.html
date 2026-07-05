@@ -280,9 +280,10 @@ body.menu-open{overflow:hidden}
   .build-process{padding:var(--s6) var(--margin)}
   .build-process-head{grid-template-columns:1fr;gap:var(--s3)}
   .build-process-head .h1{max-width:14ch}
-  .build-process-grid{grid-template-columns:1fr}
-  .process-step{border-left:1px solid var(--rule2);border-top:1px solid var(--rule2);min-height:auto}
-  .process-step:first-child{border-top:0}
+  .build-process-grid{border-top:0;grid-template-columns:1fr}
+  .process-step{border-left:1px solid var(--rule2);border-top:0;grid-template-rows:106px auto auto 1fr;min-height:auto}
+  .process-step:nth-child(n+4){border-top:0}
+  .process-icon{height:85px;width:85px}
   .build-process-line{align-items:flex-start;flex-direction:column;gap:16px;text-align:left}
   .build-process-line::before,.build-process-line::after{flex:none;width:72px}
 }
