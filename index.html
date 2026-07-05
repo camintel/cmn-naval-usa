@@ -651,25 +651,6 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
   </div>
 </section>
 
-<!-- ================= D5 · UP FRONT — GOVERNANCE ================= -->
-<section class="upfront" aria-label="Governance, up front">
-  <div class="wrap">
-    <div class="upfront-grid">
-      <div class="upfront-copy">
-        <p class="eyebrow rv">Governance, Up Front</p>
-        <h2 class="h2 rv rv-d1">A U.S. company under American leadership, with our security structure on the table before you ask.</h2>
-      </div>
-      <div class="upfront-doc rv rv-d2">
-        <div class="doc-row">
-          <p class="h3">Governance &amp; Security Statement</p>
-          <p class="caption">Entity structure · leadership · export and security posture</p>
-          <a class="tlink" href="/company#governance">Read the statement</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ================= D6 · THE TRANSFER — ACT III ================= -->
 <section id="capability" aria-label="What we actually do">
   <div class="wrap">
@@ -1103,7 +1084,7 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
     if(reduced){ el.classList.add('in'); } else { io.observe(el); }
   });
 
-  /* Count-once numerals (800ms, per doctrine) */
+  /* Count-once numerals (1200ms base, staggered for record cadence) */
   function fmt(n, comma){ n = Math.round(n); return comma ? n.toLocaleString('en-US') : String(n); }
   var cio = new IntersectionObserver(function(entries){
     entries.forEach(function(en){
@@ -1114,18 +1095,22 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
       var suffix = el.getAttribute('data-suffix') || '';
       var comma = el.hasAttribute('data-comma');
       if(reduced){ el.textContent = fmt(target,comma)+suffix; return; }
+      var order = parseInt(el.getAttribute('data-count-order'),10) || 0;
+      var delay = order * 180;
+      var duration = 1200 + (order * 90);
       var start = null;
       function step(ts){
         if(!start) start = ts;
-        var p = Math.min(1,(ts-start)/800);
+        var p = Math.min(1,(ts-start)/duration);
         var eased = 1 - Math.pow(1-p,3);
         el.textContent = fmt(target*eased, comma) + (p===1 ? suffix : '');
         if(p<1) requestAnimationFrame(step);
       }
-      requestAnimationFrame(step);
+      window.setTimeout(function(){ requestAnimationFrame(step); }, delay);
     });
   }, {threshold:0.3});
-  document.querySelectorAll('[data-count]').forEach(function(el){
+  document.querySelectorAll('[data-count]').forEach(function(el, i){
+    el.setAttribute('data-count-order', String(i));
     if(reduced){ el.textContent = fmt(parseInt(el.getAttribute('data-count'),10), el.hasAttribute('data-comma')) + (el.getAttribute('data-suffix')||''); }
     else cio.observe(el);
   });
