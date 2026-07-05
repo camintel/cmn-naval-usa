@@ -1,0 +1,66 @@
+:root{
+  --bg:#fff;--paper:#f4f6f9;--ink:#0a1a2f;--ink2:#5f6f84;--panel:#0f2444;--nav:#191650;--red:#be1e2d;--gold:#b89b5e;--steel:#c8d2de;--light:#f4f7fb;--rule:rgba(10,26,47,.16);--margin:5.5vw;--max:1280px;--font-display:"Archivo",system-ui,sans-serif;--font-body:"Inter",system-ui,sans-serif;--ease:cubic-bezier(.2,.6,.2,1)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden;width:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;width:100%}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--margin);padding-right:var(--margin)}
+.eyebrow{color:var(--ink2);font-size:13px;font-weight:800;letter-spacing:.14em;line-height:1.2;text-transform:uppercase}
+.source{color:rgba(95,111,132,.9);font-size:12px;font-weight:700;letter-spacing:.08em;line-height:1.35;text-transform:uppercase}
+.caption{font-size:14px;line-height:1.45}
+.waterline{background:var(--rule);height:1px;width:100%}
+.skip{background:var(--ink);color:#fff;left:-9999px;padding:12px 16px;position:absolute;top:0;z-index:300}
+.skip:focus{left:16px;top:16px}
+.btn{align-items:center;background:var(--red);border:1px solid var(--red);border-radius:2px;color:#fff;display:inline-flex;font-size:15px;font-weight:800;justify-content:center;letter-spacing:.02em;min-height:50px;min-width:154px;padding:13px 24px;transition:background 180ms var(--ease),border-color 180ms var(--ease),color 180ms var(--ease),transform 180ms var(--ease)}
+.btn:hover{background:#a31926;border-color:#a31926}
+.btn.secondary{background:transparent;border-color:rgba(244,247,251,.44);color:var(--light)}
+.btn.secondary:hover{background:var(--light);border-color:var(--light);color:var(--ink)}
+.site-header{align-items:center;background:transparent;border-bottom:1px solid transparent;display:grid;gap:24px;grid-template-columns:180px 1fr auto;left:0;padding:20px 32px;position:fixed;right:0;top:0;transition:background 180ms ease,border-color 180ms ease,box-shadow 180ms ease,padding 180ms ease;z-index:100}
+.site-header.is-scrolled{background:rgba(25,22,80,.98);border-bottom-color:rgba(255,255,255,.16);box-shadow:0 18px 48px rgba(10,26,47,.18);padding-bottom:14px;padding-top:14px}
+.brand,.nav-mark{color:var(--light);font-family:var(--font-display);font-size:17px;font-weight:500;letter-spacing:.06em;white-space:nowrap}
+.brand span,.nav-mark span{color:rgba(244,247,251,.72)}
+.desktop-nav{display:flex;gap:28px;justify-content:center}
+.desktop-nav a,.nav-action,.mobile-menu-nav a{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.desktop-nav a{color:rgba(244,247,251,.76);transition:color 180ms ease}
+.desktop-nav a:hover,.desktop-nav a:focus-visible,.desktop-nav a[aria-current="page"]{color:var(--gold)}
+.nav-action{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.32);color:var(--light);min-width:118px;padding:12px 16px;text-align:center;transition:background 180ms ease,border-color 180ms ease,color 180ms ease}
+.nav-action:hover,.nav-action:focus-visible{background:var(--light);border-color:var(--light);color:var(--ink)}
+.mobile-menu-toggle{align-items:center;background:rgba(244,247,251,.08);border:1px solid rgba(244,247,251,.24);color:var(--light);cursor:pointer;display:none;height:44px;justify-content:center;position:relative;width:44px}
+.mobile-menu-toggle span{background:currentColor;height:2px;left:12px;position:absolute;transition:transform 180ms ease,top 180ms ease;width:18px}
+.mobile-menu-toggle span:first-child{top:17px}.mobile-menu-toggle span:last-child{top:25px}
+.mobile-menu-toggle[aria-expanded="true"] span:first-child{top:21px;transform:rotate(45deg)}
+.mobile-menu-toggle[aria-expanded="true"] span:last-child{top:21px;transform:rotate(-45deg)}
+.mobile-menu{background:linear-gradient(180deg,rgba(5,6,8,.98),rgba(13,17,23,.96)),repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 1px,transparent 1px 72px);border-bottom:1px solid rgba(255,255,255,.16);box-shadow:0 32px 80px rgba(0,0,0,.42);left:0;opacity:0;padding:96px 24px 28px;pointer-events:none;position:fixed;right:0;top:0;transform:translateY(-18px);transition:opacity 180ms ease,transform 180ms ease;z-index:90}
+.mobile-menu.is-open{opacity:1;pointer-events:auto;transform:translateY(0)}
+.mobile-menu-nav{display:grid}.mobile-menu-nav a{border-top:1px solid rgba(255,255,255,.12);color:rgba(244,247,251,.86);font-size:15px;letter-spacing:.08em;padding:18px 0}.mobile-menu-action{color:var(--gold)!important}body.menu-open{overflow:hidden}
+.vessel-hero{background:linear-gradient(110deg,rgba(10,26,47,.98) 0 48%,rgba(15,36,68,.9) 48% 100%),repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 1px,transparent 1px 96px);color:#fff;overflow:hidden;padding:148px 32px 88px;position:relative}
+.vessel-hero:after{background:linear-gradient(128deg,transparent 0 48%,rgba(255,255,255,.05) 48.2% 50.4%,transparent 50.6%);content:"";inset:0;pointer-events:none;position:absolute}
+.vessel-hero-inner,.vessel-tabs>div,.vessel-overview,.vessel-metrics,.vessel-specs,.vessel-missions,.vessel-capabilities,.vessel-related,.fleet-cta>div{margin-left:auto;margin-right:auto;max-width:var(--max)}
+.vessel-hero-inner{align-items:end;display:grid;gap:clamp(38px,5vw,78px);grid-template-columns:minmax(0,.95fr) minmax(300px,.65fr);position:relative;z-index:1}
+.vessel-hero h1{color:#fff;font-family:var(--font-display);font-size:clamp(48px,7vw,96px);font-weight:800;letter-spacing:0;line-height:.92;margin:18px 0 28px;text-transform:uppercase}
+.vessel-hero p:not(.eyebrow){color:rgba(244,247,251,.82);font-size:clamp(18px,2vw,24px);line-height:1.5;max-width:800px}
+.vessel-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.vessel-hero-media{background:rgba(244,247,251,.08);border:1px solid rgba(244,247,251,.18);margin:0;min-height:420px;overflow:hidden;position:relative}
+.vessel-hero-media img{height:100%;object-fit:cover;object-position:top center;transition:transform 700ms ease,filter 700ms ease;width:100%}
+.vessel-hero-media:before,.vessel-hero-media:after{content:"";inset:0;pointer-events:none;position:absolute;z-index:1}
+.vessel-hero-media:before{background:repeating-linear-gradient(0deg,rgba(255,255,255,.11) 0,rgba(255,255,255,.11) 1px,transparent 1px,transparent 18px);mix-blend-mode:screen;opacity:.28}
+.vessel-hero-media:after{background:linear-gradient(180deg,rgba(10,26,47,0) 42%,rgba(10,26,47,.72) 100%)}
+.vessel-hero-media figcaption{bottom:0;color:#fff;display:grid;gap:4px;left:0;padding:34px;position:absolute;right:0;z-index:2}
+.vessel-hero-media figcaption strong{font-size:clamp(42px,5vw,68px);line-height:.9}
+.vessel-hero-media figcaption span{color:rgba(244,247,251,.78);font-size:14px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.vessel-tabs{background:var(--paper);border-bottom:1px solid var(--rule);border-top:1px solid var(--rule);padding:22px 32px;position:sticky;top:73px;z-index:40}
+.vessel-tabs>div{display:flex;flex-wrap:wrap;gap:10px}.vessel-tabs a{background:#fff;border:1px solid var(--rule);color:var(--ink);font-size:12px;font-weight:800;letter-spacing:.1em;padding:12px 14px;text-transform:uppercase}.vessel-tabs a.is-active{background:var(--ink);color:#fff}
+.vessel-overview,.vessel-specs,.vessel-missions,.vessel-capabilities,.vessel-related{padding:86px 32px 0}
+.vessel-overview{max-width:920px}.vessel-overview h2,.vessel-specs h2,.vessel-missions h2,.vessel-capabilities h2,.vessel-related h2,.fleet-cta h2{color:var(--ink);font-family:var(--font-display);font-size:clamp(38px,5vw,72px);font-weight:800;line-height:.98;margin-top:14px;text-transform:uppercase}
+.vessel-overview p,.vessel-capabilities li{color:var(--ink2);font-size:19px;line-height:1.55;margin-top:18px}
+.vessel-metrics{display:grid;gap:18px;grid-template-columns:repeat(4,minmax(0,1fr));padding:72px 32px 0}.vessel-metrics div{border:1px solid var(--rule);padding:28px}.vessel-metrics span,.vessel-spec-table span,.vessel-mission-grid span,.vessel-related-grid span{color:var(--red);display:block;font-size:12px;font-weight:900;letter-spacing:.1em;margin-bottom:14px;text-transform:uppercase}.vessel-metrics strong{color:var(--ink);display:block;font-family:var(--font-display);font-size:clamp(32px,4vw,56px);line-height:1}
+.vessel-spec-table{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:42px}.vessel-spec-table div{align-items:center;border:1px solid var(--rule);display:grid;gap:22px;grid-template-columns:minmax(160px,.52fr) minmax(0,.48fr);margin-left:-1px;margin-top:-1px;min-height:70px;padding:18px 22px}.vessel-spec-table span,.vessel-metrics span{color:var(--ink2);margin-bottom:0}.vessel-spec-table strong{color:var(--ink);font-size:18px;line-height:1.25}
+.vessel-mission-grid,.vessel-related-grid{display:grid;gap:18px;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:42px}.vessel-mission-grid article,.vessel-related-grid article{background:#fff;border:1px solid var(--rule);border-top:6px solid var(--panel);min-width:0}.vessel-mission-grid article{border-top-color:var(--rule);min-height:150px;padding:24px}.vessel-mission-grid h3,.vessel-related-grid h3{color:var(--ink);font-family:var(--font-display);font-size:clamp(20px,2vw,28px);font-weight:800;line-height:1.08;text-transform:none}
+.vessel-related-grid a{display:flex;flex-direction:column;height:100%}.vessel-related-grid img{aspect-ratio:16/9;border-bottom:1px solid var(--rule);height:100%;object-fit:cover;object-position:top center;width:100%}.vessel-related-grid article div{padding:22px}.vessel-related-grid p{color:var(--ink2);font-size:15px;line-height:1.48;margin-top:10px}
+.fleet-cta{background:linear-gradient(135deg,rgba(10,26,47,.98),rgba(15,36,68,.96));color:#fff;margin-top:96px;padding:66px 32px}.fleet-cta>div{align-items:center;display:grid;gap:28px;grid-template-columns:minmax(0,1fr) auto}.fleet-cta h2{color:#fff;font-size:clamp(34px,4vw,58px)}
+footer{background:var(--paper);border-top:1px solid var(--rule);padding:96px 0 48px}.footer-grid{display:grid;gap:24px;grid-template-columns:4fr 2fr 2fr 2fr 2fr}.footer-grid .eyebrow{margin-bottom:24px}.footer-grid ul{display:flex;flex-direction:column;gap:16px;list-style:none}.footer-grid a{color:var(--ink2);font-size:14px;transition:color 180ms var(--ease)}.footer-grid a:hover{color:var(--ink)}.footer-mark .nav-mark{color:var(--ink)}.footer-mark .nav-mark span{color:var(--ink2)}.footer-mark .caption{color:var(--ink2);margin-top:16px;max-width:30ch}.footer-wl{margin:96px 0 24px}.footer-legal{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
+@media(max-width:980px){.vessel-hero-inner,.fleet-cta>div{grid-template-columns:1fr}.vessel-mission-grid,.vessel-related-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.vessel-metrics,.vessel-spec-table{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:900px){.site-header{grid-template-columns:150px 1fr auto}.desktop-nav{display:none}.nav-action{justify-self:end}.mobile-menu-toggle{display:inline-flex}}
+@media(max-width:620px){body{font-size:16px}.site-header{gap:10px;grid-template-columns:minmax(118px,1fr) auto;padding:14px 18px}.nav-action{display:none}.mobile-menu{padding-left:20px;padding-right:20px}.vessel-hero{padding:116px 20px 70px}.vessel-tabs,.vessel-overview,.vessel-specs,.vessel-missions,.vessel-capabilities,.vessel-related,.vessel-metrics,.fleet-cta{padding-left:20px;padding-right:20px}.vessel-tabs{top:65px}.vessel-mission-grid,.vessel-related-grid,.vessel-metrics,.vessel-spec-table{grid-template-columns:1fr}.vessel-spec-table div{grid-template-columns:1fr}.vessel-hero-media{min-height:320px}.footer-grid{grid-template-columns:1fr 1fr}.footer-mark{grid-column:1/3}}
