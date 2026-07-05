@@ -288,6 +288,62 @@ body.menu-open{overflow:hidden}
   .build-process-line::before,.build-process-line::after{flex:none;width:72px}
 }
 
+/* ---------- D2C Vessel Families ---------- */
+.vessel-families{background:#F7F8FA;padding:88px var(--margin)}
+.vessel-families-inner{max-width:1280px;margin:0 auto}
+.vessel-families-kicker{align-items:center;color:var(--signal);display:grid;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;font-weight:800;gap:14px;grid-template-columns:auto 1fr auto;letter-spacing:.24em;margin-bottom:18px;text-transform:uppercase}
+.vessel-families-kicker::before{content:"What We Build"}
+.vessel-families-kicker::after{color:var(--ink2);content:"18 Platforms · 6 Families";letter-spacing:.14em}
+.vessel-families-kicker span{background:var(--rule2);height:1px}
+.vessel-families-head{align-items:end;display:grid;gap:40px;grid-template-columns:1.4fr 1fr;margin-bottom:48px}
+.vessel-families-head .eyebrow{display:none}
+.vessel-families-head .h1{font-size:clamp(30px,3.4vw,44px);font-weight:800;letter-spacing:-.01em;line-height:1.08;max-width:15ch;text-transform:none}
+.vessel-families-head .body{color:#4A5A72;font-size:15.5px;font-weight:500;line-height:1.6;max-width:520px}
+.vessel-families-head .body .underline{border-bottom:1px solid var(--signal);color:var(--ink);padding-bottom:1px}
+.vessel-family-grid{border-left:1px solid #D6DEE8;border-top:1px solid #D6DEE8;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.vessel-family-card{background:#FFFFFF;border-bottom:1px solid #D6DEE8;border-right:1px solid #D6DEE8;color:inherit;display:flex;flex-direction:column;min-height:280px;padding:26px 26px 22px;position:relative;text-decoration:none;transition:background 180ms var(--ease),box-shadow 180ms var(--ease),transform 180ms var(--ease)}
+.vessel-family-card:hover,.vessel-family-card:focus-visible{background:#FAF1F2;box-shadow:none;transform:none}
+.vf-idx{align-items:center;color:#4A5A72;display:flex;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;font-weight:700;justify-content:space-between;letter-spacing:.18em;text-transform:uppercase}
+.vf-idx span:first-child{color:var(--signal);font-size:12px;font-weight:800}
+.vf-idx span:last-child{color:#4A5A72;font-size:12px;font-weight:700;letter-spacing:.18em}
+.vessel-family-line{align-items:flex-end;display:flex;height:64px;margin:18px 0 14px;position:relative}
+.vessel-family-line svg{height:100%;overflow:visible;width:100%}
+.vf-hull{fill:none;stroke:#334761;stroke-linecap:square;stroke-linejoin:miter;stroke-width:1.4}
+.vf-water{stroke:rgba(158,42,43,.7);stroke-dasharray:3 4;stroke-width:1}
+.vessel-family-card:hover .vf-hull,.vessel-family-card:focus-visible .vf-hull{stroke:#0A1A2F}
+.vessel-family-body{display:flex;flex:1;flex-direction:column}
+.vessel-family-body .h3{font-size:20px;font-weight:800;letter-spacing:-.01em;line-height:1.15;text-transform:none}
+.vessel-family-body .caption{color:#4A5A72;font-size:13.5px;font-weight:500;line-height:1.45;margin-top:4px}
+.vessel-family-chips{border-top:1px solid var(--rule2);display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:14px}
+.vessel-family-chips span{border:1px solid #D2DAE5;color:#4A5A72;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10.5px;font-weight:700;letter-spacing:.08em;padding:3px 8px;text-transform:uppercase;white-space:nowrap}
+.vessel-family-go{color:var(--signal);font-size:16px;opacity:0;position:absolute;right:22px;top:24px;transform:translateX(-6px);transition:opacity 180ms var(--ease),transform 180ms var(--ease)}
+.vessel-family-card:hover .vessel-family-go,.vessel-family-card:focus-visible .vessel-family-go{opacity:1;transform:none}
+.vf-bridge{align-items:center;background:#FFFFFF;border:1px solid #D6DEE8;border-top:0;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;padding:18px 26px}
+.vf-bridge-stat{color:#4A5A72;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.vf-bridge-stat strong{color:var(--ink)}
+.vf-bridge-stat span{margin:0 8px}
+.vf-bridge-cta{align-items:center;background:#9E2A2B;color:#FFFFFF;display:inline-flex;font-family:var(--font-display);font-size:13px;font-weight:800;justify-content:center;letter-spacing:.12em;min-width:0;padding:11px 22px;text-transform:uppercase;transition:background 180ms var(--ease),transform 180ms var(--ease)}
+.vf-bridge-cta:hover,.vf-bridge-cta:focus-visible{background:var(--signal);transform:translateY(-1px)}
+@media(max-width:1180px){
+  .vessel-family-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .vessel-families-head{grid-template-columns:1fr}
+  .vf-bridge{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:767px){
+  .vessel-families{padding:var(--s6) var(--margin)}
+  .vessel-families-kicker{grid-template-columns:1fr}
+  .vessel-families-kicker span{display:none}
+  .vessel-families-kicker::after{font-size:13px}
+  .vessel-families-head{grid-template-columns:1fr;gap:var(--s3)}
+  .vessel-families-head .h1{max-width:14ch}
+  .vessel-family-grid{grid-template-columns:1fr}
+  .vessel-family-card{min-height:0}
+  .vf-idx span:last-child{font-size:13px}
+  .vessel-family-body .caption{font-size:13.5px}
+  .vf-bridge{align-items:flex-start;flex-direction:column}
+  .vf-bridge-cta{width:100%}
+}
+
 /* ---------- D3 Company ---------- */
 .company-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-top:var(--s6)}
 .company-copy{grid-column:1/6}
@@ -604,6 +660,86 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
       </article>
     </div>
     <p class="build-process-line rv">American Partners. Proven Platforms. Mission Ready.</p>
+  </div>
+</section>
+
+<!-- ================= D2C · VESSEL FAMILIES ================= -->
+<section class="vessel-families" id="vessel-families" aria-label="Six vessel family types">
+  <div class="vessel-families-inner">
+    <div class="vessel-families-kicker"><span></span></div>
+    <div class="vessel-families-head">
+      <div>
+        <p class="eyebrow rv">Vessel Families</p>
+        <h2 class="h1 rv rv-d1">Six families. One industrial discipline.</h2>
+      </div>
+      <p class="body rv rv-d2">Every hull we deliver belongs to one of six proven vessel families — from blue-water combatants to unmanned interceptors. Each family carries decades of design heritage, <span class="underline">ready for American production.</span></p>
+    </div>
+    <div class="vessel-family-grid">
+      <a class="vessel-family-card rv" href="fleet/#corvettes">
+        <div class="vf-idx"><span>01</span><span>3 Platforms</span></div>
+        <div class="vessel-family-line"><svg viewBox="0 0 200 56" preserveAspectRatio="none" aria-hidden="true"><path class="vf-hull" d="M4 44 L18 44 L30 30 L54 30 L58 22 L84 22 L88 14 L96 14 L96 8 L100 8 L100 22 L128 22 L134 30 L172 30 L196 40 L188 46 L10 46 Z"/><line class="vf-water" x1="0" y1="46" x2="200" y2="46"/></svg></div>
+        <div class="vessel-family-body">
+          <h3 class="h3">Corvettes</h3>
+          <p class="caption">Blue-water combatants — endurance, sensors, and weapons integration for fleet missions.</p>
+          <div class="vessel-family-chips"><span>BR71</span><span>SeaGuard 96</span><span>SAAR 6</span></div>
+        </div>
+        <span class="vessel-family-go">→</span>
+      </a>
+      <a class="vessel-family-card rv rv-d1" href="fleet/#fast-missile-craft">
+        <div class="vf-idx"><span>02</span><span>2 Platforms</span></div>
+        <div class="vessel-family-line"><svg viewBox="0 0 200 56" preserveAspectRatio="none" aria-hidden="true"><path class="vf-hull" d="M8 44 L26 40 L62 28 L70 20 L92 20 L96 12 L102 12 L102 20 L130 20 L138 28 L178 34 L194 42 L184 46 L14 46 Z"/><line class="vf-water" x1="0" y1="46" x2="200" y2="46"/></svg></div>
+        <div class="vessel-family-body">
+          <h3 class="h3">Fast Missile Craft</h3>
+          <p class="caption">Compact strike platforms — speed, deterrence, and coastal defense at operational tempo.</p>
+          <div class="vessel-family-chips"><span>FS56</span><span>FS65</span></div>
+        </div>
+        <span class="vessel-family-go">→</span>
+      </a>
+      <a class="vessel-family-card rv rv-d2" href="fleet/#interceptors">
+        <div class="vf-idx"><span>03</span><span>4 Platforms</span></div>
+        <div class="vessel-family-line"><svg viewBox="0 0 200 56" preserveAspectRatio="none" aria-hidden="true"><path class="vf-hull" d="M14 44 L48 34 L96 26 L112 18 L134 18 L140 26 L170 32 L192 42 L180 46 L22 46 Z"/><line class="vf-water" x1="0" y1="46" x2="200" y2="46"/></svg></div>
+        <div class="vessel-family-body">
+          <h3 class="h3">High-Speed Interceptors</h3>
+          <p class="caption">Rapid response — interdiction, force protection, and patrol at speed. Crewed or unmanned.</p>
+          <div class="vessel-family-chips"><span>HSI32</span><span>DV16</span><span>U-DV15</span><span>WP18</span></div>
+        </div>
+        <span class="vessel-family-go">→</span>
+      </a>
+      <a class="vessel-family-card rv rv-d3" href="fleet/#landing-craft">
+        <div class="vf-idx"><span>04</span><span>4 Platforms</span></div>
+        <div class="vessel-family-line"><svg viewBox="0 0 200 56" preserveAspectRatio="none" aria-hidden="true"><path class="vf-hull" d="M8 30 L26 42 L26 30 L60 30 L60 24 L84 24 L84 30 L168 30 L186 34 L194 42 L184 46 L14 46 Z"/><line class="vf-water" x1="0" y1="46" x2="200" y2="46"/></svg></div>
+        <div class="vessel-family-body">
+          <h3 class="h3">Landing Craft</h3>
+          <p class="caption">Projection and access — moving people, vehicles, and mass from sea to shore.</p>
+          <div class="vessel-family-chips"><span>HSAB20</span><span>HSAB32</span><span>LCT 200</span><span>NDH 250</span></div>
+        </div>
+        <span class="vessel-family-go">→</span>
+      </a>
+      <a class="vessel-family-card rv rv-d4" href="fleet/#surveillance">
+        <div class="vf-idx"><span>05</span><span>2 Platforms</span></div>
+        <div class="vessel-family-line"><svg viewBox="0 0 200 56" preserveAspectRatio="none" aria-hidden="true"><path class="vf-hull" d="M10 44 L34 38 L66 32 L84 32 L92 12 L98 12 L98 6 L102 6 L102 32 L148 32 L170 36 L192 42 L182 46 L18 46 Z"/><line class="vf-water" x1="0" y1="46" x2="200" y2="46"/></svg></div>
+        <div class="vessel-family-body">
+          <h3 class="h3">Surveillance</h3>
+          <p class="caption">Persistent maritime awareness — long-range patrol, monitoring, and sustained presence.</p>
+          <div class="vessel-family-chips"><span>OE43</span><span>OE43-MH</span></div>
+        </div>
+        <span class="vessel-family-go">→</span>
+      </a>
+      <a class="vessel-family-card rv rv-d4" href="fleet/#opv">
+        <div class="vf-idx"><span>06</span><span>3 Platforms</span></div>
+        <div class="vessel-family-line"><svg viewBox="0 0 200 56" preserveAspectRatio="none" aria-hidden="true"><path class="vf-hull" d="M6 42 L20 42 L34 26 L74 26 L80 16 L108 16 L112 26 L152 26 L162 32 L192 40 L184 46 L12 46 Z"/><line class="vf-water" x1="0" y1="46" x2="200" y2="46"/></svg></div>
+        <div class="vessel-family-body">
+          <h3 class="h3">Offshore Patrol Vessels</h3>
+          <p class="caption">Sovereignty and presence — scalable offshore patrol for security and surveillance.</p>
+          <div class="vessel-family-chips"><span>CL55</span><span>CL65</span><span>CL75</span></div>
+        </div>
+        <span class="vessel-family-go">→</span>
+      </a>
+    </div>
+    <div class="vf-bridge rv">
+      <p class="vf-bridge-stat"><strong>18 Spec Sheets</strong><span>·</span>48 Navies Served<span>·</span>Every Family Ready for American Yards</p>
+      <a class="vf-bridge-cta" href="fleet/">Explore the Fleet</a>
+    </div>
   </div>
 </section>
 
