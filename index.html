@@ -525,7 +525,7 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
       <p class="body rv rv-d3">We exist to help execute it — American shipyards, American workers, American steel.</p>
       <div class="hero-ctas rv rv-d4" aria-label="Mission calls to action">
         <a class="hero-cta" href="#capability"><span>Capabilities</span><span class="hero-cta-arrow hero-cta-arrow--down" aria-hidden="true"></span></a>
-        <a class="hero-cta" href="#platforms"><span>Vessels</span><span class="hero-cta-arrow hero-cta-arrow--right" aria-hidden="true">→</span></a>
+        <a class="hero-cta" href="fleet/"><span>Vessels</span><span class="hero-cta-arrow hero-cta-arrow--right" aria-hidden="true">→</span></a>
       </div>
     </div>
   </div>
@@ -637,9 +637,9 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
       <h2 class="h2 rv rv-d1">Proven abroad. Built in America.</h2>
     </div>
     <div class="evidence-grid">
-      <div class="stat rv"><p class="numeral" data-count="1946" data-duration="3500">0</p><p class="eyebrow">Building ships since</p></div>
+      <div class="stat rv"><p class="numeral" data-count="1946" data-duration="4500" data-slow-tail>0</p><p class="eyebrow">Building ships since</p></div>
       <div class="stat rv rv-d1"><p class="numeral" data-count="40" data-suffix="+">0</p><p class="eyebrow">Years of naval construction</p></div>
-      <div class="stat rv rv-d2"><p class="numeral" data-count="3500" data-suffix="+" data-comma>0</p><p class="eyebrow">Vessels delivered</p></div>
+      <div class="stat rv rv-d2"><p class="numeral" data-count="3500" data-duration="4500" data-suffix="+" data-comma data-slow-tail>0</p><p class="eyebrow">Vessels delivered</p></div>
       <div class="stat rv rv-d3"><p class="numeral" data-count="48">0</p><p class="eyebrow">Navies &amp; coast guards served</p></div>
     </div>
     <p class="source rv">SEVEN DECADES OF NAVAL ENGINEERING, BROUGHT HOME TO AMERICAN SHIPYARDS.</p>
@@ -1093,11 +1093,24 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
       var order = parseInt(el.getAttribute('data-count-order'),10) || 0;
       var delay = order * 180;
       var duration = parseInt(el.getAttribute('data-duration'),10) || (1200 + (order * 90));
+      var slowTail = el.hasAttribute('data-slow-tail');
       var start = null;
       function step(ts){
         if(!start) start = ts;
         var p = Math.min(1,(ts-start)/duration);
-        var eased = 1 - Math.pow(1-p,3);
+        var eased;
+        if(slowTail && duration > 1000){
+          var tailStart = (duration - 1000) / duration;
+          if(p < tailStart){
+            var lead = p / tailStart;
+            eased = (1 - Math.pow(1-lead,3)) * .9;
+          } else {
+            var tail = (p - tailStart) / (1 - tailStart);
+            eased = .9 + (1 - Math.pow(1-tail,2)) * .1;
+          }
+        } else {
+          eased = 1 - Math.pow(1-p,3);
+        }
         el.textContent = fmt(target*eased, comma) + (p===1 ? suffix : '');
         if(p<1) requestAnimationFrame(step);
       }
