@@ -249,6 +249,39 @@ body.menu-open{overflow:hidden}
   .mission-visual{min-height:260px}
 }
 
+/* ---------- D2B How We Build ---------- */
+.build-process{background:linear-gradient(180deg,#FFFFFF 0%,#F5F8FB 100%);padding:var(--s8) var(--margin)}
+.build-process-inner{max-width:1280px;margin:0 auto}
+.build-process-head{align-items:end;display:grid;gap:var(--s5);grid-template-columns:minmax(0,.95fr) minmax(280px,.55fr);margin-bottom:var(--s6)}
+.build-process-head .eyebrow{color:var(--signal);margin-bottom:var(--s3)}
+.build-process-head .h1{font-weight:800;max-width:12ch;text-transform:uppercase}
+.build-process-head .body{color:var(--ink2);max-width:440px}
+.build-process-grid{border-top:1px solid var(--rule2);display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+.process-step{border-right:1px solid var(--rule2);display:grid;gap:var(--s3);grid-template-rows:86px auto auto 1fr;min-height:320px;padding:var(--s4) var(--s3) var(--s5)}
+.process-step:first-child{border-left:1px solid var(--rule2)}
+.process-icon{align-self:start;height:68px;object-fit:contain;object-position:left top;width:68px}
+.process-step strong{color:var(--signal);font-family:var(--font-display);font-size:15px;font-weight:800;letter-spacing:.14em}
+.process-step .h3{font-weight:800;text-transform:uppercase}
+.process-step .caption{color:var(--ink2);max-width:25ch}
+.build-process-line{align-items:center;color:var(--ink);display:flex;font-family:var(--font-display);font-size:clamp(18px,1.8vw,24px);font-weight:800;gap:24px;letter-spacing:.12em;padding-top:var(--s4);text-align:center;text-transform:uppercase}
+.build-process-line::before,.build-process-line::after{background:var(--signal);content:"";display:block;flex:1 1 80px;height:2px}
+@media(max-width:1180px){
+  .build-process-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .process-step:nth-child(n){border-left:0}
+  .process-step:nth-child(3n+1){border-left:1px solid var(--rule2)}
+  .process-step:nth-child(n+4){border-top:1px solid var(--rule2)}
+}
+@media(max-width:767px){
+  .build-process{padding:var(--s6) var(--margin)}
+  .build-process-head{grid-template-columns:1fr;gap:var(--s3)}
+  .build-process-head .h1{max-width:14ch}
+  .build-process-grid{grid-template-columns:1fr}
+  .process-step{border-left:1px solid var(--rule2);border-top:1px solid var(--rule2);min-height:auto}
+  .process-step:first-child{border-top:0}
+  .build-process-line{align-items:flex-start;flex-direction:column;gap:16px;text-align:left}
+  .build-process-line::before,.build-process-line::after{flex:none;width:72px}
+}
+
 /* ---------- D3 Company ---------- */
 .company-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-top:var(--s6)}
 .company-copy{grid-column:1/6}
@@ -529,6 +562,52 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
         <path class="accent" d="M184 398v44h250"/>
       </svg>
     </div>
+  </div>
+</section>
+
+<!-- ================= D2B · HOW WE BUILD — PROCESS ================= -->
+<section class="build-process" id="how-we-build" aria-label="How we build">
+  <div class="build-process-inner">
+    <div class="build-process-head">
+      <div>
+        <p class="eyebrow rv">How We Build</p>
+        <h2 class="h1 rv rv-d1">From Concept to Fleet Readiness.</h2>
+      </div>
+      <p class="body rv rv-d2">The full lifecycle approach that delivers modern maritime capability — faster and stronger.</p>
+    </div>
+    <div class="build-process-grid" aria-label="How CMN Naval USA builds capability">
+      <article class="process-step rv">
+        <img class="process-icon" src="assets/images/how-we-build-design.svg" alt="" aria-hidden="true">
+        <strong>01</strong>
+        <h3 class="h3">Design</h3>
+        <p class="caption">Mission-driven naval architecture engineered for performance, survivability, and flexibility.</p>
+      </article>
+      <article class="process-step rv rv-d1">
+        <img class="process-icon" src="assets/images/how-we-build-build.svg" alt="" aria-hidden="true">
+        <strong>02</strong>
+        <h3 class="h3">Build</h3>
+        <p class="caption">Constructed in American shipyards by skilled workers using modern methods.</p>
+      </article>
+      <article class="process-step rv rv-d2">
+        <img class="process-icon" src="assets/images/how-we-build-integrate.svg" alt="" aria-hidden="true">
+        <strong>03</strong>
+        <h3 class="h3">Integrate</h3>
+        <p class="caption">Seamless integration of combat systems, autonomy, and advanced technologies for mission advantage.</p>
+      </article>
+      <article class="process-step rv rv-d3">
+        <img class="process-icon" src="assets/images/how-we-build-deliver.svg" alt="" aria-hidden="true">
+        <strong>04</strong>
+        <h3 class="h3">Deliver</h3>
+        <p class="caption">Accelerating delivery of operational capability to the U.S. Navy, Coast Guard, and allies.</p>
+      </article>
+      <article class="process-step rv rv-d4">
+        <img class="process-icon" src="assets/images/how-we-build-sustain.svg" alt="" aria-hidden="true">
+        <strong>05</strong>
+        <h3 class="h3">Sustain</h3>
+        <p class="caption">Lifecycle support and sustainment to ensure readiness for decades to come.</p>
+      </article>
+    </div>
+    <p class="build-process-line rv">American Partners. Proven Platforms. Mission Ready.</p>
   </div>
 </section>
 
