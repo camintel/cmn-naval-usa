@@ -636,7 +636,7 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
       <h2 class="h2 rv rv-d1">Proven abroad. Built in America.</h2>
     </div>
     <div class="evidence-grid">
-      <div class="stat rv"><p class="numeral" data-count="1946">0</p><p class="eyebrow">Building ships since</p></div>
+      <div class="stat rv"><p class="numeral" data-count="1946" data-duration="3500">0</p><p class="eyebrow">Building ships since</p></div>
       <div class="stat rv rv-d1"><p class="numeral" data-count="40" data-suffix="+">0</p><p class="eyebrow">Years of naval construction</p></div>
       <div class="stat rv rv-d2"><p class="numeral" data-count="3500" data-suffix="+" data-comma>0</p><p class="eyebrow">Vessels delivered</p></div>
       <div class="stat rv rv-d3"><p class="numeral" data-count="48">0</p><p class="eyebrow">Navies &amp; coast guards served</p></div>
@@ -1091,7 +1091,7 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
       if(reduced){ el.textContent = fmt(target,comma)+suffix; return; }
       var order = parseInt(el.getAttribute('data-count-order'),10) || 0;
       var delay = order * 180;
-      var duration = 1200 + (order * 90);
+      var duration = parseInt(el.getAttribute('data-duration'),10) || (1200 + (order * 90));
       var start = null;
       function step(ts){
         if(!start) start = ts;
