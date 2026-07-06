@@ -213,22 +213,26 @@ body.menu-open{overflow:hidden}
 
 /* ---------- D2 Mission Advantage ---------- */
 .mission-advantage{background:linear-gradient(180deg,#F7FAFD 0%,#FFFFFF 18%,#FFFFFF 82%,#F4F8FB 100%);padding:var(--s8) var(--margin)}
-.mission-panel{border:1px solid rgba(10,26,47,.16);box-shadow:0 24px 80px rgba(10,26,47,.08);display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);gap:var(--s6);max-width:1900px;margin:0 auto;padding:var(--s7);position:relative}
-.mission-panel:before{background:var(--signal);content:"";height:74%;left:0;position:absolute;top:13%;width:5px}
-.mission-copy{align-self:center;padding-left:var(--s4)}
+.mission-panel{background:#FFFFFF;border:1px solid rgba(10,26,47,.16);box-shadow:0 24px 80px rgba(10,26,47,.08);max-width:1900px;margin:0 auto;min-height:760px;overflow:hidden;padding:var(--s7);position:relative}
+.mission-panel:before{background:var(--signal);content:"";height:74%;left:0;position:absolute;top:13%;width:5px;z-index:3}
+.mission-panel:after{background:linear-gradient(90deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.9) 38%,rgba(255,255,255,.38) 58%,rgba(255,255,255,.02) 100%);content:"";inset:0;position:absolute;z-index:1}
+.mission-copy{align-self:center;max-width:920px;padding-left:var(--s4);position:relative;z-index:2}
 .mission-copy .eyebrow{color:var(--signal);margin-bottom:var(--s4)}
 .mission-title{font-family:var(--font-display);font-size:clamp(36px,4vw,64px);font-weight:700;line-height:1.08;letter-spacing:-.015em;text-transform:uppercase}
 .mission-title span{color:var(--signal);display:block}
 .mission-lede{color:var(--ink2);font-size:clamp(18px,1.7vw,24px);line-height:1.5;margin-top:var(--s5);max-width:860px}
-.mission-pillars{border-top:1px solid var(--rule2);display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:var(--s6);padding-top:var(--s4)}
-.mission-pillar-num{color:var(--signal);font-size:14px;font-weight:700;letter-spacing:.12em;margin-bottom:var(--s2)}
+.mission-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:var(--s6);padding-top:var(--s4)}
+.mission-pillars > div{border-right:1px solid rgba(10,26,47,.18);padding-right:24px}
+.mission-pillars > div:last-child{border-right:0}
+.mission-pillar-num{color:var(--signal);font-family:var(--font-display);font-size:clamp(34px,4vw,64px);font-weight:800;letter-spacing:.02em;line-height:.9;margin-bottom:var(--s2)}
 .mission-pillar-label{color:var(--ink);font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-.mission-visual{align-self:center;min-height:480px;overflow:hidden;position:relative}
-.mission-visual:after{background:linear-gradient(110deg,transparent 0%,rgba(255,255,255,.18) 48%,transparent 62%);content:"";inset:0;opacity:0;position:absolute;transform:translateX(-35%);transition:opacity .45s ease,transform .75s ease}
-.mission-visual:hover:after{opacity:1;transform:translateX(35%)}
+.mission-visual{inset:0;overflow:hidden;position:absolute;z-index:0}
+.mission-visual:before{background-image:linear-gradient(rgba(10,26,47,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(10,26,47,.055) 1px,transparent 1px);background-size:44px 44px;content:"";inset:0;opacity:.7;position:absolute;z-index:2}
+.mission-visual:after{background:linear-gradient(110deg,transparent 0%,rgba(255,255,255,.32) 48%,transparent 62%);content:"";inset:0;opacity:0;position:absolute;transform:translateX(-35%);transition:opacity .45s ease,transform .75s ease;z-index:3}
+.mission-panel:hover .mission-visual:after{opacity:1;transform:translateX(35%)}
 .mission-grid{background-image:linear-gradient(rgba(10,26,47,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(10,26,47,.06) 1px,transparent 1px);background-size:36px 36px;inset:8% 3% 8% 3%;position:absolute}
-.mission-image{height:100%;inset:0;object-fit:cover;object-position:74% center;position:absolute;transition:filter .45s ease,transform .65s ease;width:100%}
-.mission-visual:hover .mission-image{filter:contrast(1.08) brightness(1.08);transform:scale(1.035)}
+.mission-image{filter:grayscale(1) contrast(1.08) brightness(1.02);height:80%;inset:auto 0 10% auto;object-fit:contain;object-position:center;opacity:.78;position:absolute;transition:filter .45s ease,opacity .45s ease,transform .65s ease;width:80%;z-index:1}
+.mission-panel:hover .mission-image{filter:grayscale(.9) contrast(1.12) brightness(1.04);opacity:.88;transform:scale(1.018)}
 .mission-blueprint{height:100%;left:0;position:absolute;top:0;width:100%}
 .mission-blueprint .ghost{fill:none;stroke:#C9D4E0;stroke-width:2}
 .mission-blueprint .hull{fill:#D8DEE6;opacity:.72}
@@ -241,17 +245,19 @@ body.menu-open{overflow:hidden}
 .bridge .pivot{color:var(--ink2);margin-top:var(--s5)}
 .bridge-sm{min-height:50vh}
 @media(max-width:1100px){
-  .mission-panel{grid-template-columns:1fr;gap:var(--s5)}
-  .mission-visual{min-height:360px}
-  .mission-image{object-position:62% center}
+  .mission-panel{min-height:680px}
+  .mission-panel:after{background:linear-gradient(90deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.88) 52%,rgba(255,255,255,.22) 100%)}
+  .mission-image{object-position:72% center}
 }
 @media(max-width:767px){
   .mission-advantage{padding:var(--s6) var(--margin)}
-  .mission-panel{padding:var(--s5) var(--s4)}
+  .mission-panel{min-height:auto;padding:var(--s5) var(--s4)}
+  .mission-panel:after{background:linear-gradient(180deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.84) 52%,rgba(255,255,255,.56) 100%)}
   .mission-panel:before{height:calc(100% - var(--s5) * 2);top:var(--s5)}
   .mission-copy{padding-left:var(--s3)}
   .mission-pillars{grid-template-columns:1fr;gap:var(--s3)}
-  .mission-visual{min-height:260px}
+  .mission-pillars > div{border-right:0;border-top:1px solid rgba(10,26,47,.14);padding-right:0;padding-top:var(--s3)}
+  .mission-image{object-position:66% center;opacity:.5}
 }
 
 /* ---------- D2B How We Build ---------- */
@@ -612,7 +618,7 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
       </div>
     </div>
     <div class="mission-visual rv rv-d2" aria-hidden="true">
-      <img class="mission-image" src="assets/images/mockups/mission-ship-mockup.png" alt="">
+      <img class="mission-image" src="assets/images/mockups/mission-ship-reference.png" alt="">
     </div>
   </div>
 </section>
