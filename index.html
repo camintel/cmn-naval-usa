@@ -221,11 +221,10 @@ body.menu-open{overflow:hidden}
 .mission-title{font-family:var(--font-display);font-size:clamp(36px,4vw,64px);font-weight:700;line-height:1.08;letter-spacing:-.015em;text-transform:uppercase}
 .mission-title span{color:var(--signal);display:block}
 .mission-lede{color:var(--ink2);font-size:clamp(18px,1.7vw,24px);line-height:1.5;margin-top:var(--s5);max-width:860px}
-.mission-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:var(--s6);padding-top:var(--s4)}
-.mission-pillars > div{border-right:1px solid rgba(10,26,47,.18);padding-right:24px}
-.mission-pillars > div:last-child{border-right:0}
-.mission-pillar-num{color:var(--signal);font-family:var(--font-display);font-size:clamp(34px,4vw,64px);font-weight:800;letter-spacing:.02em;line-height:.9;margin-bottom:var(--s2)}
-.mission-pillar-label{color:var(--ink);font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.mission-pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:var(--s6);padding-top:var(--s4)}
+.mission-pillars .stat{min-width:0}
+.mission-pillars .numeral{font-size:clamp(44px,5.2vw,90px);letter-spacing:-.04em;line-height:.9;margin-bottom:var(--s2)}
+.mission-pillars .eyebrow{color:var(--ink2);line-height:1.35}
 .mission-visual{inset:0;overflow:hidden;position:absolute;z-index:0}
 .mission-visual:before{background-image:linear-gradient(rgba(10,26,47,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(10,26,47,.055) 1px,transparent 1px);background-size:44px 44px;content:"";inset:0;opacity:.7;position:absolute;z-index:2}
 .mission-visual:after{background:linear-gradient(110deg,transparent 0%,rgba(255,255,255,.32) 48%,transparent 62%);content:"";inset:0;opacity:0;position:absolute;transform:translateX(-35%);transition:opacity .45s ease,transform .75s ease;z-index:3}
@@ -255,8 +254,7 @@ body.menu-open{overflow:hidden}
   .mission-panel:after{background:linear-gradient(180deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.84) 52%,rgba(255,255,255,.56) 100%)}
   .mission-panel:before{height:calc(100% - var(--s5) * 2);top:var(--s5)}
   .mission-copy{padding-left:var(--s3)}
-  .mission-pillars{grid-template-columns:1fr;gap:var(--s3)}
-  .mission-pillars > div{border-right:0;border-top:1px solid rgba(10,26,47,.14);padding-right:0;padding-top:var(--s3)}
+  .mission-pillars{grid-template-columns:repeat(2,1fr);gap:var(--s4) 18px}
   .mission-image{object-position:66% center;opacity:.5}
 }
 
@@ -602,18 +600,22 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
       <p class="eyebrow rv">Our Mission</p>
       <h2 class="mission-title rv rv-d1">Strengthening America’s Fleet. <span>On Time and On Budget.</span></h2>
       <p class="mission-lede rv rv-d2">CMN Naval USA brings proven naval designs, shipbuilding know-how, and a track record of delivering complex naval platforms to the U.S. industrial base—helping American shipyards build faster, smarter, and with greater confidence.</p>
-      <div class="mission-pillars rv rv-d3" aria-label="Mission pillars">
-        <div>
-          <p class="mission-pillar-num">01</p>
-          <p class="mission-pillar-label">Industrial Base</p>
+      <div class="mission-pillars rv rv-d3" aria-label="Our record metrics">
+        <div class="stat">
+          <p class="numeral" data-count="1946" data-duration="4500" data-slow-tail>0</p>
+          <p class="eyebrow">Building ships since</p>
         </div>
-        <div>
-          <p class="mission-pillar-num">02</p>
-          <p class="mission-pillar-label">American Shipyards</p>
+        <div class="stat">
+          <p class="numeral" data-count="40" data-suffix="+">0</p>
+          <p class="eyebrow">Years of naval construction</p>
         </div>
-        <div>
-          <p class="mission-pillar-num">03</p>
-          <p class="mission-pillar-label">Fleet Readiness</p>
+        <div class="stat">
+          <p class="numeral" data-count="3500" data-duration="4500" data-suffix="+" data-comma data-slow-tail>0</p>
+          <p class="eyebrow">Vessels delivered</p>
+        </div>
+        <div class="stat">
+          <p class="numeral" data-count="48">0</p>
+          <p class="eyebrow">Navies &amp; coast guards served</p>
         </div>
       </div>
     </div>
