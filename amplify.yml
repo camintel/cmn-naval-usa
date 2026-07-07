@@ -8,6 +8,7 @@ frontend:
     baseDirectory: .
     files:
       - assets/**/*
+      - contact/**/*
       - fleet/**/*
       - maritime-logistics/**/*
       - index.html

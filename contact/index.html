@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | CMN Naval USA</title>
+<meta name="description" content="Contact CMN Naval USA for government affairs, partnerships, logistics, and platform inquiries.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800&family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--paper:#f4f6f9;--ink:#0a1a2f;--ink2:#5f6f84;--panel:#0f2444;--nav:#191650;--red:#be1e2d;--gold:#b89b5e;--light:#f4f7fb;--rule:rgba(10,26,47,.16);--margin:5.5vw;--max:1280px;--font-display:"Archivo",system-ui,sans-serif;--font-body:"Inter",system-ui,sans-serif;--ease:cubic-bezier(.2,.6,.2,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden;width:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;width:100%}
+a{color:inherit;text-decoration:none}
+button,input,textarea,select{font:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--margin);padding-right:var(--margin)}
+.eyebrow{color:var(--red);font-size:13px;font-weight:800;letter-spacing:.14em;line-height:1.2;text-transform:uppercase}
+.source{color:rgba(95,111,132,.9);font-size:12px;font-weight:700;letter-spacing:.08em;line-height:1.35;text-transform:uppercase}
+.waterline{background:var(--rule);height:1px;width:100%}
+.skip{background:var(--ink);color:#fff;left:-9999px;padding:12px 16px;position:absolute;top:0;z-index:300}
+.skip:focus{left:16px;top:16px}
+.site-header{align-items:center;background:rgba(25,22,80,.98);border-bottom:1px solid rgba(255,255,255,.16);box-shadow:0 18px 48px rgba(10,26,47,.18);display:grid;gap:14px;grid-template-columns:228px 1fr auto;left:0;padding:8px 19px;position:fixed;right:0;top:0;z-index:100}
+.brand{background:url("../assets/brand/cmn-naval-usa-white-v5.svg") left center/contain no-repeat;display:block;font-size:0;height:53px;width:228px}
+.desktop-nav{display:flex;gap:28px;justify-content:center}
+.desktop-nav a,.nav-action,.mobile-menu-nav a{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.desktop-nav a{color:rgba(244,247,251,.72);transition:color 180ms ease}
+.desktop-nav a:hover,.desktop-nav a:focus-visible{color:var(--gold)}
+.nav-action{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.32);color:var(--light);min-width:118px;padding:12px 16px;text-align:center;transition:background 180ms ease,border-color 180ms ease,color 180ms ease}
+.nav-action:hover,.nav-action:focus-visible{background:var(--light);border-color:var(--light);color:var(--ink)}
+.mobile-menu-toggle{align-items:center;background:rgba(244,247,251,.08);border:1px solid rgba(244,247,251,.24);color:var(--light);cursor:pointer;display:none;height:44px;justify-content:center;position:relative;width:44px}
+.mobile-menu-toggle span{background:currentColor;height:2px;left:12px;position:absolute;transition:transform 180ms ease,top 180ms ease;width:18px}
+.mobile-menu-toggle span:first-child{top:17px}.mobile-menu-toggle span:last-child{top:25px}
+.mobile-menu-toggle[aria-expanded="true"] span:first-child{top:21px;transform:rotate(45deg)}
+.mobile-menu-toggle[aria-expanded="true"] span:last-child{top:21px;transform:rotate(-45deg)}
+.mobile-menu{background:linear-gradient(180deg,rgba(5,6,8,.98),rgba(13,17,23,.96));border-bottom:1px solid rgba(255,255,255,.16);box-shadow:0 32px 80px rgba(0,0,0,.42);left:0;opacity:0;padding:96px 24px 28px;pointer-events:none;position:fixed;right:0;top:0;transform:translateY(-18px);transition:opacity 180ms ease,transform 180ms ease;z-index:90}
+.mobile-menu.is-open{opacity:1;pointer-events:auto;transform:translateY(0)}
+.mobile-menu-nav{display:grid}.mobile-menu-nav a{border-top:1px solid rgba(255,255,255,.12);color:rgba(244,247,251,.86);font-size:15px;letter-spacing:.08em;padding:18px 0}.mobile-menu-action{color:var(--gold)!important}
+body.menu-open{overflow:hidden}
+.contact-hero{background:linear-gradient(135deg,rgba(10,26,47,.98),rgba(15,36,68,.96));color:#fff;overflow:hidden;padding:168px 0 96px;position:relative}
+.contact-hero:before{background-image:linear-gradient(rgba(244,247,251,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(244,247,251,.045) 1px,transparent 1px);background-size:64px 64px;content:"";inset:0;opacity:.75;position:absolute}
+.contact-hero .wrap{position:relative;z-index:1}
+.contact-hero h1{font-family:var(--font-display);font-size:clamp(46px,7vw,104px);font-weight:800;line-height:1.02;margin-top:26px;max-width:980px}
+.contact-hero p:not(.eyebrow){color:rgba(244,247,251,.76);font-size:clamp(18px,1.7vw,23px);line-height:1.6;margin-top:28px;max-width:760px}
+.contact-section{background:linear-gradient(180deg,#fff 0%,var(--paper) 100%);padding:96px 0}
+.contact-grid{display:grid;gap:54px;grid-template-columns:minmax(0,.74fr) minmax(340px,.86fr)}
+.contact-card{background:#fff;border:1px solid var(--rule);box-shadow:0 24px 80px rgba(10,26,47,.08);padding:clamp(28px,4vw,48px)}
+.context-panel{border-left:5px solid var(--red);padding-left:28px}
+.context-panel h2{font-family:var(--font-display);font-size:clamp(30px,3.5vw,52px);font-weight:800;line-height:1.08}
+.context-panel p{color:var(--ink2);font-size:19px;line-height:1.7;margin-top:22px}
+.context-meta{border-top:1px solid var(--rule);display:grid;gap:18px;margin-top:36px;padding-top:28px}
+.context-meta div{display:grid;gap:4px}
+.context-meta span{color:var(--ink2);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.context-meta strong{font-family:var(--font-display);font-size:22px}
+.form-grid{display:grid;gap:18px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.form-field{display:grid;gap:8px}
+.form-field.is-wide{grid-column:1/-1}
+label{color:var(--ink2);font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+input,textarea,select{background:#fff;border:1px solid rgba(10,26,47,.2);border-radius:0;color:var(--ink);min-height:52px;padding:13px 14px;transition:border-color 180ms var(--ease),box-shadow 180ms var(--ease)}
+textarea{min-height:160px;resize:vertical}
+input:focus,textarea:focus,select:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(190,30,45,.12);outline:0}
+.form-actions{align-items:center;display:flex;flex-wrap:wrap;gap:16px;margin-top:22px}
+.btn{background:var(--red);border:1px solid var(--red);color:#fff;cursor:pointer;display:inline-flex;font-size:15px;font-weight:800;justify-content:center;letter-spacing:.04em;min-height:52px;min-width:190px;padding:14px 24px;text-transform:uppercase;transition:background 180ms var(--ease),border-color 180ms var(--ease),transform 180ms var(--ease)}
+.btn:hover{background:#a31926;border-color:#a31926}
+.btn:active{transform:translateY(1px)}
+.form-note{color:var(--ink2);font-size:14px;line-height:1.55}
+.form-honey{left:-9999px;position:absolute;top:auto}
+footer{background:var(--paper);border-top:1px solid var(--rule);padding:96px 0 48px}
+.footer-grid{display:grid;gap:24px;grid-template-columns:4fr 2fr 2fr 2fr 2fr}
+.footer-grid .eyebrow{font-weight:800;margin-bottom:24px}
+.footer-grid ul{display:flex;flex-direction:column;gap:16px;list-style:none}
+.footer-grid a{color:var(--ink2);font-size:14px;transition:color 180ms var(--ease)}
+.footer-grid a:hover{color:var(--ink)}
+.footer-mark .nav-mark{background:var(--nav) url("../assets/brand/cmn-naval-usa-white-v5.svg") 18px center/178px auto no-repeat;display:block;height:48px;overflow:hidden;text-indent:-9999px;width:220px}
+.footer-mark .caption{color:var(--ink2);margin-top:16px;max-width:30ch}
+.footer-wl{margin:96px 0 24px}
+.footer-legal{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
+@media(max-width:1180px){.site-header{grid-template-columns:150px 1fr auto}.desktop-nav{display:none}.nav-action{justify-self:end}.mobile-menu-toggle{display:inline-flex}}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+@media(max-width:620px){body{font-size:16px}.site-header{gap:6px;grid-template-columns:minmax(118px,1fr) auto;padding:8px 11px}.brand{height:34px;width:146px}.nav-action{display:none}.mobile-menu{padding-left:20px;padding-right:20px;padding-top:58px}.contact-hero{padding:124px 0 72px}.contact-section{padding:72px 0}.form-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.footer-mark{grid-column:1/3}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header" data-header>
+  <a class="brand" href="/" aria-label="CMN Naval USA home">CMN NAVAL USA</a>
+  <nav class="desktop-nav" aria-label="Primary">
+    <a href="/#mission">Mission</a>
+    <a href="/#capability">Capability</a>
+    <a href="/#company">Company</a>
+    <a href="/fleet/">Platforms</a>
+    <a href="/maritime-logistics/">Logistics</a>
+    <a href="/contact/?topic=Partnerships">Partnership</a>
+  </nav>
+  <a class="nav-action" href="/contact/?topic=Partnerships">Engage</a>
+  <button class="mobile-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle><span></span><span></span></button>
+</header>
+<main id="main">
+  <section class="contact-hero">
+    <div class="wrap">
+      <p class="eyebrow">Contact CMN Naval USA</p>
+      <h1>Start the right conversation.</h1>
+      <p>Use this form for government affairs, shipyard partnerships, platform briefings, logistics coordination, and executive inquiries.</p>
+    </div>
+  </section>
+  <section class="contact-section" aria-label="Contact form">
+    <div class="wrap contact-grid">
+      <aside class="context-panel">
+        <p class="eyebrow">Inquiry routing</p>
+        <h2 id="contact-title">Government, industry, and mission partners.</h2>
+        <p>The message will include the topic selected and the page link that brought you here, so the CMN Naval USA team can route the inquiry cleanly.</p>
+        <div class="context-meta">
+          <div><span>Topic</span><strong data-topic-label>General Inquiry</strong></div>
+          <div><span>Source Page</span><strong data-source-label>Direct visit</strong></div>
+          <div><span>Recipient</span><strong>camilo@pacificsqr.com</strong></div>
+        </div>
+      </aside>
+      <form class="contact-card" action="https://formsubmit.co/camilo@pacificsqr.com" method="POST" data-contact-form>
+        <input type="hidden" name="_subject" value="CMN Naval USA inquiry">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://v1.d3dfu80rh6ctt2.amplifyapp.com/contact/?sent=1">
+        <input type="hidden" name="Inquiry Topic" value="General Inquiry">
+        <input type="hidden" name="Source Page" value="Direct visit">
+        <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off">
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="first-name">First Name</label>
+            <input id="first-name" name="First Name" type="text" autocomplete="given-name" required>
+          </div>
+          <div class="form-field">
+            <label for="last-name">Last Name</label>
+            <input id="last-name" name="Last Name" type="text" autocomplete="family-name" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" name="Email" type="email" autocomplete="email" required>
+          </div>
+          <div class="form-field">
+            <label for="organization">Organization</label>
+            <input id="organization" name="Organization" type="text" autocomplete="organization">
+          </div>
+          <div class="form-field">
+            <label for="topic">Topic</label>
+            <select id="topic" name="Selected Topic" required>
+              <option>General Inquiry</option>
+              <option>Government Affairs</option>
+              <option>Partnerships</option>
+              <option>Executive Briefing</option>
+              <option>Maritime Logistics</option>
+              <option>Platforms</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="Phone" type="tel" autocomplete="tel">
+          </div>
+          <div class="form-field is-wide">
+            <label for="message">Message</label>
+            <textarea id="message" name="Message" placeholder="Tell us what you would like to discuss." required></textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="btn" type="submit">Send Inquiry</button>
+          <p class="form-note" data-form-note>Submissions are sent to camilo@pacificsqr.com.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-mark"><p class="nav-mark">CMN NAVAL USA</p><p class="caption">American naval industrialization. We build quality advanced ships on time and on budget.</p></div>
+      <div><p class="eyebrow">Contact</p><ul><li><a href="/contact/?topic=Government%20Affairs">Government Affairs</a></li><li><a href="/contact/?topic=General%20Inquiry">General</a></li><li><a href="#" aria-disabled="true">Washington, D.C.</a></li></ul></div>
+      <div><p class="eyebrow">Company</p><ul><li><a href="/#mission">Mission</a></li><li><a href="/#capability">Capability</a></li><li><a href="/#company">Company</a></li><li><a href="/fleet/">Platforms</a></li><li><a href="/maritime-logistics/">Logistics</a></li><li><a href="/contact/?topic=Partnerships">Partnership</a></li></ul></div>
+      <div><p class="eyebrow">Documents</p><ul><li><a href="/company#governance">Governance Statement</a></li><li><a href="/contact/?topic=Executive%20Briefing">Executive Briefing</a></li></ul></div>
+      <div><p class="eyebrow">Compliance</p><ul><li><a href="/legal/privacy">Privacy</a></li><li><a href="/legal/terms">Legal</a></li><li><a href="/legal/export">Export &amp; Anti-Corruption</a></li></ul></div>
+    </div>
+    <div class="footer-wl"><div class="waterline"></div></div>
+    <div class="footer-legal"><p class="source">&copy; 2026 CMN Naval USA. All rights reserved.</p><p class="source">Proven abroad. Built in America.</p></div>
+  </div>
+</footer>
+<script>
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var topic = params.get("topic") || "General Inquiry";
+  var source = params.get("source") || document.referrer || "Direct visit";
+  var sent = params.get("sent");
+  var topicLabel = document.querySelector("[data-topic-label]");
+  var sourceLabel = document.querySelector("[data-source-label]");
+  var form = document.querySelector("[data-contact-form]");
+  var topicSelect = document.getElementById("topic");
+  var note = document.querySelector("[data-form-note]");
+  function clean(value){ return String(value || "").replace(/\s+/g, " ").trim(); }
+  topic = clean(topic);
+  source = clean(source);
+  if(topicSelect){
+    Array.prototype.forEach.call(topicSelect.options, function(option){
+      if(option.value.toLowerCase() === topic.toLowerCase()){ topicSelect.value = option.value; }
+    });
+  }
+  if(topicLabel){ topicLabel.textContent = topic; }
+  if(sourceLabel){ sourceLabel.textContent = source; }
+  if(form){
+    form.elements["_subject"].value = "CMN Naval USA — " + topic + " — " + source;
+    form.elements["Inquiry Topic"].value = topic;
+    form.elements["Source Page"].value = source;
+    if(topicSelect){
+      topicSelect.addEventListener("change", function(){
+        topic = topicSelect.value;
+        if(topicLabel){ topicLabel.textContent = topic; }
+        form.elements["_subject"].value = "CMN Naval USA — " + topic + " — " + source;
+        form.elements["Inquiry Topic"].value = topic;
+      });
+    }
+  }
+  if(sent && note){ note.textContent = "Thank you. Your inquiry has been submitted."; }
+  var header = document.querySelector("[data-header]");
+  var desktopNav = document.querySelector(".desktop-nav");
+  var navAction = document.querySelector(".nav-action");
+  var mobileMenuToggle = document.querySelector("[data-menu-toggle]");
+  function buildMobileMenu(){
+    if(!header || !mobileMenuToggle || !desktopNav){ return null; }
+    var drawer = document.createElement("div");
+    drawer.className = "mobile-menu";
+    drawer.id = "mobile-menu";
+    drawer.setAttribute("aria-hidden", "true");
+    var drawerNav = document.createElement("nav");
+    drawerNav.className = "mobile-menu-nav";
+    drawerNav.setAttribute("aria-label", "Mobile primary");
+    desktopNav.querySelectorAll("a").forEach(function(link){ drawerNav.appendChild(link.cloneNode(true)); });
+    if(navAction){
+      var drawerAction = navAction.cloneNode(true);
+      drawerAction.classList.add("mobile-menu-action");
+      drawerNav.appendChild(drawerAction);
+    }
+    drawer.appendChild(drawerNav);
+    header.after(drawer);
+    mobileMenuToggle.setAttribute("aria-controls", drawer.id);
+    return drawer;
+  }
+  var mobileMenu = buildMobileMenu();
+  function setMobileMenu(open){
+    if(!mobileMenu || !mobileMenuToggle){ return; }
+    document.body.classList.toggle("menu-open", open);
+    mobileMenu.classList.toggle("is-open", open);
+    mobileMenu.setAttribute("aria-hidden", open ? "false" : "true");
+    mobileMenuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+  if(mobileMenuToggle){
+    mobileMenuToggle.addEventListener("click", function(){ setMobileMenu(mobileMenuToggle.getAttribute("aria-expanded") !== "true"); });
+  }
+  if(mobileMenu){
+    mobileMenu.addEventListener("click", function(event){ if(event.target.closest("a")){ setMobileMenu(false); } });
+  }
+})();
+</script>
+</body>
+</html>
