@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maritime Logistics | CMN Naval USA</title>
+<meta name="description" content="CMN Naval USA maritime logistics connects shipyard readiness, vessel delivery, spare parts, customs support, and worldwide maritime transport.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800&family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fff;--paper:#f4f6f9;--ink:#0a1a2f;--ink2:#5f6f84;--panel:#0f2444;--nav:#191650;--red:#be1e2d;--gold:#b89b5e;--steel:#c8d2de;--light:#f4f7fb;--rule:rgba(10,26,47,.16);--rule-strong:rgba(10,26,47,.28);--margin:5.5vw;--font-display:"Archivo",system-ui,sans-serif;--font-body:"Inter",system-ui,sans-serif;--ease:cubic-bezier(.2,.6,.2,1)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden;width:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;width:100%}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.wrap{max-width:1280px;margin:0 auto;padding-left:var(--margin);padding-right:var(--margin)}
+.display{font-family:var(--font-display);font-size:clamp(44px,7vw,96px);font-weight:800;line-height:1.02;letter-spacing:0}
+.h1{font-family:var(--font-display);font-size:clamp(36px,5vw,72px);font-weight:800;line-height:1.06;letter-spacing:0}
+.h2{font-family:var(--font-display);font-size:clamp(28px,3.6vw,48px);font-weight:800;line-height:1.12;letter-spacing:0}
+.h3{font-family:var(--font-display);font-size:clamp(21px,2vw,30px);font-weight:800;line-height:1.2;letter-spacing:0}
+.eyebrow{color:var(--red);font-size:13px;font-weight:800;letter-spacing:.14em;line-height:1.2;text-transform:uppercase}
+.source{color:rgba(95,111,132,.9);font-size:12px;font-weight:700;letter-spacing:.08em;line-height:1.35;text-transform:uppercase}
+.caption{font-size:14px;line-height:1.45}
+.btn{align-items:center;background:var(--red);border:1px solid var(--red);border-radius:2px;color:#fff;display:inline-flex;font-size:15px;font-weight:800;height:50px;justify-content:center;letter-spacing:.02em;min-width:154px;padding:0 24px;transition:background 180ms var(--ease),border-color 180ms var(--ease),transform 180ms var(--ease)}
+.btn:hover{background:#a31926;border-color:#a31926}
+.btn:active{transform:translateY(1px)}
+.btn.secondary{background:transparent;border-color:rgba(244,247,251,.42);color:var(--light)}
+.btn.secondary:hover{background:var(--light);border-color:var(--light);color:var(--ink)}
+.waterline{background:var(--rule);height:1px;width:100%}
+.skip{background:var(--ink);color:#fff;left:-9999px;padding:12px 16px;position:absolute;top:0;z-index:300}
+.skip:focus{left:16px;top:16px}
+
+.site-header{align-items:center;background:transparent;border-bottom:1px solid transparent;box-shadow:none;display:grid;gap:14px;grid-template-columns:228px 1fr auto;left:0;padding:12px 19px;position:fixed;right:0;top:0;transition:background 180ms ease,border-color 180ms ease,box-shadow 180ms ease,padding 180ms ease;z-index:100}
+.site-header.is-scrolled{background:rgba(25,22,80,.98);border-bottom-color:rgba(255,255,255,.16);box-shadow:0 18px 48px rgba(10,26,47,.18);padding-bottom:8px;padding-top:8px}
+.brand,.nav-mark{color:var(--light);font-family:var(--font-display);font-size:17px;font-weight:500;letter-spacing:.06em;white-space:nowrap;transition:color 180ms ease}
+.brand{background:url("../assets/brand/cmn-naval-usa-white-v5.svg") left center/contain no-repeat;display:block;font-size:0;height:53px;width:228px}
+.brand span,.nav-mark span{color:rgba(244,247,251,.72)}
+.desktop-nav{display:flex;gap:28px;justify-content:center}
+.desktop-nav a,.nav-action,.mobile-menu-nav a{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.desktop-nav a{color:rgba(244,247,251,.72);transition:color 180ms ease}
+.desktop-nav a:hover,.desktop-nav a:focus-visible,.desktop-nav a[aria-current="page"]{color:var(--gold)}
+.nav-action{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.32);color:var(--light);min-width:118px;padding:12px 16px;text-align:center;transition:background 180ms ease,border-color 180ms ease,color 180ms ease}
+.nav-action:hover,.nav-action:focus-visible{background:var(--light);border-color:var(--light);color:var(--ink)}
+.mobile-menu-toggle{align-items:center;background:rgba(244,247,251,.08);border:1px solid rgba(244,247,251,.24);color:var(--light);cursor:pointer;display:none;height:44px;justify-content:center;position:relative;width:44px}
+.mobile-menu-toggle span{background:currentColor;height:2px;left:12px;position:absolute;transition:transform 180ms ease,top 180ms ease;width:18px}
+.mobile-menu-toggle span:first-child{top:17px}
+.mobile-menu-toggle span:last-child{top:25px}
+.mobile-menu-toggle[aria-expanded="true"] span:first-child{top:21px;transform:rotate(45deg)}
+.mobile-menu-toggle[aria-expanded="true"] span:last-child{top:21px;transform:rotate(-45deg)}
+.mobile-menu{background:linear-gradient(180deg,rgba(5,6,8,.98),rgba(13,17,23,.96)),repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 1px,transparent 1px 72px);border-bottom:1px solid rgba(255,255,255,.16);box-shadow:0 32px 80px rgba(0,0,0,.42);left:0;opacity:0;padding:96px 24px 28px;pointer-events:none;position:fixed;right:0;top:0;transform:translateY(-18px);transition:opacity 180ms ease,transform 180ms ease;z-index:90}
+.mobile-menu.is-open{opacity:1;pointer-events:auto;transform:translateY(0)}
+.mobile-menu-nav{display:grid}
+.mobile-menu-nav a{border-top:1px solid rgba(255,255,255,.12);color:rgba(244,247,251,.86);font-size:15px;letter-spacing:.08em;padding:18px 0}
+.mobile-menu-action{color:var(--gold)!important}
+body.menu-open{overflow:hidden}
+
+.logistics-hero{background:#061222;color:var(--light);min-height:92vh;overflow:hidden;padding:160px 0 72px;position:relative}
+.logistics-hero:before{background:linear-gradient(90deg,rgba(5,8,17,.9),rgba(5,8,17,.58) 46%,rgba(5,8,17,.18)),url("../assets/images/logistics/logistics-support.png") right center/contain no-repeat,linear-gradient(135deg,#071423,#132b4d);content:"";inset:0;position:absolute}
+.logistics-hero:after{background:repeating-linear-gradient(90deg,rgba(255,255,255,.055) 0 1px,transparent 1px 64px),repeating-linear-gradient(0deg,rgba(255,255,255,.04) 0 1px,transparent 1px 64px);content:"";inset:0;opacity:.42;position:absolute}
+.logistics-hero-grid{align-items:end;display:grid;gap:56px;grid-template-columns:minmax(0,1.1fr) minmax(320px,.72fr);position:relative;z-index:1}
+.logistics-hero-copy{max-width:840px}
+.logistics-hero-copy .eyebrow{color:var(--steel);margin-bottom:26px}
+.logistics-hero-copy p{color:rgba(244,247,251,.78);font-size:21px;line-height:1.55;margin-top:28px;max-width:740px}
+.logistics-panel{background:rgba(8,18,34,.56);border:1px solid rgba(244,247,251,.22);box-shadow:0 28px 80px rgba(0,0,0,.22);padding:26px}
+.logistics-panel .waterline{background:rgba(244,247,251,.28);margin:22px 0}
+.logistics-panel p:not(.source){color:rgba(244,247,251,.76)}
+.logistics-stats{display:grid;gap:16px;grid-template-columns:1fr 1fr}
+.logistics-stat strong{color:#fff;display:block;font-family:var(--font-display);font-size:32px;font-weight:800;line-height:1}
+.logistics-stat span{color:rgba(244,247,251,.64);display:block;font-size:12px;font-weight:800;letter-spacing:.1em;margin-top:8px;text-transform:uppercase}
+
+.briefing{padding:104px 0 84px}
+.briefing-grid{display:grid;gap:56px;grid-template-columns:minmax(0,.78fr) minmax(0,1fr)}
+.briefing-grid p{color:var(--ink2);font-size:20px;line-height:1.7;max-width:760px}
+.section-kicker{color:var(--red);font-size:13px;font-weight:800;letter-spacing:.14em;margin-bottom:28px;text-transform:uppercase}
+.route-section{background:var(--paper);padding:96px 0}
+.route-grid{align-items:start;display:grid;gap:44px;grid-template-columns:minmax(0,.75fr) minmax(0,1fr)}
+.route-copy p{color:var(--ink2);font-size:18px;line-height:1.7;margin-top:20px;max-width:560px}
+.route-panel{background:#fff;border:1px solid var(--rule);display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.route-panel div{min-height:260px;padding:28px;position:relative}
+.route-panel div+div{border-left:1px solid var(--rule)}
+.route-panel span,.capability-card span{color:var(--red);display:block;font-family:var(--font-display);font-size:15px;font-weight:800;letter-spacing:.14em;margin-bottom:28px}
+.route-panel strong{display:block;font-family:var(--font-display);font-size:24px;font-weight:800;line-height:1.15}
+.route-panel p{color:var(--ink2);font-size:15px;line-height:1.55;margin-top:14px}
+.capabilities{padding:104px 0}
+.section-heading{align-items:end;display:grid;gap:40px;grid-template-columns:minmax(0,.8fr) minmax(0,.7fr);margin-bottom:46px}
+.section-heading p:not(.eyebrow){color:var(--ink2);font-size:18px;line-height:1.65}
+.capability-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.capability-card{background:#fff;border:1px solid var(--rule);min-height:310px;padding:32px;transition:border-color 180ms var(--ease),box-shadow 180ms var(--ease),transform 180ms var(--ease)}
+.capability-card:hover{border-color:rgba(190,30,45,.42);box-shadow:0 26px 80px rgba(10,26,47,.12);transform:translateY(-3px)}
+.capability-card h3{font-family:var(--font-display);font-size:25px;font-weight:800;line-height:1.18}
+.capability-card p{color:var(--ink2);font-size:15.5px;line-height:1.6;margin-top:16px}
+.proof{background:var(--panel);color:var(--light);padding:104px 0}
+.proof-grid{align-items:center;display:grid;gap:52px;grid-template-columns:minmax(0,.85fr) minmax(0,1fr)}
+.proof-media{background:#071423;border:1px solid rgba(244,247,251,.18);overflow:hidden}
+.proof-media img{aspect-ratio:1/1;height:100%;object-fit:cover;width:100%}
+.proof-copy p:not(.eyebrow){color:rgba(244,247,251,.74);font-size:19px;line-height:1.7;margin-top:22px;max-width:680px}
+.proof-copy .btn{margin-top:30px}
+.proof-copy .eyebrow{color:var(--steel);margin-bottom:22px}
+
+footer{background:var(--paper);border-top:1px solid var(--rule);padding:96px 0 48px}
+.footer-grid{display:grid;gap:24px;grid-template-columns:4fr 2fr 2fr 2fr 2fr}
+.footer-grid .eyebrow{margin-bottom:24px}
+.footer-grid ul{display:flex;flex-direction:column;gap:16px;list-style:none}
+.footer-grid a{color:var(--ink2);font-size:14px;transition:color 180ms var(--ease)}
+.footer-grid a:hover{color:var(--ink)}
+.footer-mark .nav-mark{color:var(--ink)}
+.footer-mark .nav-mark span{color:var(--ink2)}
+.footer-mark .caption{color:var(--ink2);margin-top:16px;max-width:30ch}
+.footer-wl{margin:96px 0 24px}
+.footer-legal{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
+
+@media(max-width:1000px){
+  .logistics-hero-grid,.briefing-grid,.route-grid,.section-heading,.proof-grid{grid-template-columns:1fr}
+  .logistics-panel{max-width:640px}
+  .route-panel,.capability-grid{grid-template-columns:1fr}
+  .route-panel div+div{border-left:0;border-top:1px solid var(--rule)}
+}
+@media(max-width:1180px){
+  .site-header{grid-template-columns:150px 1fr auto}
+  .desktop-nav{display:none}
+  .nav-action{justify-self:end}
+  .mobile-menu-toggle{display:inline-flex}
+}
+@media(max-width:700px){
+  body{font-size:16px}
+  .site-header{gap:6px;grid-template-columns:minmax(118px,1fr) auto;padding:8px 11px}
+  .brand{height:34px;width:146px}
+  .nav-action{display:none}
+  .mobile-menu{padding-left:20px;padding-right:20px;padding-top:58px}
+  .logistics-hero{min-height:86vh;padding:124px 0 56px}
+  .logistics-hero:before{background:linear-gradient(180deg,rgba(5,8,17,.52),rgba(5,8,17,.9)),url("../assets/images/logistics/logistics-support.png") center 58%/cover no-repeat}
+  .logistics-hero-copy p{font-size:17px;line-height:1.62}
+  .logistics-stats{grid-template-columns:1fr}
+  .briefing,.route-section,.capabilities,.proof{padding:72px 0}
+  .capability-card{min-height:0}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-mark{grid-column:1/3}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header" data-header>
+  <a class="brand" href="../" aria-label="CMN Naval USA home">CMN NAVAL <span>USA</span></a>
+  <nav class="desktop-nav" aria-label="Primary">
+    <a href="../#mission">Mission</a>
+    <a href="../#company">Company</a>
+    <a href="../#capability">Capability</a>
+    <a href="../fleet/">Platforms</a>
+    <a href="./" aria-current="page">Logistics</a>
+    <a href="../#partnership">Partnership</a>
+  </nav>
+  <a class="nav-action" href="../#partnership">Engage</a>
+  <button class="mobile-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle>
+    <span></span>
+    <span></span>
+  </button>
+</header>
+
+<main id="main">
+  <section class="logistics-hero" aria-label="Maritime Logistics">
+    <div class="wrap logistics-hero-grid">
+      <div class="logistics-hero-copy">
+        <p class="eyebrow">Maritime Logistics</p>
+        <h1 class="display">Move from shipyard readiness to fleet availability.</h1>
+        <p>CMN Naval USA delivers turnkey maritime logistics through Advanced Maritime Transports, connecting vessel delivery, spare parts, maritime equipment, customs, and shipping coordination worldwide.</p>
+      </div>
+      <aside class="logistics-panel" aria-label="Logistics summary">
+        <p class="source">Global maritime logistics</p>
+        <div class="logistics-stats">
+          <div class="logistics-stat"><strong>01</strong><span>Vessel delivery</span></div>
+          <div class="logistics-stat"><strong>02</strong><span>Customs support</span></div>
+          <div class="logistics-stat"><strong>03</strong><span>Shipping management</span></div>
+          <div class="logistics-stat"><strong>AMT</strong><span>Single point of contact</span></div>
+        </div>
+        <div class="waterline"></div>
+        <p>Logistics keeps the handoff from production to operational use visible, coordinated, and accountable.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="briefing" aria-label="Global maritime logistics">
+    <div class="wrap">
+      <p class="section-kicker">Global maritime logistics</p>
+      <div class="briefing-grid">
+        <h2 class="h2">The mission does not end when the vessel leaves the yard.</h2>
+        <p>AMT plays a strategic role inside the CMN Naval USA group by managing the movement of vessels, spare parts, and maritime equipment from production to deployment. The goal is simple: reduce handoff risk, preserve schedule confidence, and keep naval programs moving across borders, ports, and operating regions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="route-section" aria-label="Networked delivery">
+    <div class="wrap route-grid">
+      <div class="route-copy">
+        <p class="eyebrow">Networked delivery</p>
+        <h2 class="h2">Global reach, local maritime expertise.</h2>
+        <p>Operating across multiple continents, AMT combines international coverage with practical knowledge of maritime hubs, customs regimes, shipping lines, and port operations.</p>
+      </div>
+      <div class="route-panel" aria-label="Logistics route priorities">
+        <div>
+          <span>01</span>
+          <strong>Global coverage</strong>
+          <p>Strategic locations supporting worldwide maritime operations.</p>
+        </div>
+        <div>
+          <span>02</span>
+          <strong>Local compliance</strong>
+          <p>Customs, documentation, and regional process support.</p>
+        </div>
+        <div>
+          <span>03</span>
+          <strong>Continuity</strong>
+          <p>Service continuity across diverse ports, regions, and programs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="capabilities" aria-label="Maritime logistics solutions">
+    <div class="wrap">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Maritime logistics solutions</p>
+          <h2 class="h2">A single point of contact for complex maritime supply chains.</h2>
+        </div>
+        <p>From vessel movement to customs regimes, the logistics layer is designed to keep sensitive maritime programs coordinated from production through deployment.</p>
+      </div>
+      <div class="capability-grid">
+        <article class="capability-card">
+          <span>01</span>
+          <h3>Vessel &amp; Equipment Delivery</h3>
+          <p>Coordinate vessel delivery, spare parts movement, and maritime equipment transport worldwide.</p>
+        </article>
+        <article class="capability-card">
+          <span>02</span>
+          <h3>Customs Support</h3>
+          <p>Process financial and suspensive customs regimes for sensitive cargo and vessels.</p>
+        </article>
+        <article class="capability-card">
+          <span>03</span>
+          <h3>Shipping Line Management</h3>
+          <p>Manage freight billing, container fleet follow-up, demurrage, and detention oversight.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof" aria-label="Operational value">
+    <div class="wrap proof-grid">
+      <figure class="proof-media">
+        <img src="../assets/images/logistics/logistics-training.png" alt="CMN Naval USA training and logistics support">
+      </figure>
+      <div class="proof-copy">
+        <p class="eyebrow">Operational value</p>
+        <h2 class="h2">Reliability, transparency, and efficiency at fleet tempo.</h2>
+        <p>Integrated logistics improves the client experience by keeping transportation timely, cost-effective, and visible. For defense customers, that means smoother transitions from construction to deployment and stronger confidence in operational readiness.</p>
+        <a class="btn" href="../#partnership">Coordinate a logistics briefing</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-mark">
+        <p class="nav-mark">CMN NAVAL <span>USA</span></p>
+        <p class="caption">American naval industrialization. We build quality advanced ships on time and on budget.</p>
+      </div>
+      <div><p class="eyebrow">Contact</p><ul>
+        <li><a href="mailto:government@cmn-usa.com">Government Affairs</a></li>
+        <li><a href="mailto:info@cmn-usa.com">General</a></li>
+        <li><a href="#" aria-disabled="true">Washington, D.C.</a></li>
+      </ul></div>
+      <div><p class="eyebrow">Company</p><ul>
+        <li><a href="../#mission">Mission</a></li>
+        <li><a href="../#company">Company</a></li>
+        <li><a href="../#capability">Capability</a></li>
+        <li><a href="../fleet/">Platforms</a></li>
+        <li><a href="./">Logistics</a></li>
+        <li><a href="../#partnership">Partnership</a></li>
+      </ul></div>
+      <div><p class="eyebrow">Documents</p><ul>
+        <li><a href="../company#governance">Governance Statement</a></li>
+        <li><a href="../#partnership">Executive Briefing</a></li>
+      </ul></div>
+      <div><p class="eyebrow">Compliance</p><ul>
+        <li><a href="../legal/privacy">Privacy</a></li>
+        <li><a href="../legal/terms">Legal</a></li>
+        <li><a href="../legal/export">Export &amp; Anti-Corruption</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-wl"><div class="waterline"></div></div>
+    <div class="footer-legal">
+      <p class="source">&#169; 2026 CMN Naval USA. All rights reserved.</p>
+      <p class="source">Proven abroad. Built in America.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var header = document.querySelector("[data-header]");
+  var desktopNav = document.querySelector(".desktop-nav");
+  var navAction = document.querySelector(".nav-action");
+  var mobileMenuToggle = document.querySelector("[data-menu-toggle]");
+  function updateHeader(){
+    if(header){ header.classList.toggle("is-scrolled", window.scrollY > 24); }
+  }
+  function buildMobileMenu(){
+    if(!header || !mobileMenuToggle || !desktopNav){ return null; }
+    var drawer = document.createElement("div");
+    drawer.className = "mobile-menu";
+    drawer.id = "mobile-menu";
+    drawer.setAttribute("aria-hidden", "true");
+    var drawerNav = document.createElement("nav");
+    drawerNav.className = "mobile-menu-nav";
+    drawerNav.setAttribute("aria-label", "Mobile primary");
+    desktopNav.querySelectorAll("a").forEach(function(link){
+      drawerNav.appendChild(link.cloneNode(true));
+    });
+    if(navAction){
+      var drawerAction = navAction.cloneNode(true);
+      drawerAction.classList.add("mobile-menu-action");
+      drawerNav.appendChild(drawerAction);
+    }
+    drawer.appendChild(drawerNav);
+    header.after(drawer);
+    mobileMenuToggle.setAttribute("aria-controls", drawer.id);
+    return drawer;
+  }
+  var mobileMenu = buildMobileMenu();
+  function setMobileMenu(open){
+    if(!mobileMenu || !mobileMenuToggle){ return; }
+    document.body.classList.toggle("menu-open", open);
+    mobileMenu.classList.toggle("is-open", open);
+    mobileMenu.setAttribute("aria-hidden", String(!open));
+    mobileMenuToggle.setAttribute("aria-expanded", String(open));
+    mobileMenuToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+  }
+  window.addEventListener("scroll", updateHeader, {passive:true});
+  updateHeader();
+  if(mobileMenuToggle){
+    mobileMenuToggle.addEventListener("click", function(){
+      setMobileMenu(mobileMenuToggle.getAttribute("aria-expanded") !== "true");
+    });
+  }
+  if(mobileMenu){
+    mobileMenu.addEventListener("click", function(e){
+      if(e.target.closest("a")){ setMobileMenu(false); }
+    });
+  }
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){ setMobileMenu(false); }
+  });
+})();
+</script>
+</body>
+</html>
