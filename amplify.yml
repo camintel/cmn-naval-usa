@@ -9,4 +9,5 @@ frontend:
     files:
       - assets/**/*
       - fleet/**/*
+      - maritime-logistics/**/*
       - index.html
