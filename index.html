@@ -219,9 +219,10 @@ body.menu-open{overflow:hidden}
 .mission-copy{align-self:center;max-width:920px;padding-left:var(--s4);position:relative;z-index:2}
 .mission-copy .eyebrow{color:var(--signal);margin-bottom:var(--s4)}
 .mission-title{font-family:var(--font-display);font-size:clamp(36px,4vw,64px);font-weight:700;line-height:1.08;letter-spacing:-.015em;text-transform:uppercase}
-.mission-title span{color:var(--signal);display:block}
+.mission-title span{color:var(--signal);display:inline}
 .mission-lede{color:var(--ink2);font-size:clamp(18px,1.7vw,24px);line-height:1.5;margin-top:var(--s5);max-width:860px}
-.mission-pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:var(--s6);padding-top:var(--s4)}
+.mission-record-label{color:var(--signal);margin-top:var(--s6)}
+.mission-pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:var(--s3);padding-top:var(--s4)}
 .mission-pillars .stat{min-width:0}
 .mission-pillars .numeral{font-size:clamp(44px,5.2vw,90px);letter-spacing:-.04em;line-height:.9;margin-bottom:var(--s2)}
 .mission-pillars .eyebrow{color:var(--ink2);line-height:1.35}
@@ -230,8 +231,8 @@ body.menu-open{overflow:hidden}
 .mission-visual:after{background:linear-gradient(110deg,transparent 0%,rgba(255,255,255,.32) 48%,transparent 62%);content:"";inset:0;opacity:0;position:absolute;transform:translateX(-35%);transition:opacity .45s ease,transform .75s ease;z-index:3}
 .mission-panel:hover .mission-visual:after{opacity:1;transform:translateX(35%)}
 .mission-grid{background-image:linear-gradient(rgba(10,26,47,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(10,26,47,.06) 1px,transparent 1px);background-size:36px 36px;inset:8% 3% 8% 3%;position:absolute}
-.mission-image{filter:grayscale(1) contrast(1.08) brightness(1.02);height:80%;inset:auto 0 10% auto;object-fit:contain;object-position:center;opacity:.78;position:absolute;transition:filter .45s ease,opacity .45s ease,transform .65s ease;width:80%;z-index:1}
-.mission-panel:hover .mission-image{filter:grayscale(.9) contrast(1.12) brightness(1.04);opacity:.88;transform:scale(1.018)}
+.mission-image{filter:grayscale(1) contrast(1.08) brightness(1.02);height:80%;inset:auto 0 10% auto;object-fit:contain;object-position:center;opacity:.94;position:absolute;transition:filter .45s ease,opacity .45s ease,transform .65s ease;width:80%;z-index:1}
+.mission-panel:hover .mission-image{filter:grayscale(.9) contrast(1.12) brightness(1.04);opacity:.96;transform:scale(1.018)}
 .mission-blueprint{height:100%;left:0;position:absolute;top:0;width:100%}
 .mission-blueprint .ghost{fill:none;stroke:#C9D4E0;stroke-width:2}
 .mission-blueprint .hull{fill:#D8DEE6;opacity:.72}
@@ -255,7 +256,7 @@ body.menu-open{overflow:hidden}
   .mission-panel:before{height:calc(100% - var(--s5) * 2);top:var(--s5)}
   .mission-copy{padding-left:var(--s3)}
   .mission-pillars{grid-template-columns:repeat(2,1fr);gap:var(--s4) 18px}
-  .mission-image{object-position:66% center;opacity:.5}
+  .mission-image{object-position:66% center;opacity:.6}
 }
 
 /* ---------- D2B How We Build ---------- */
@@ -295,12 +296,8 @@ body.menu-open{overflow:hidden}
 /* ---------- D2C Vessel Families ---------- */
 .vessel-families{background:#F7F8FA;padding:88px var(--margin)}
 .vessel-families-inner{max-width:1280px;margin:0 auto}
-.vessel-families-kicker{align-items:center;color:var(--signal);display:grid;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;font-weight:800;gap:14px;grid-template-columns:auto 1fr auto;letter-spacing:.24em;margin-bottom:18px;text-transform:uppercase}
-.vessel-families-kicker::before{content:"What We Build"}
-.vessel-families-kicker::after{color:var(--ink2);content:"18 Platforms · 6 Families";letter-spacing:.14em}
-.vessel-families-kicker span{background:var(--rule2);height:1px}
 .vessel-families-head{align-items:end;display:grid;gap:40px;grid-template-columns:1.4fr 1fr;margin-bottom:48px}
-.vessel-families-head .eyebrow{display:none}
+.vessel-families-head .eyebrow{color:var(--signal);margin-bottom:var(--s3)}
 .vessel-families-head .h1{font-size:clamp(30px,3.4vw,44px);font-weight:800;letter-spacing:-.01em;line-height:1.08;max-width:25ch;text-transform:none}
 .vessel-families-head .body{color:#4A5A72;font-size:15.5px;font-weight:500;line-height:1.6;max-width:520px}
 .vessel-families-head .body .underline{border-bottom:1px solid var(--signal);color:var(--ink);padding-bottom:1px}
@@ -335,9 +332,6 @@ body.menu-open{overflow:hidden}
 }
 @media(max-width:767px){
   .vessel-families{padding:var(--s6) var(--margin)}
-  .vessel-families-kicker{grid-template-columns:1fr}
-  .vessel-families-kicker span{display:none}
-  .vessel-families-kicker::after{font-size:13px}
   .vessel-families-head{grid-template-columns:1fr;gap:var(--s3)}
   .vessel-families-head .h1{max-width:14ch}
   .vessel-family-grid{grid-template-columns:1fr}
@@ -358,6 +352,7 @@ body.menu-open{overflow:hidden}
 .statement-block .eyebrow{margin-bottom:var(--s3)}
 .statement-block .h1,.statement-block .display{max-width:20ch}
 .statement-block{margin-bottom:var(--s6)}
+.company-title{font-size:clamp(30px,3.4vw,44px);font-weight:800;letter-spacing:-.01em;line-height:1.08;max-width:25ch;text-transform:none}
 @media(max-width:767px){
   .company-grid{display:block}
   .company-facts{margin-top:var(--s6);gap:var(--s4)}
@@ -386,39 +381,6 @@ body.menu-open{overflow:hidden}
 .doc-row .tlink{margin-top:var(--s2);align-self:flex-start}
 @media(max-width:767px){.upfront-grid{display:block}.upfront-doc{margin-top:var(--s5)}}
 
-/* ---------- D6 Transfer ---------- */
-.diagram-wrap{margin-top:var(--s7)}
-.diagram{width:100%;height:auto}
-.dnode{opacity:0;transition:opacity var(--base) var(--ease)}
-.diagram.in .dnode{opacity:1}
-.diagram.in .dnode:nth-of-type(1){transition-delay:0ms}
-.diagram.in .dnode:nth-of-type(2){transition-delay:320ms}
-.diagram.in .dnode:nth-of-type(3){transition-delay:640ms}
-.diagram.in .dnode:nth-of-type(4){transition-delay:960ms}
-.diagram.in .dnode:nth-of-type(5){transition-delay:1280ms}
-.dspine{stroke-dasharray:1200;stroke-dashoffset:1200;transition:stroke-dashoffset 400ms var(--ease)}
-.diagram.in .dspine{stroke-dashoffset:0}
-@media(prefers-reduced-motion:reduce){.dnode{opacity:1!important;transition:none}.dspine{stroke-dashoffset:0;transition:none}}
-.manifest{margin-top:var(--s7)}
-.manifest .eyebrow{margin-bottom:var(--s4)}
-.mrow{display:grid;grid-template-columns:4fr 8fr;gap:24px;padding:var(--s3) 0;border-top:1px solid var(--rule2)}
-.mrow:last-of-type{border-bottom:1px solid var(--rule2)}
-.mrow .h3{font-size:clamp(18px,1.5vw,22px)}
-.mrow p{color:var(--ink2);font-size:16px;line-height:25px;max-width:62ch}
-.manifest-close{color:var(--ink2);font-size:14px;margin-top:var(--s4)}
-@media(max-width:767px){.mrow{grid-template-columns:1fr;gap:var(--s1)}}
-.b2s{position:relative;margin-top:var(--s8);height:100vh;overflow:hidden}
-/* PHOTOGRAPHY SLOT [blueprint-to-steel]: layer 2 replace with photographed hull section, same crop. */
-.b2s-layer{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:0 var(--margin)}
-.b2s-blueprint svg{width:min(920px,86vw)}
-.b2s-steel{opacity:0;background:
-  repeating-linear-gradient(90deg, rgba(10,26,47,.035) 0 1px, transparent 1px 72px),
-  radial-gradient(80% 60% at 50% 45%, rgba(10,26,47,.06), transparent 70%),
-  linear-gradient(160deg,#EDF1F6 0%, #E2E9F0 45%, #F0F3F7 100%)}
-.b2s-steel svg{width:min(920px,86vw)}
-.b2s-caption{position:absolute;left:var(--margin);bottom:var(--s5);max-width:520px}
-.b2s-caption .caption{color:var(--ink2);margin-bottom:var(--s1)}
-
 /* ---------- D7 Built in America ---------- */
 .bia-hero{position:relative;height:88vh;overflow:hidden;margin-bottom:var(--s8)}
 /* PHOTOGRAPHY SLOT [welder-arc]: replace .bia-atmo with welder mid-arc, work light only, LUT-graded (light grade). */
@@ -430,96 +392,6 @@ body.menu-open{overflow:hidden}
 .bia-head{position:absolute;left:var(--margin);right:var(--margin);bottom:calc(38% + var(--s4));max-width:1120px;z-index:2}
 .bia-head .h1{margin-top:var(--s3);max-width:16ch}
 .bia-wl{position:absolute;left:0;right:0;top:62%;z-index:2}
-.modules{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4)}
-.module{position:relative;border-top:1px solid var(--rule2);padding-top:var(--s4)}
-.module .h3{margin:var(--s2) 0}
-.module .body{color:var(--ink2);font-size:17px;line-height:26px;max-width:52ch}
-.module-quote{margin-top:var(--s4)}
-.module-quote .h3{font-weight:500;max-width:24ch}
-.module-quote .caption{color:var(--ink2);margin-top:var(--s2)}
-@media(max-width:767px){.modules{grid-template-columns:1fr}}
-
-/* ---------- D8 Ledger ---------- */
-.ledger-table{width:100%;border-collapse:collapse;margin-top:var(--s6)}
-.ledger-table th{text-align:left;font-family:var(--font-body);font-weight:500;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);padding:0 var(--s3) var(--s2) 0;border-bottom:1px solid var(--rule)}
-.ledger-table td{padding:var(--s3) var(--s3) var(--s3) 0;border-bottom:1px solid var(--rule2);font-size:17px;vertical-align:top}
-.ledger-table td.dim{color:var(--ink2)}
-.ledger-note{color:var(--ink2);font-size:14px;margin-top:var(--s3)}
-.ledger-cards{display:none}
-@media(max-width:767px){
-  .ledger-table{display:none}
-  .ledger-cards{display:flex;flex-direction:column;gap:var(--s3);margin-top:var(--s5)}
-  .lcard{border:1px solid var(--rule2);border-radius:2px;padding:var(--s3)}
-  .lcard .h3{margin-bottom:var(--s2)}
-  .lcard dl{display:grid;grid-template-columns:1fr 1fr;gap:var(--s2)}
-  .lcard dt{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
-  .lcard dd{font-size:15px}
-}
-
-/* ---------- D10 Proof Cards ---------- */
-.proof{position:relative;min-height:92vh;padding:0;overflow:hidden;display:block;background:repeating-linear-gradient(90deg, rgba(10,26,47,.035) 0 1px, transparent 1px 72px), var(--paper)}
-.proof + .proof{border-top:1px solid var(--rule2)}
-/* PHOTOGRAPHY SLOT [platform-*]: replace .proof-atmo with sea-trial photography, dawn, long lens. */
-.proof-atmo{position:absolute;inset:0}
-.proof-atmo svg{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);width:min(1080px,92vw);opacity:.9}
-.proof-scrim{position:absolute;inset:0;background:linear-gradient(to top, rgba(244,246,249,.75) 0%, rgba(244,246,249,.08) 55%, rgba(244,246,249,.3) 100%)}
-.proof-inner{position:relative;z-index:2;min-height:92vh}
-.proof-head{position:absolute;left:var(--margin);right:var(--margin);bottom:calc(38% + var(--s4));max-width:1120px}
-.proof-head .h1{margin:var(--s2) 0}
-.proof-head .body{color:var(--ink2);max-width:44ch}
-.proof-wl{position:absolute;left:0;right:0;top:62%}
-.proof-stats{position:absolute;left:var(--margin);top:calc(62% + var(--s5));display:flex;gap:var(--s6);flex-wrap:wrap}
-.proof-stats .h2{font-variant-numeric:tabular-nums}
-.proof-stats .eyebrow{margin-top:var(--s1)}
-.proof-link{position:absolute;right:var(--margin);bottom:var(--s5)}
-@media(max-width:767px){
-  .proof-stats{gap:var(--s4) var(--s5);right:var(--margin)}
-  .proof-link{left:var(--margin);right:auto}
-  .proof{min-height:100svh}.proof-inner{min-height:100svh}
-}
-
-/* ---------- D11 The Clock ---------- */
-.clock-section{min-height:70vh}
-.clock-rail{position:relative;margin-top:var(--s8);height:200px}
-.clock-line{position:absolute;left:0;right:0;top:100px}
-.tick{position:absolute;top:88px;width:2px;height:12px;background:var(--ink);cursor:pointer;border:none;padding:0}
-.tick.hollow{background:transparent;border:1px solid rgba(10,26,47,.5);width:2px}
-.tick.now{background:var(--signal);animation:pulse-once 400ms var(--ease) 1}
-@keyframes pulse-once{0%{transform:scale(1)}50%{transform:scale(1.4)}100%{transform:scale(1)}}
-@media(prefers-reduced-motion:reduce){.tick.now{animation:none}}
-.tick-label{position:absolute;width:150px;font-size:12px;line-height:16px;letter-spacing:.04em;color:var(--ink2)}
-.tick-label .date{color:var(--ink);display:block;margin-bottom:2px;font-variant-numeric:tabular-nums}
-.tick-label.above{bottom:118px}
-.tick-label.below{top:118px}
-.tick-label.now-label .date{color:var(--ink)}
-.tick-label.now-label{color:var(--ink2)}
-.clock-note{color:var(--ink2);font-size:14px;margin-top:var(--s4);max-width:60ch}
-@media(max-width:767px){
-  /* Clock rotates to vertical rail per spec D11 */
-  .clock-rail{height:auto;margin-top:var(--s6);border-left:1px solid var(--rule);padding-left:var(--s4);display:flex;flex-direction:column;gap:var(--s5)}
-  .clock-line{display:none}
-  .tick{position:relative;top:auto;left:auto!important;width:12px;height:2px;margin-left:calc(-1 * var(--s4) - 6px)}
-  .tick.hollow{height:2px;width:12px}
-  .vrow{position:relative}
-  .tick-label{position:relative;left:auto!important;width:auto;max-width:100%;bottom:auto!important;top:auto!important;margin-top:calc(-1 * var(--s2))}
-}
-
-/* ---------- D12 Doors ---------- */
-.doors{margin-top:var(--s7)}
-.door{display:grid;grid-template-columns:3fr 5fr 4fr;align-items:center;gap:24px;min-height:96px;border-top:1px solid var(--rule);padding:var(--s3) 0;transition:background var(--fast) var(--ease);text-decoration:none}
-.door:last-child{border-bottom:1px solid var(--rule)}
-.door:hover{background:var(--paper)}
-.door .verb{font-family:var(--font-display);font-weight:500;font-size:clamp(20px,1.95vw,28px)}
-.door .artifact{color:var(--ink2);font-size:14px;display:flex;align-items:center;justify-content:flex-end;gap:var(--s2)}
-.door .arrow{color:var(--ink)}
-.door-primary .verb .btn{height:48px}
-.doors-note{color:var(--ink2);font-size:14px;margin-top:var(--s4)}
-@media(max-width:767px){
-  .door{grid-template-columns:1fr;gap:var(--s2);border:1px solid var(--rule);border-radius:2px;padding:var(--s3);margin-bottom:var(--s3)}
-  .door:last-child{border-bottom:1px solid var(--rule)}
-  .door .artifact{justify-content:flex-start}
-}
-
 /* ---------- D13 Close ---------- */
 .close-section{min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
 .close-section .display{max-width:16ch}
@@ -583,7 +455,7 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
     </div>
     <div class="hero-wl"><div class="waterline draw" data-draw></div></div>
     <div class="hero-bottom">
-      <p class="body rv rv-d3">We exist to help execute it — American shipyards, American workers, American steel.</p>
+      <p class="body rv rv-d3">American Hands. American Steel. American Strength.</p>
       <div class="hero-ctas rv rv-d4" aria-label="Mission calls to action">
         <a class="hero-cta" href="#capability"><span>Capabilities</span><span class="hero-cta-arrow hero-cta-arrow--down" aria-hidden="true"></span></a>
         <a class="hero-cta" href="fleet/"><span>Vessels</span><span class="hero-cta-arrow hero-cta-arrow--right" aria-hidden="true">→</span></a>
@@ -598,8 +470,9 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
   <div class="mission-panel">
     <div class="mission-copy">
       <p class="eyebrow rv">Our Mission</p>
-      <h2 class="mission-title rv rv-d1">Strengthening America’s Fleet. <span>On Time and On Budget.</span></h2>
-      <p class="mission-lede rv rv-d2">CMN Naval USA brings proven naval designs, shipbuilding know-how, and a track record of delivering complex naval platforms to the U.S. industrial base—helping American shipyards build faster, smarter, and with greater confidence.</p>
+      <h2 class="mission-title rv rv-d1">Strengthening America’s Fleet <span>On Time and On Budget.</span></h2>
+      <p class="mission-lede rv rv-d2">CMN Naval USA brings proven naval designs, shipbuilding know-how, and a track record of delivering complex naval platforms to the U.S. industrial base.</p>
+      <p class="eyebrow mission-record-label rv rv-d3">Our Record</p>
       <div class="mission-pillars rv rv-d3" aria-label="Our record metrics">
         <div class="stat">
           <p class="numeral" data-count="1946" data-duration="4500" data-slow-tail>0</p>
@@ -610,7 +483,7 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
           <p class="eyebrow">Years of naval construction</p>
         </div>
         <div class="stat">
-          <p class="numeral" data-count="3500" data-duration="4500" data-suffix="+" data-comma data-slow-tail>0</p>
+          <p class="numeral" data-count="3500" data-duration="4500" data-comma data-slow-tail>0</p>
           <p class="eyebrow">Vessels delivered</p>
         </div>
         <div class="stat">
@@ -628,10 +501,9 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
 <!-- ================= D2C · VESSEL FAMILIES ================= -->
 <section class="vessel-families" id="vessel-families" aria-label="Six vessel family types">
   <div class="vessel-families-inner">
-    <div class="vessel-families-kicker"><span></span></div>
     <div class="vessel-families-head">
       <div>
-        <p class="eyebrow rv">Vessel Families</p>
+        <p class="eyebrow rv">What We Build</p>
         <h2 class="h1 rv rv-d1">Decades of proven designs and performance.</h2>
       </div>
     </div>
@@ -704,6 +576,28 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
   </div>
 </section>
 
+<!-- ================= D3 · THE COMPANY — ACT II ================= -->
+<section id="company" aria-label="Why we exist">
+  <div class="wrap">
+    <div class="statement-block">
+      <p class="eyebrow rv">Why It Matters</p>
+      <h2 class="h1 company-title rv rv-d1">We build quality advanced ships on time and on budget.</h2>
+    </div>
+    <div class="waterline draw" data-draw></div>
+    <div class="company-grid">
+      <div class="company-copy rv">
+        <p class="body">Every program we deliver produces two outputs: the vessel, and the industrial capacity created by building it — workers certified, suppliers qualified, yard capability standing after delivery. The vessel serves the fleet. The building of it serves the nation.</p>
+        <a class="tlink" href="fleet/">View our hardware</a>
+      </div>
+      <div class="company-facts">
+        <div class="fact rv rv-d1"><p class="h3">America First</p><p class="caption">U.S. shipyards · American workforce · Gulf Coast expansion</p></div>
+        <div class="fact rv rv-d2"><p class="h3">American Scale</p><p class="caption">Scaling American production, integration, and manufacturing capacity</p></div>
+        <div class="fact rv rv-d3"><p class="h3">American Warfighter</p><p class="caption">Platforms and sustainment that keep sailors safe and mission-ready.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= D2B · HOW WE BUILD — PROCESS ================= -->
 <section class="build-process" id="how-we-build" aria-label="How we build">
   <div class="build-process-inner">
@@ -750,315 +644,16 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
   </div>
 </section>
 
-<!-- ================= D3 · THE COMPANY — ACT II ================= -->
-<section id="company" aria-label="Why we exist">
-  <div class="wrap">
-    <div class="statement-block">
-      <p class="eyebrow rv">Why It Matters</p>
-      <h2 class="h1 rv rv-d1">We build quality advanced ships on time and on budget.</h2>
-    </div>
-    <div class="waterline draw" data-draw></div>
-    <div class="company-grid">
-      <div class="company-copy rv">
-        <p class="body">Every program we deliver produces two outputs: the vessel, and the industrial capacity created by building it — workers certified, suppliers qualified, yard capability standing after delivery. The vessel serves the fleet. The building of it serves the nation.</p>
-        <a class="tlink" href="fleet/">View our hardware</a>
-      </div>
-      <div class="company-facts">
-        <div class="fact rv rv-d1"><p class="h3">America First</p><p class="caption">U.S. shipyards · American workforce · Gulf Coast expansion</p></div>
-        <div class="fact rv rv-d2"><p class="h3">American Scale</p><p class="caption">Scaling American production, integration, and manufacturing capacity</p></div>
-        <div class="fact rv rv-d3"><p class="h3">American Warfighter</p><p class="caption">Platforms and sustainment that keep sailors safe and mission-ready.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= D4 · THE RECORD — ACT III ================= -->
-<section class="evidence" aria-label="The record">
-  <div class="wrap">
-    <div class="waterline draw" data-draw></div>
-    <div class="statement-block" style="margin-top:var(--s6)">
-      <p class="eyebrow rv">Our Record</p>
-      <h2 class="h2 rv rv-d1">Proven abroad. Built in America.</h2>
-    </div>
-    <div class="evidence-grid">
-      <div class="stat rv"><p class="numeral" data-count="1946" data-duration="4500" data-slow-tail>0</p><p class="eyebrow">Building ships since</p></div>
-      <div class="stat rv rv-d1"><p class="numeral" data-count="40" data-suffix="+">0</p><p class="eyebrow">Years of naval construction</p></div>
-      <div class="stat rv rv-d2"><p class="numeral" data-count="3500" data-duration="4500" data-suffix="+" data-comma data-slow-tail>0</p><p class="eyebrow">Vessels delivered</p></div>
-      <div class="stat rv rv-d3"><p class="numeral" data-count="48">0</p><p class="eyebrow">Navies &amp; coast guards served</p></div>
-    </div>
-    <p class="source rv">SEVEN DECADES OF NAVAL ENGINEERING, BROUGHT HOME TO AMERICAN SHIPYARDS.</p>
-  </div>
-</section>
-
-<!-- ================= D6 · THE TRANSFER — ACT III ================= -->
-<section id="capability" aria-label="What we actually do">
-  <div class="wrap">
-    <div class="statement-block">
-      <p class="eyebrow rv">What We Actually Do</p>
-      <h2 class="h1 rv rv-d1">Capacity is the product.</h2>
-      <p class="body steel-text rv rv-d2" style="max-width:56ch;margin-top:var(--s3)">We have stood up sovereign shipbuilding capability in nations that had none. Doing it at home is not our market entry — it is the mission.</p>
-    </div>
-    <div class="diagram-wrap rv">
-      <svg class="diagram" id="transferDiagram" viewBox="0 0 1200 220" role="img" aria-label="Transfer model: proven design plus transfer method plus American yard plus American workforce produces standing capacity">
-        <line class="dspine" x1="40" y1="110" x2="1160" y2="110" stroke="#0A1A2F" stroke-opacity="0.35" stroke-width="1"/>
-        <g class="dnode"><circle cx="120" cy="110" r="4" fill="#0A1A2F"/><text x="120" y="70" fill="#0A1A2F" font-family="Archivo,sans-serif" font-size="18" font-weight="500" text-anchor="middle">Proven design</text><text x="120" y="150" fill="#5F6F84" font-size="12" letter-spacing="1.5" text-anchor="middle">3,500+ HULLS</text></g>
-        <g class="dnode"><circle cx="360" cy="110" r="4" fill="#0A1A2F"/><text x="360" y="70" fill="#0A1A2F" font-family="Archivo,sans-serif" font-size="18" font-weight="500" text-anchor="middle">Transfer method</text><text x="360" y="150" fill="#5F6F84" font-size="12" letter-spacing="1.5" text-anchor="middle">PROVEN ABROAD</text></g>
-        <g class="dnode"><circle cx="600" cy="110" r="4" fill="#0A1A2F"/><text x="600" y="70" fill="#0A1A2F" font-family="Archivo,sans-serif" font-size="18" font-weight="500" text-anchor="middle">American yard</text><text x="600" y="150" fill="#5F6F84" font-size="12" letter-spacing="1.5" text-anchor="middle">PARTNER-FIRST</text></g>
-        <g class="dnode"><circle cx="840" cy="110" r="4" fill="#0A1A2F"/><text x="840" y="70" fill="#0A1A2F" font-family="Archivo,sans-serif" font-size="18" font-weight="500" text-anchor="middle">American workforce</text><text x="840" y="150" fill="#5F6F84" font-size="12" letter-spacing="1.5" text-anchor="middle">CERTIFIED, KEPT</text></g>
-        <g class="dnode"><circle cx="1090" cy="110" r="5" fill="#BE1E2D"/><text x="1090" y="70" fill="#0A1A2F" font-family="Archivo,sans-serif" font-size="18" font-weight="500" text-anchor="middle">Standing capacity</text><text x="1090" y="150" fill="#5F6F84" font-size="12" letter-spacing="1.5" text-anchor="middle">THE SECOND DELIVERABLE</text></g>
-      </svg>
-    </div>
-    <div class="manifest">
-      <p class="eyebrow rv">Engineering Depth — Brought Ashore</p>
-      <div class="mrow rv"><p class="h3">Naval architecture &amp; engineering</p><p>Hull form, structural design and accommodation arrangement, with platform systems integrated from the drawing forward — auxiliaries, piping, HVAC.</p></div>
-      <div class="mrow rv"><p class="h3">Multi-material construction</p><p>Steel, aluminum, and composite technologies under one industrial discipline.</p></div>
-      <div class="mrow rv rv-d1"><p class="h3">Combat system integration</p><p>Combat management, surveillance and sensor suites, and UAV / UUV integration — the unmanned edge, built in.</p></div>
-      <div class="mrow rv rv-d1"><p class="h3">Signature management</p><p>Radar cross-section and infrared management engineered into the hull, not bolted on.</p></div>
-      <div class="mrow rv rv-d2"><p class="h3">Integrated logistics &amp; training</p><p>Lifecycle cost, reliability, availability and maintainability; technical documentation; and training programs built and delivered until the customer can run them alone.</p></div>
-      <div class="mrow rv rv-d2"><p class="h3">Integrated surveillance solutions</p><p>Persistent maritime surveillance delivered as a system, not a sensor.</p></div>
-      <p class="manifest-close rv">Every discipline above has one destination: American yards.</p>
-    </div>
-  </div>
-  <div class="b2s" id="b2s">
-    <div class="b2s-layer b2s-blueprint" id="b2sBlueprint">
-      <svg viewBox="0 0 920 300" role="img" aria-label="General arrangement line drawing of a fast interceptor hull">
-        <g stroke="#0A1A2F" stroke-opacity="0.7" stroke-width="1" fill="none">
-          <path d="M60 200 L120 170 Q300 130 520 138 L780 150 Q850 155 880 200 L820 218 Q500 240 180 226 Z"/>
-          <path d="M300 138 L330 96 L520 92 L560 138"/>
-          <path d="M345 96 L350 70 L470 66 L500 92"/>
-          <line x1="60" y1="200" x2="880" y2="200" stroke-dasharray="4 6" stroke-opacity="0.4"/>
-          <line x1="200" y1="60" x2="200" y2="235" stroke-opacity="0.25"/>
-          <line x1="420" y1="60" x2="420" y2="240" stroke-opacity="0.25"/>
-          <line x1="640" y1="60" x2="640" y2="238" stroke-opacity="0.25"/>
-        </g>
-        <text x="60" y="280" fill="#5F6F84" font-size="12" letter-spacing="2">GENERAL ARRANGEMENT — FAST INTERCEPTOR CLASS</text>
-      </svg>
-    </div>
-    <div class="b2s-layer b2s-steel" id="b2sSteel">
-      <svg viewBox="0 0 920 300" role="img" aria-label="The same hull, in steel">
-        <g stroke="#0A1A2F" stroke-width="1.5" fill="rgba(10,26,47,0.05)">
-          <path d="M60 200 L120 170 Q300 130 520 138 L780 150 Q850 155 880 200 L820 218 Q500 240 180 226 Z"/>
-          <path d="M300 138 L330 96 L520 92 L560 138" fill="rgba(10,26,47,0.035)"/>
-          <path d="M345 96 L350 70 L470 66 L500 92" fill="rgba(10,26,47,0.035)"/>
-        </g>
-        <text x="60" y="280" fill="#5F6F84" font-size="12" letter-spacing="2">THE SAME HULL, IN STEEL</text>
-      </svg>
-    </div>
-    <div class="b2s-caption">
-      <p class="caption">Design → Build → Integrate → Deliver → Sustain. We stay for the service life.</p>
-      <p class="source">Drawing-to-delivery sequence — program imagery pending first U.S. build</p>
-    </div>
-  </div>
-</section>
-
 <!-- ================= D7 · BUILT IN AMERICA — ACT IV ================= -->
 <section aria-label="Built in America" style="padding-top:0">
   <div class="bia-hero">
     <div class="bia-atmo"></div>
     <div class="bia-scrim"></div>
     <div class="bia-head">
-      <p class="eyebrow rv">Act IV — Built in America</p>
+      <p class="eyebrow rv">Built in America</p>
       <h2 class="h1 rv rv-d1">American keels. American hands. American steel.</h2>
     </div>
     <div class="bia-wl"><div class="waterline draw" data-draw></div></div>
-  </div>
-  <div class="wrap">
-    <div class="modules">
-      <div class="module rv"><p class="eyebrow">Yards</p><p class="h3">We multiply American yards.</p><p class="body">Work packages flow outward. We team before we contract, and our partners are named in our own type size.</p></div>
-      <div class="module rv rv-d1"><p class="eyebrow">Workers</p><p class="h3">Careers, not gigs.</p><p class="body">Apprenticeships that end in certifications workers keep for life — published, program by program.</p>
-        <div class="module-quote"><p class="h3">&#8220;Every hull we build trains the crew that builds the next one.&#8221;</p><p class="caption">Workforce doctrine — first apprentice class to be named at program start</p></div>
-      </div>
-      <div class="module rv rv-d2"><p class="eyebrow">Suppliers</p><p class="h3">A network that reaches inland.</p><p class="body">Qualified American suppliers on every program — counted in the Ledger, kept after delivery.</p></div>
-      <div class="module rv rv-d3"><p class="eyebrow">Investment</p><p class="h3">We build to stay.</p><p class="body">Our parent organization has operated in its home region for generations. Permanence is the model we import.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= D8 · THE LEDGER ================= -->
-<section aria-label="The Ledger">
-  <div class="wrap">
-    <div class="statement-block">
-      <p class="eyebrow rv">The Ledger — What Each Program Leaves Behind</p>
-      <h2 class="h2 rv rv-d1">Every program delivers twice: the vessel, and the capacity to build the next one.</h2>
-    </div>
-    <div class="waterline draw" data-draw></div>
-    <table class="ledger-table rv">
-      <thead><tr><th>Program</th><th>Workers certified</th><th>Suppliers qualified</th><th>Capacity added</th><th>As of</th></tr></thead>
-      <tbody>
-        <tr>
-          <td>Sovereign shipbuilding programs — delivered abroad</td>
-          <td class="dim">Record in briefing</td><td class="dim">Record in briefing</td><td class="dim">National yards established</td><td class="dim">1946–present</td>
-        </tr>
-        <tr>
-          <td>First U.S. program</td>
-          <td class="dim">Ledger opens at first steel</td><td class="dim">—</td><td class="dim">—</td><td class="dim">Date to be named</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="ledger-cards rv">
-      <div class="lcard"><p class="h3">Delivered abroad</p><dl><dt>Workers certified</dt><dd>Record in briefing</dd><dt>Suppliers qualified</dt><dd>Record in briefing</dd><dt>Capacity added</dt><dd>National yards established</dd><dt>As of</dt><dd>1946–present</dd></dl></div>
-      <div class="lcard"><p class="h3">First U.S. program</p><dl><dt>Status</dt><dd>Ledger opens at first steel</dd><dt>Date</dt><dd>To be named</dd></dl></div>
-    </div>
-    <p class="ledger-note rv">We publish the instrument before the measurements. That is the point.</p>
-    <p class="source rv">Source: CMN Naval USA program ledger — updated at each milestone</p>
-  </div>
-</section>
-
-<!-- ================= D9 · BRIDGE — THE RECEIPTS ================= -->
-<section class="bridge bridge-sm" aria-label="Platforms are proof">
-  <div class="inner">
-    <h2 class="h2 rv">The platforms are not the product.</h2>
-    <p class="body pivot rv rv-d2">They are the receipts — proof of engineering, in service today, for the missions America is running this quarter.</p>
-  </div>
-</section>
-
-<!-- ================= D10 · PLATFORMS AS PROOF — ACT V ================= -->
-<div id="platforms">
-<section class="proof" aria-label="HSI32 fast interceptor">
-  <div class="proof-atmo">
-    <svg viewBox="0 0 1080 360" aria-hidden="true">
-      <g stroke="#0A1A2F" stroke-opacity="0.5" stroke-width="1" fill="none">
-        <path d="M80 250 L150 215 Q360 165 620 172 L900 186 Q980 192 1010 250 L940 272 Q580 298 220 282 Z"/>
-        <path d="M370 172 L405 118 L630 114 L678 172"/>
-        <path d="M425 118 L432 86 L575 82 L610 114"/>
-        <line x1="80" y1="250" x2="1010" y2="250" stroke-dasharray="4 6" stroke-opacity="0.35"/>
-      </g>
-    </svg>
-  </div>
-  <div class="proof-scrim"></div>
-  <div class="proof-inner">
-    <div class="proof-head">
-      <p class="eyebrow rv">Mission — High-Speed Interdiction</p>
-      <h2 class="h1 rv rv-d1">HSI32</h2>
-      <p class="body rv rv-d2">Interdiction at speed — in service with allied navies today.</p>
-    </div>
-    <div class="proof-wl"><div class="waterline draw" data-draw></div></div>
-    <div class="proof-stats">
-      <div class="rv"><p class="h2">32 m</p><p class="eyebrow">Length</p></div>
-      <div class="rv rv-d1"><p class="h2">43 kt</p><p class="eyebrow">Speed</p></div>
-      <div class="rv rv-d2"><p class="h2">In service</p><p class="eyebrow">Allied fleets</p></div>
-    </div>
-    <a class="tlink proof-link" href="/platforms#hsi32">The mission story</a>
-  </div>
-</section>
-
-<section class="proof" aria-label="DV series unmanned surface vessel">
-  <div class="proof-atmo">
-    <svg viewBox="0 0 1080 360" aria-hidden="true">
-      <g stroke="#0A1A2F" stroke-opacity="0.5" stroke-width="1" fill="none">
-        <path d="M140 245 L220 225 Q460 195 700 205 L920 220 Q975 228 995 245 L930 258 Q560 275 260 264 Z"/>
-        <path d="M430 205 L455 168 L640 165 L672 205"/>
-        <line x1="140" y1="245" x2="995" y2="245" stroke-dasharray="4 6" stroke-opacity="0.35"/>
-      </g>
-    </svg>
-  </div>
-  <div class="proof-scrim"></div>
-  <div class="proof-inner">
-    <div class="proof-head">
-      <p class="eyebrow rv">Mission — Unmanned Surface Warfare</p>
-      <h2 class="h1 rv rv-d1">DV Series</h2>
-      <p class="body rv rv-d2">Autonomous speed for contested waters — crewed or uncrewed.</p>
-    </div>
-    <div class="proof-wl"><div class="waterline draw" data-draw></div></div>
-    <div class="proof-stats">
-      <div class="rv"><p class="h2">90 kt</p><p class="eyebrow">Speed class</p></div>
-      <div class="rv rv-d1"><p class="h2">&lt;3 t</p><p class="eyebrow">Displacement</p></div>
-      <div class="rv rv-d2"><p class="h2">Crewed / uncrewed</p><p class="eyebrow">Modes</p></div>
-    </div>
-    <a class="tlink proof-link" href="/platforms#dv">The mission story</a>
-  </div>
-</section>
-
-<section class="proof" aria-label="BR71 MKII corvette">
-  <div class="proof-atmo">
-    <svg viewBox="0 0 1080 360" aria-hidden="true">
-      <g stroke="#0A1A2F" stroke-opacity="0.5" stroke-width="1" fill="none">
-        <path d="M60 240 L130 210 Q400 175 700 182 L950 196 Q1005 202 1025 240 L950 262 Q540 288 190 272 Z"/>
-        <path d="M300 182 L330 130 L560 124 L600 182"/>
-        <path d="M355 130 L362 96 L500 92 L535 124"/>
-        <path d="M640 182 L660 148 L780 146 L805 182"/>
-        <line x1="60" y1="240" x2="1025" y2="240" stroke-dasharray="4 6" stroke-opacity="0.35"/>
-      </g>
-    </svg>
-  </div>
-  <div class="proof-scrim"></div>
-  <div class="proof-inner">
-    <div class="proof-head">
-      <p class="eyebrow rv">Mission — Surface Combat</p>
-      <h2 class="h1 rv rv-d1">BR71 MKII</h2>
-      <p class="body rv rv-d2">Combat-ready corvette class — fleet capability at fleet speed.</p>
-    </div>
-    <div class="proof-wl"><div class="waterline draw" data-draw></div></div>
-    <div class="proof-stats">
-      <div class="rv"><p class="h2">71 m</p><p class="eyebrow">Length</p></div>
-      <div class="rv rv-d1"><p class="h2">Corvette</p><p class="eyebrow">Class</p></div>
-      <div class="rv rv-d2"><p class="h2">Multi-mission</p><p class="eyebrow">Role</p></div>
-    </div>
-    <a class="tlink proof-link" href="/platforms#br71">The mission story</a>
-  </div>
-</section>
-</div>
-
-<!-- ================= D11 · THE CLOCK ================= -->
-<section class="clock-section" aria-label="The Clock — milestones in public">
-  <div class="wrap">
-    <div class="statement-block">
-      <p class="eyebrow rv">The Clock — Milestones, In Public</p>
-      <h2 class="h2 rv rv-d1">We name the dates we control. Then we hit them.</h2>
-    </div>
-    <div class="clock-rail rv" id="clockRail">
-      <div class="clock-line"><div class="waterline draw" data-draw></div></div>
-      <!-- MILESTONES: custodian-approved entries only. Replace placeholders before launch. -->
-      <div class="vrow"><button class="tick" style="left:8%" aria-label="Milestone: U.S. entity established"></button>
-        <div class="tick-label above" style="left:8%"><span class="date">Done</span>U.S. entity established</div></div>
-      <div class="vrow"><button class="tick" style="left:28%" aria-label="Milestone: Washington D.C. operations opened"></button>
-        <div class="tick-label below" style="left:28%"><span class="date">Done</span>Washington, D.C. operations opened</div></div>
-      <div class="vrow"><button class="tick now" style="left:48%" aria-label="Current milestone: Gulf Coast site and partnership development"></button>
-        <div class="tick-label above now-label" style="left:48%"><span class="date">Now</span>Gulf Coast site &amp; yard partnership development</div></div>
-      <div class="vrow"><button class="tick hollow" style="left:68%" aria-label="Named ahead: yard partnership announcement"></button>
-        <div class="tick-label below" style="left:68%"><span class="date">Named ahead</span>Yard partnership announcement</div></div>
-      <div class="vrow"><button class="tick hollow" style="left:88%" aria-label="Named ahead: first steel"></button>
-        <div class="tick-label above" style="left:88%"><span class="date">Named ahead</span>First steel — the Ledger opens</div></div>
-    </div>
-    <p class="clock-note rv">Only milestones we control appear here. A missed date is never deleted — it is struck, owned, and corrected in daylight.</p>
-  </div>
-</section>
-
-<!-- ================= D12 · THE PATH FORWARD — ACT VI ================= -->
-<section id="partnership" aria-label="The path forward">
-  <div class="wrap">
-    <div class="statement-block">
-      <p class="eyebrow rv">Act VI — The Path Forward</p>
-      <h2 class="h1 rv rv-d1">The course is set. Let&#8217;s build.</h2>
-    </div>
-    <div class="doors">
-      <a class="door door-primary rv" href="mailto:government@cmn-usa.com?subject=Executive%20Briefing%20Request">
-        <span class="eyebrow">For the Administration &amp; Congress</span>
-        <span class="verb"><span class="btn">Request the Executive Briefing</span></span>
-        <span class="artifact">Deck + one-page memo, within 48 hours <span class="arrow">&#8594;</span></span>
-      </a>
-      <a class="door rv rv-d1" href="mailto:government@cmn-usa.com?subject=Mission%20Requirements">
-        <span class="eyebrow">For the Navy &amp; Coast Guard</span>
-        <span class="verb">Discuss mission requirements</span>
-        <span class="artifact">Platform mission briefs <span class="arrow">&#8594;</span></span>
-      </a>
-      <a class="door rv rv-d2" href="mailto:government@cmn-usa.com?subject=Site%20and%20Partnership%20Dialogue">
-        <span class="eyebrow">For Governors &amp; States</span>
-        <span class="verb">Open a site dialogue</span>
-        <span class="artifact">Regional partnership framework <span class="arrow">&#8594;</span></span>
-      </a>
-      <a class="door rv rv-d3" href="mailto:info@cmn-usa.com?subject=Teaming">
-        <span class="eyebrow">For Shipyards &amp; Primes</span>
-        <span class="verb">Explore teaming</span>
-        <span class="artifact">Capacity-partnership framework <span class="arrow">&#8594;</span></span>
-      </a>
-      <a class="door rv rv-d4" href="mailto:info@cmn-usa.com?subject=Careers">
-        <span class="eyebrow">For the Workforce</span>
-        <span class="verb">Build with us</span>
-        <span class="artifact">Apprenticeship &amp; careers pathway <span class="arrow">&#8594;</span></span>
-      </a>
-    </div>
-    <p class="doors-note rv">Every request receives its named document within 48 hours. Consider it your first experience of the Clock.</p>
   </div>
 </section>
 
@@ -1219,7 +814,7 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
       }
     });
   }, {threshold:0.3});
-  document.querySelectorAll('.rv, [data-draw], #transferDiagram').forEach(function(el){
+  document.querySelectorAll('.rv, [data-draw]').forEach(function(el){
     if(reduced){ el.classList.add('in'); } else { io.observe(el); }
   });
 
@@ -1267,21 +862,6 @@ footer{border-top:1px solid var(--rule2);background:var(--paper);padding:var(--s
     else cio.observe(el);
   });
 
-  /* Blueprint-to-steel: the page's single scroll-linked effect */
-  var b2s = document.getElementById('b2s');
-  var steel = document.getElementById('b2sSteel');
-  var bp = document.getElementById('b2sBlueprint');
-  if(b2s && !reduced){
-    window.addEventListener('scroll', function(){
-      var r = b2s.getBoundingClientRect();
-      var total = r.height + window.innerHeight * 0.2;
-      var p = Math.min(1, Math.max(0, (window.innerHeight - r.top) / total));
-      steel.style.opacity = p;
-      bp.style.opacity = 1 - p * 0.85;
-    }, {passive:true});
-  } else if (steel) {
-    steel.style.opacity = 0.9; bp.style.opacity = 0.15;
-  }
 })();
 </script>
 </body>
