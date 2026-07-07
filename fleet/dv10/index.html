@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DV10 Autonomous Maritime Combat | CMN Naval USA</title>
+<meta name="description" content="DV10 autonomous maritime combat platform by CMN Naval USA: 45-knot performance, optional unmanned operation, modular payloads, and low-observable design.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800&family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050b17;--paper:#f4f6f9;--ink:#0a1a2f;--ink2:#5f6f84;--panel:#0f2444;--nav:#191650;--red:#be1e2d;--gold:#b89b5e;--steel:#c8d2de;--light:#f4f7fb;--rule:rgba(244,247,251,.18);--rule-dark:rgba(10,26,47,.16);--margin:5.5vw;--max:1320px;--font-display:"Archivo",system-ui,sans-serif;--font-body:"Inter",system-ui,sans-serif;--ease:cubic-bezier(.2,.6,.2,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden;width:100%}
+body{background:var(--bg);color:var(--light);font-family:var(--font-body);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;width:100%}
+img,svg,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--margin);padding-right:var(--margin)}
+.eyebrow{color:var(--steel);font-size:13px;font-weight:800;letter-spacing:.16em;line-height:1.2;text-transform:uppercase}
+.source{color:rgba(244,247,251,.62);font-size:12px;font-weight:800;letter-spacing:.1em;line-height:1.35;text-transform:uppercase}
+.display{font-family:var(--font-display);font-size:clamp(78px,17vw,236px);font-weight:800;letter-spacing:-.03em;line-height:.78;text-transform:uppercase}
+.h1{font-family:var(--font-display);font-size:clamp(42px,6.4vw,104px);font-weight:800;letter-spacing:-.02em;line-height:.96;text-transform:uppercase}
+.h2{font-family:var(--font-display);font-size:clamp(34px,5vw,76px);font-weight:800;letter-spacing:-.015em;line-height:.98;text-transform:uppercase}
+.h3{font-family:var(--font-display);font-size:clamp(22px,2.4vw,34px);font-weight:800;line-height:1.05}
+.btn{align-items:center;border:1px solid rgba(244,247,251,.46);border-radius:3px;color:#fff;display:inline-flex;font-size:13px;font-weight:800;gap:18px;justify-content:space-between;letter-spacing:.12em;min-height:56px;min-width:220px;padding:0 22px;text-transform:uppercase;transition:background 180ms var(--ease),border-color 180ms var(--ease),color 180ms var(--ease),transform 180ms var(--ease)}
+.btn:after{content:"→";font-size:26px;font-weight:400;line-height:1}
+.btn:hover,.btn:focus-visible{background:rgba(255,255,255,.1);border-color:#fff;transform:translateY(-1px)}
+.btn.primary{background:rgba(190,30,45,.92);border-color:rgba(190,30,45,.95)}
+.btn.primary:hover,.btn.primary:focus-visible{background:#d52031;border-color:#d52031}
+.skip{background:#fff;color:var(--ink);left:-9999px;padding:12px 16px;position:absolute;top:0;z-index:300}
+.skip:focus{left:16px;top:16px}
+.site-header{align-items:center;background:transparent;border-bottom:1px solid transparent;box-shadow:none;display:grid;gap:14px;grid-template-columns:228px 1fr auto;left:0;padding:12px 19px;position:fixed;right:0;top:0;transition:background 180ms ease,border-color 180ms ease,box-shadow 180ms ease,padding 180ms ease;z-index:100}
+.site-header.is-scrolled{background:rgba(25,22,80,.98);border-bottom-color:rgba(255,255,255,.16);box-shadow:0 18px 48px rgba(0,0,0,.25);padding-bottom:8px;padding-top:8px}
+.brand,.nav-mark{color:var(--light);font-family:var(--font-display);font-size:17px;font-weight:500;letter-spacing:.06em;white-space:nowrap;transition:color 180ms ease}
+.brand{background:url("../../assets/brand/cmn-naval-usa-white-v5.svg") left center/contain no-repeat;display:block;font-size:0;height:53px;width:228px}
+.desktop-nav{display:flex;gap:28px;justify-content:center}
+.desktop-nav a,.nav-action,.mobile-menu-nav a{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.desktop-nav a{color:rgba(244,247,251,.72);transition:color 180ms ease}
+.desktop-nav a:hover,.desktop-nav a:focus-visible,.desktop-nav a[aria-current="page"]{color:var(--gold)}
+.nav-action{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.32);color:var(--light);min-width:118px;padding:12px 16px;text-align:center;transition:background 180ms ease,border-color 180ms ease,color 180ms ease}
+.nav-action:hover,.nav-action:focus-visible{background:var(--light);border-color:var(--light);color:var(--ink)}
+.mobile-menu-toggle{align-items:center;background:rgba(244,247,251,.08);border:1px solid rgba(244,247,251,.24);color:var(--light);cursor:pointer;display:none;height:44px;justify-content:center;position:relative;width:44px}
+.mobile-menu-toggle span{background:currentColor;height:2px;left:12px;position:absolute;transition:transform 180ms ease,top 180ms ease;width:18px}
+.mobile-menu-toggle span:first-child{top:17px}.mobile-menu-toggle span:last-child{top:25px}
+.mobile-menu-toggle[aria-expanded="true"] span:first-child{top:21px;transform:rotate(45deg)}
+.mobile-menu-toggle[aria-expanded="true"] span:last-child{top:21px;transform:rotate(-45deg)}
+.mobile-menu{background:linear-gradient(180deg,rgba(5,6,8,.98),rgba(13,17,23,.96)),repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 1px,transparent 1px 72px);border-bottom:1px solid rgba(255,255,255,.16);box-shadow:0 32px 80px rgba(0,0,0,.42);left:0;opacity:0;padding:96px 24px 28px;pointer-events:none;position:fixed;right:0;top:0;transform:translateY(-18px);transition:opacity 180ms ease,transform 180ms ease;z-index:90}
+.mobile-menu.is-open{opacity:1;pointer-events:auto;transform:translateY(0)}
+.mobile-menu-nav{display:grid}.mobile-menu-nav a{border-top:1px solid rgba(255,255,255,.12);color:rgba(244,247,251,.86);font-size:15px;letter-spacing:.08em;padding:18px 0}.mobile-menu-action{color:var(--gold)!important}body.menu-open{overflow:hidden}
+.hero{align-items:end;display:flex;min-height:100svh;overflow:hidden;padding:150px 0 70px;position:relative}
+.hero-video{height:100%;inset:0;object-fit:cover;position:absolute;width:100%;z-index:0}
+.hero:before{background:linear-gradient(90deg,rgba(4,10,20,.96) 0%,rgba(4,10,20,.76) 36%,rgba(4,10,20,.36) 62%,rgba(4,10,20,.78) 100%);content:"";inset:0;position:absolute;z-index:1}
+.hero:after{background:repeating-linear-gradient(90deg,rgba(255,255,255,.055) 0 1px,transparent 1px 78px),repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 1px,transparent 1px 78px);content:"";inset:0;opacity:.5;position:absolute;z-index:2}
+.hero-inner{display:grid;gap:42px;grid-template-columns:minmax(0,1fr) minmax(310px,.42fr);position:relative;z-index:3}
+.hero-copy{max-width:880px}
+.hero-copy .eyebrow{color:#fff;margin-bottom:22px}
+.hero-copy h1{margin-bottom:24px}
+.hero-kicker{color:#fff;font-family:var(--font-display);font-size:clamp(28px,4.5vw,68px);font-weight:800;line-height:1.02;max-width:900px;text-transform:uppercase}
+.hero-copy p:not(.eyebrow){color:rgba(244,247,251,.8);font-size:clamp(17px,1.8vw,22px);line-height:1.55;margin-top:24px;max-width:800px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.hero-telemetry{align-self:end;background:rgba(7,18,34,.55);border:1px solid rgba(244,247,251,.2);backdrop-filter:blur(16px);display:grid;gap:0;grid-template-columns:1fr 1fr}
+.hero-telemetry div{border-bottom:1px solid rgba(244,247,251,.14);border-right:1px solid rgba(244,247,251,.14);padding:22px}
+.hero-telemetry strong{display:block;font-family:var(--font-display);font-size:clamp(30px,4vw,56px);font-weight:800;line-height:1}
+.hero-telemetry span{color:rgba(244,247,251,.62);display:block;font-size:11px;font-weight:800;letter-spacing:.11em;margin-top:8px;text-transform:uppercase}
+.product-tabs{background:rgba(5,11,23,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(244,247,251,.12);border-top:1px solid rgba(244,247,251,.12);position:sticky;top:77px;z-index:45}
+.product-tabs div{display:flex;gap:10px;overflow-x:auto;padding:12px var(--margin);scrollbar-width:none}
+.product-tabs div::-webkit-scrollbar{display:none}
+.product-tabs a{border:1px solid rgba(244,247,251,.18);color:rgba(244,247,251,.72);flex:0 0 auto;font-size:11px;font-weight:800;letter-spacing:.12em;padding:10px 13px;text-transform:uppercase;transition:background 180ms var(--ease),border-color 180ms var(--ease),color 180ms var(--ease)}
+.product-tabs a:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.42);color:#fff}
+.section{padding:112px 0;position:relative}
+.section.light{background:var(--paper);color:var(--ink)}
+.section.dark{background:linear-gradient(135deg,#061222,#0f2444)}
+.split{align-items:start;display:grid;gap:clamp(34px,5vw,86px);grid-template-columns:minmax(0,.9fr) minmax(0,1fr)}
+.section p{color:rgba(244,247,251,.72);font-size:clamp(17px,1.7vw,22px);line-height:1.68;max-width:760px}
+.light p{color:var(--ink2)}
+.section .eyebrow{margin-bottom:18px}
+.mission-body{display:grid;gap:26px}
+.mission-body strong{color:#fff}.light .mission-body strong{color:var(--ink)}
+.mission-map{background:rgba(255,255,255,.04);border:1px solid rgba(244,247,251,.18);min-height:420px;overflow:hidden;position:relative}
+.mission-map:before{background:repeating-linear-gradient(90deg,rgba(255,255,255,.06) 0 1px,transparent 1px 76px),repeating-linear-gradient(0deg,rgba(255,255,255,.04) 0 1px,transparent 1px 76px);content:"";inset:0;position:absolute}
+.node{background:rgba(255,255,255,.08);border:1px solid rgba(244,247,251,.34);border-radius:999px;color:#fff;font-size:11px;font-weight:800;letter-spacing:.1em;padding:12px 16px;position:absolute;text-transform:uppercase}
+.node.n1{left:10%;top:18%}.node.n2{right:11%;top:24%}.node.n3{left:22%;bottom:18%}.node.n4{right:20%;bottom:16%}.node.center{background:rgba(190,30,45,.82);left:50%;top:50%;transform:translate(-50%,-50%)}
+.line{background:linear-gradient(90deg,transparent,rgba(190,30,45,.92),transparent);height:1px;left:12%;position:absolute;right:12%;top:50%;transform-origin:center}
+.line.l2{transform:rotate(28deg)}.line.l3{transform:rotate(-23deg)}.line.l4{transform:rotate(90deg)}
+.feature-grid{display:grid;gap:1px;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:48px}
+.feature-card{background:#fff;border:1px solid var(--rule-dark);min-height:245px;padding:30px;transition:background 180ms var(--ease),transform 180ms var(--ease)}
+.feature-card:hover{background:#faf1f2;transform:translateY(-3px)}
+.feature-card span{color:var(--red);display:block;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:18px;font-weight:800;letter-spacing:.08em;margin-bottom:44px}
+.feature-card p{font-size:16px;line-height:1.55;margin-top:14px}
+.cinema{overflow:hidden;padding:0;position:relative}
+.cinema-media{height:78vh;min-height:560px;position:relative}
+.cinema-media video{height:100%;object-fit:cover;position:absolute;width:100%}
+.cinema-media:after{background:linear-gradient(90deg,rgba(5,11,23,.94),rgba(5,11,23,.62) 45%,rgba(5,11,23,.2)),linear-gradient(0deg,rgba(5,11,23,.82),transparent 34%,rgba(5,11,23,.58));content:"";inset:0;position:absolute}
+.cinema-copy{left:0;max-width:820px;padding-left:var(--margin);position:absolute;top:50%;transform:translateY(-50%);z-index:2}
+.cinema-copy ul{display:grid;gap:12px;list-style:none;margin-top:30px}
+.cinema-copy li{border-left:3px solid var(--red);color:rgba(244,247,251,.78);font-size:15px;font-weight:800;letter-spacing:.08em;padding:6px 0 6px 14px;text-transform:uppercase}
+.swarm-grid{display:grid;gap:28px;grid-template-columns:minmax(0,.78fr) minmax(0,1fr)}
+.swarm-visual{background:rgba(255,255,255,.04);border:1px solid rgba(244,247,251,.16);min-height:520px;overflow:hidden;position:relative}
+.swarm-visual:before{background:radial-gradient(circle at 50% 50%,rgba(190,30,45,.32),transparent 22%),repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 1px,transparent 1px 70px),repeating-linear-gradient(0deg,rgba(255,255,255,.04) 0 1px,transparent 1px 70px);content:"";inset:0;position:absolute}
+.craft{border:1px solid rgba(244,247,251,.6);height:16px;position:absolute;width:72px}
+.craft:after{border-bottom:8px solid transparent;border-left:22px solid rgba(244,247,251,.72);border-top:8px solid transparent;content:"";position:absolute;right:-22px;top:-1px}
+.craft.c1{left:18%;top:24%;transform:rotate(8deg)}.craft.c2{left:54%;top:30%;transform:rotate(-12deg)}.craft.c3{left:32%;top:58%;transform:rotate(18deg)}.craft.c4{left:68%;top:64%;transform:rotate(-6deg)}.craft.c5{left:44%;top:44%;border-color:var(--red)}
+.profile-grid,.apps-grid{display:grid;gap:12px;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:46px}
+.profile-card,.app-card{background:rgba(255,255,255,.05);border:1px solid rgba(244,247,251,.14);padding:24px;transition:background 180ms var(--ease),border-color 180ms var(--ease),transform 180ms var(--ease)}
+.profile-card:hover,.app-card:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.34);transform:translateY(-2px)}
+.profile-card span,.app-card span{color:var(--red);display:block;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:800;margin-bottom:18px}
+.profile-card h3,.app-card h3{font-family:var(--font-display);font-size:22px;font-weight:800;line-height:1.1}
+.spec-shell{background:#fff;border:1px solid var(--rule-dark);margin-top:48px}
+.spec-row{display:grid;grid-template-columns:minmax(180px,.34fr) 1fr;border-bottom:1px solid var(--rule-dark)}
+.spec-row:last-child{border-bottom:0}
+.spec-row span{color:var(--ink2);font-size:12px;font-weight:800;letter-spacing:.12em;padding:20px 24px;text-transform:uppercase}
+.spec-row strong{border-left:1px solid var(--rule-dark);color:var(--ink);font-family:var(--font-display);font-size:24px;font-weight:800;padding:18px 24px}
+.compare-grid{display:grid;gap:18px;grid-template-columns:1fr 1fr;margin-top:46px}
+.compare-card{border:1px solid rgba(244,247,251,.16);padding:30px}
+.compare-card.dv{background:linear-gradient(135deg,rgba(190,30,45,.22),rgba(255,255,255,.04))}
+.compare-list{display:grid;gap:12px;margin-top:26px}
+.compare-list div{align-items:center;border-top:1px solid rgba(244,247,251,.12);display:flex;justify-content:space-between;padding-top:12px}
+.compare-list span{color:rgba(244,247,251,.64);font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.compare-list strong{font-family:var(--font-display);font-size:20px}
+.cta{background:linear-gradient(120deg,rgba(5,11,23,.94),rgba(15,36,68,.9)),url("../../assets/fleet/firefly/dv16-firefly.png") right center/contain no-repeat;border-top:1px solid rgba(255,255,255,.14);padding:120px 0}
+.cta p{margin-top:24px}
+footer{background:var(--paper);border-top:1px solid var(--rule-dark);color:var(--ink);padding:96px 0 48px}.footer-grid{display:grid;gap:24px;grid-template-columns:4fr 2fr 2fr 2fr 2fr}.footer-grid .eyebrow{color:var(--ink2);margin-bottom:24px}.footer-grid ul{display:flex;flex-direction:column;gap:16px;list-style:none}.footer-grid a{color:var(--ink2);font-size:14px;transition:color 180ms var(--ease)}.footer-grid a:hover{color:var(--ink)}.footer-mark .nav-mark{color:var(--ink)}.footer-mark .caption{color:var(--ink2);font-size:14px;margin-top:16px;max-width:30ch}.footer-wl{background:var(--rule-dark);height:1px;margin:96px 0 24px}.footer-legal{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}.footer-legal .source{color:rgba(95,111,132,.9)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity 700ms var(--ease),transform 700ms var(--ease)}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:no-preference){.line{animation:pulse 3200ms ease-in-out infinite}.craft{animation:drift 4600ms ease-in-out infinite}.craft.c2,.craft.c4{animation-delay:700ms}@keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}@keyframes drift{0%,100%{translate:0 0}50%{translate:10px -6px}}}
+@media(max-width:1100px){.site-header{grid-template-columns:150px 1fr auto}.desktop-nav{display:none}.nav-action{justify-self:end}.mobile-menu-toggle{display:inline-flex}.hero-inner,.split,.swarm-grid{grid-template-columns:1fr}.hero-telemetry{max-width:640px}.feature-grid,.profile-grid,.apps-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-grid{grid-template-columns:1fr 1fr}.footer-mark{grid-column:1/3}}
+@media(max-width:700px){body{font-size:16px}.site-header{gap:6px;grid-template-columns:minmax(118px,1fr) auto;padding:8px 11px}.brand{height:34px;width:146px}.nav-action{display:none}.mobile-menu{padding-left:20px;padding-right:20px;padding-top:58px}.hero{min-height:100svh;padding:112px 0 42px}.hero:before{background:linear-gradient(180deg,rgba(4,10,20,.46),rgba(4,10,20,.95) 62%,rgba(4,10,20,.98))}.hero-actions .btn{width:100%}.hero-telemetry{grid-template-columns:1fr 1fr}.hero-telemetry div{padding:16px}.product-tabs{top:51px}.section{padding:78px 0}.feature-grid,.profile-grid,.apps-grid,.compare-grid{grid-template-columns:1fr}.cinema-media{height:auto;min-height:720px}.cinema-copy{padding:0 var(--margin);right:0}.spec-row{grid-template-columns:1fr}.spec-row strong{border-left:0;border-top:1px solid var(--rule-dark)}.footer-grid{grid-template-columns:1fr}.footer-mark{grid-column:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header" data-header>
+  <a class="brand" href="../../" aria-label="CMN Naval USA home">CMN NAVAL USA</a>
+  <nav class="desktop-nav" aria-label="Primary">
+    <a href="../../#mission">Mission</a>
+    <a href="../../#company">Company</a>
+    <a href="../../#capability">Capability</a>
+    <a href="../" aria-current="page">Platforms</a>
+    <a href="../../maritime-logistics/">Logistics</a>
+    <a href="../../#partnership">Partnership</a>
+  </nav>
+  <a class="nav-action" href="../../#partnership">Engage</a>
+  <button class="mobile-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle><span></span><span></span></button>
+</header>
+<main id="main">
+  <section class="hero" aria-label="DV10">
+    <video class="hero-video" src="../../assets/video/dv10-operational-proof.mp4" autoplay muted loop playsinline preload="metadata"></video>
+    <div class="wrap hero-inner">
+      <div class="hero-copy rv">
+        <p class="eyebrow">Autonomous Maritime Combat</p>
+        <h1 class="display">DV10</h1>
+        <p class="hero-kicker">The Next Generation of Autonomous Maritime Combat.</p>
+        <p>Designed for speed, autonomy, and distributed maritime operations, the DV10 combines a 45-knot performance envelope with optional unmanned operation, modular payloads, and low-observable design to redefine littoral warfare.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#capabilities">Explore Capabilities</a>
+          <a class="btn" href="#specifications">Technical Specifications</a>
+        </div>
+      </div>
+      <aside class="hero-telemetry rv" aria-label="DV10 headline metrics">
+        <div><strong>45</strong><span>Knots</span></div>
+        <div><strong>&lt;3t</strong><span>Displacement</span></div>
+        <div><strong>10.2m</strong><span>Length</span></div>
+        <div><strong>0.4m</strong><span>Draft</span></div>
+      </aside>
+    </div>
+  </section>
+  <nav class="product-tabs" aria-label="DV10 sections">
+    <div>
+      <a href="#mission">Mission</a><a href="#capabilities">Why DV10</a><a href="#autonomy">Autonomy</a><a href="#swarm">Swarm</a><a href="#profiles">Profiles</a><a href="#specifications">Specs</a><a href="#comparison">Compare</a>
+    </div>
+  </nav>
+  <section class="section dark" id="mission">
+    <div class="wrap split">
+      <div class="rv">
+        <p class="eyebrow">Mission Architecture</p>
+        <h2 class="h2">Designed for Tomorrow's Maritime Battlefield.</h2>
+      </div>
+      <div class="mission-body rv">
+        <p>Modern maritime defense is becoming distributed, attritable, autonomous, and sensor-rich. DV10 is built for that operating picture: a fast optional-unmanned platform that can extend reach, complicate adversary planning, and preserve human decision advantage.</p>
+        <p><strong>Human-machine teaming</strong> sits at the center of the concept. Operators retain command intent while DV10 platforms maneuver, sense, relay, screen, decoy, and respond across contested littorals.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section light" id="capabilities">
+    <div class="wrap">
+      <p class="eyebrow rv">Why DV10</p>
+      <h2 class="h2 rv">Speed, autonomy, and presence without excess mass.</h2>
+      <div class="feature-grid">
+        <article class="feature-card rv"><span>01</span><h3 class="h3">45 Knots</h3><p>High-speed performance for interception, repositioning, and rapid response at the tactical edge.</p></article>
+        <article class="feature-card rv"><span>02</span><h3 class="h3">Autonomous</h3><p>Optional manned, remote, and autonomous modes support flexible risk posture.</p></article>
+        <article class="feature-card rv"><span>03</span><h3 class="h3">Low Observable</h3><p>Reduced visual and radar signature helps the platform operate in contested waters.</p></article>
+        <article class="feature-card rv"><span>04</span><h3 class="h3">Swarm Ready</h3><p>Designed for distributed operations where multiple craft act as a coordinated force.</p></article>
+        <article class="feature-card rv"><span>05</span><h3 class="h3">Modular</h3><p>Payload flexibility supports sensors, relay packages, mission gear, and remote weapon station options.</p></article>
+        <article class="feature-card rv"><span>06</span><h3 class="h3">Shallow Draft</h3><p>A 0.4-meter draft enables access to littoral, riverine, harbor, and constrained operating areas.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="cinema" id="autonomy">
+    <div class="cinema-media">
+      <video src="../../assets/video/dv10-operational-proof.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      <div class="cinema-copy rv">
+        <p class="eyebrow">Autonomy Layer</p>
+        <h2 class="h2">Optional crew. Remote operation. Autonomous execution.</h2>
+        <p>DV10 is conceived around mission planning, autonomous navigation, sensor fusion, resilient communications, and dangerous mission execution where speed and unmanned persistence change the risk equation.</p>
+        <ul>
+          <li>Manned / unmanned configuration</li>
+          <li>Mission planning and remote control</li>
+          <li>Sensor relay and distributed awareness</li>
+          <li>Autonomous navigation in littoral spaces</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="section dark" id="swarm">
+    <div class="wrap swarm-grid">
+      <div class="rv">
+        <p class="eyebrow">Swarm Warfare</p>
+        <h2 class="h2">Dozens of intelligent craft can alter the geometry of a fight.</h2>
+        <p>Instead of relying on one expensive patrol vessel to cover every task, DV10 enables distributed sensors, reconnaissance, decoys, electronic warfare support, target saturation, and force multiplication across a wider maritime picture.</p>
+      </div>
+      <div class="swarm-visual rv" aria-label="Abstract DV10 swarm visualization">
+        <span class="craft c1"></span><span class="craft c2"></span><span class="craft c3"></span><span class="craft c4"></span><span class="craft c5"></span>
+        <span class="node center">Command</span><span class="node n1">ISR</span><span class="node n2">Decoy</span><span class="node n3">Relay</span><span class="node n4">Strike</span>
+        <span class="line"></span><span class="line l2"></span><span class="line l3"></span><span class="line l4"></span>
+      </div>
+    </div>
+  </section>
+  <section class="section dark" id="profiles">
+    <div class="wrap">
+      <p class="eyebrow rv">Mission Profiles</p>
+      <h2 class="h2 rv">One platform. Many maritime security missions.</h2>
+      <div class="profile-grid">
+        <article class="profile-card rv"><span>01</span><h3>Harbor Defense</h3></article>
+        <article class="profile-card rv"><span>02</span><h3>Coastal Security</h3></article>
+        <article class="profile-card rv"><span>03</span><h3>Special Operations</h3></article>
+        <article class="profile-card rv"><span>04</span><h3>ISR</h3></article>
+        <article class="profile-card rv"><span>05</span><h3>Counter-Smuggling</h3></article>
+        <article class="profile-card rv"><span>06</span><h3>Critical Infrastructure</h3></article>
+        <article class="profile-card rv"><span>07</span><h3>Force Protection</h3></article>
+        <article class="profile-card rv"><span>08</span><h3>Border Security</h3></article>
+        <article class="profile-card rv"><span>09</span><h3>Autonomous Reconnaissance</h3></article>
+      </div>
+    </div>
+  </section>
+  <section class="section light" id="specifications">
+    <div class="wrap split">
+      <div class="rv">
+        <p class="eyebrow">Technical Specifications</p>
+        <h2 class="h2">A compact, high-speed autonomous surface platform.</h2>
+      </div>
+      <div class="spec-shell rv">
+        <div class="spec-row"><span>Length</span><strong>10.2 m</strong></div>
+        <div class="spec-row"><span>Beam</span><strong>2.3 m</strong></div>
+        <div class="spec-row"><span>Draft</span><strong>0.4 m</strong></div>
+        <div class="spec-row"><span>Displacement</span><strong>&lt;3 tons</strong></div>
+        <div class="spec-row"><span>Maximum Speed</span><strong>45 knots</strong></div>
+        <div class="spec-row"><span>Configuration</span><strong>Manned / Unmanned</strong></div>
+        <div class="spec-row"><span>Construction</span><strong>Composite</strong></div>
+        <div class="spec-row"><span>Remote Weapon Station</span><strong>5.56 mm / 7.62 mm / 12.7 mm supported calibers</strong></div>
+      </div>
+    </div>
+  </section>
+  <section class="section dark" id="comparison">
+    <div class="wrap">
+      <p class="eyebrow rv">Comparison</p>
+      <h2 class="h2 rv">Built to change the cost, risk, and speed curve.</h2>
+      <div class="compare-grid">
+        <article class="compare-card dv rv"><h3 class="h3">DV10</h3><div class="compare-list"><div><span>Crew Risk</span><strong>Low</strong></div><div><span>Speed</span><strong>45 kt</strong></div><div><span>Autonomy</span><strong>Native</strong></div><div><span>Swarm</span><strong>Ready</strong></div><div><span>Signature</span><strong>Low</strong></div><div><span>Operational Cost</span><strong>Distributed</strong></div></div></article>
+        <article class="compare-card rv"><h3 class="h3">Traditional Patrol Boat</h3><div class="compare-list"><div><span>Crew Risk</span><strong>Higher</strong></div><div><span>Speed</span><strong>Moderate</strong></div><div><span>Autonomy</span><strong>Limited</strong></div><div><span>Swarm</span><strong>No</strong></div><div><span>Signature</span><strong>Larger</strong></div><div><span>Operational Cost</span><strong>Centralized</strong></div></div></article>
+      </div>
+    </div>
+  </section>
+  <section class="section dark" id="applications">
+    <div class="wrap">
+      <p class="eyebrow rv">Applications</p>
+      <h2 class="h2 rv">Defense, homeland security, and infrastructure protection.</h2>
+      <div class="apps-grid">
+        <article class="app-card rv"><span>01</span><h3>Military</h3></article><article class="app-card rv"><span>02</span><h3>Special Operations</h3></article><article class="app-card rv"><span>03</span><h3>Border Security</h3></article><article class="app-card rv"><span>04</span><h3>Critical Infrastructure</h3></article><article class="app-card rv"><span>05</span><h3>Port Protection</h3></article><article class="app-card rv"><span>06</span><h3>Energy Infrastructure</h3></article><article class="app-card rv"><span>07</span><h3>Maritime Security</h3></article><article class="app-card rv"><span>08</span><h3>Government Agencies</h3></article>
+      </div>
+    </div>
+  </section>
+  <section class="cta">
+    <div class="wrap rv">
+      <p class="eyebrow">Next Step</p>
+      <h2 class="h2">Built for the Future of Maritime Security</h2>
+      <p>Discover how the DV10 is redefining autonomous maritime operations for defense, homeland security, and critical infrastructure protection.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="../../#partnership">Contact CMN</a>
+        <a class="btn" href="#specifications">Download Specifications</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-mark"><p class="nav-mark">CMN NAVAL USA</p><p class="caption">American naval industrialization. We build quality advanced ships on time and on budget.</p></div>
+      <div><p class="eyebrow">Contact</p><ul><li><a href="mailto:government@cmn-usa.com">Government Affairs</a></li><li><a href="mailto:info@cmn-usa.com">General</a></li><li><a href="#" aria-disabled="true">Washington, D.C.</a></li></ul></div>
+      <div><p class="eyebrow">Company</p><ul><li><a href="../../#mission">Mission</a></li><li><a href="../../#company">Company</a></li><li><a href="../../#capability">Capability</a></li><li><a href="../">Platforms</a></li><li><a href="../../maritime-logistics/">Logistics</a></li><li><a href="../../#partnership">Partnership</a></li></ul></div>
+      <div><p class="eyebrow">Documents</p><ul><li><a href="../../company#governance">Governance Statement</a></li><li><a href="../../#partnership">Executive Briefing</a></li></ul></div>
+      <div><p class="eyebrow">Compliance</p><ul><li><a href="../../legal/privacy">Privacy</a></li><li><a href="../../legal/terms">Legal</a></li><li><a href="../../legal/export">Export &amp; Anti-Corruption</a></li></ul></div>
+    </div>
+    <div class="footer-wl"></div>
+    <div class="footer-legal"><p class="source">&#169; 2026 CMN Naval USA. All rights reserved.</p><p class="source">Proven abroad. Built in America.</p></div>
+  </div>
+</footer>
+<script>
+(function(){
+  var header=document.querySelector("[data-header]"),desktopNav=document.querySelector(".desktop-nav"),navAction=document.querySelector(".nav-action"),toggle=document.querySelector("[data-menu-toggle]");
+  function updateHeader(){if(header){header.classList.toggle("is-scrolled",window.scrollY>24)}}
+  function buildMobileMenu(){if(!header||!toggle||!desktopNav){return null}var drawer=document.createElement("div");drawer.className="mobile-menu";drawer.id="mobile-menu";drawer.setAttribute("aria-hidden","true");var nav=document.createElement("nav");nav.className="mobile-menu-nav";nav.setAttribute("aria-label","Mobile primary");desktopNav.querySelectorAll("a").forEach(function(link){nav.appendChild(link.cloneNode(true))});if(navAction){var action=navAction.cloneNode(true);action.classList.add("mobile-menu-action");nav.appendChild(action)}drawer.appendChild(nav);header.after(drawer);toggle.setAttribute("aria-controls",drawer.id);return drawer}
+  var mobileMenu=buildMobileMenu();
+  function setMobileMenu(open){if(!mobileMenu||!toggle){return}document.body.classList.toggle("menu-open",open);mobileMenu.classList.toggle("is-open",open);mobileMenu.setAttribute("aria-hidden",String(!open));toggle.setAttribute("aria-expanded",String(open));toggle.setAttribute("aria-label",open?"Close navigation":"Open navigation")}
+  window.addEventListener("scroll",updateHeader,{passive:true});updateHeader();
+  if(toggle){toggle.addEventListener("click",function(){setMobileMenu(toggle.getAttribute("aria-expanded")!=="true")})}
+  if(mobileMenu){mobileMenu.addEventListener("click",function(e){if(e.target.closest("a")){setMobileMenu(false)}})}
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"){setMobileMenu(false)}});
+  var reveals=document.querySelectorAll(".rv");
+  if(!("IntersectionObserver" in window)){reveals.forEach(function(el){el.classList.add("in")});return}
+  var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add("in");observer.unobserve(entry.target)}})},{threshold:.16});
+  reveals.forEach(function(el){observer.observe(el)});
+})();
+</script>
+</body>
+</html>
