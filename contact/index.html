@@ -38,11 +38,17 @@ button,input,textarea,select{font:inherit}
 .mobile-menu.is-open{opacity:1;pointer-events:auto;transform:translateY(0)}
 .mobile-menu-nav{display:grid}.mobile-menu-nav a{border-top:1px solid rgba(255,255,255,.12);color:rgba(244,247,251,.86);font-size:15px;letter-spacing:.08em;padding:18px 0}.mobile-menu-action{color:var(--gold)!important}
 body.menu-open{overflow:hidden}
-.contact-hero{background:linear-gradient(135deg,rgba(10,26,47,.98),rgba(15,36,68,.96));color:#fff;overflow:hidden;padding:168px 0 96px;position:relative}
-.contact-hero:before{background-image:linear-gradient(rgba(244,247,251,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(244,247,251,.045) 1px,transparent 1px);background-size:64px 64px;content:"";inset:0;opacity:.75;position:absolute}
-.contact-hero .wrap{position:relative;z-index:1}
-.contact-hero h1{font-family:var(--font-display);font-size:clamp(46px,7vw,104px);font-weight:800;line-height:1.02;margin-top:26px;max-width:980px}
-.contact-hero p:not(.eyebrow){color:rgba(244,247,251,.76);font-size:clamp(18px,1.7vw,23px);line-height:1.6;margin-top:28px;max-width:760px}
+.contact-hero{background:linear-gradient(180deg,#fff 0%,#f7f9fc 100%);border-bottom:1px solid var(--rule);color:var(--ink);overflow:hidden;padding:138px 0 82px;position:relative}
+.contact-hero:before{background-image:linear-gradient(rgba(10,26,47,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(10,26,47,.035) 1px,transparent 1px);background-size:64px 64px;content:"";inset:0;opacity:.7;position:absolute}
+.contact-hero:after{background:var(--red);content:"";height:68%;left:var(--margin);max-height:420px;position:absolute;top:130px;width:4px}
+.contact-cover{align-items:center;display:grid;position:relative;z-index:1}
+.cover-media{background:var(--panel);border:1px solid rgba(10,26,47,.18);box-shadow:0 30px 80px rgba(10,26,47,.16);min-height:520px;overflow:hidden;position:relative}
+.cover-media img{display:block;height:100%;inset:0;object-fit:cover;object-position:center;width:100%;position:absolute;transition:transform 520ms var(--ease)}
+.cover-media:after{background:linear-gradient(180deg,rgba(10,26,47,0) 35%,rgba(10,26,47,.58));content:"";inset:0;position:absolute}
+.cover-media:hover img{transform:scale(1.035)}
+.cover-caption{bottom:24px;color:#fff;left:24px;position:absolute;right:24px;z-index:1}
+.cover-caption strong{display:block;font-family:var(--font-display);font-size:clamp(30px,4vw,54px);font-weight:800;line-height:.95}
+.cover-caption span{color:rgba(244,247,251,.8);display:block;font-size:12px;font-weight:800;letter-spacing:.16em;margin-top:10px;text-transform:uppercase}
 .contact-section{background:linear-gradient(180deg,#fff 0%,var(--paper) 100%);padding:96px 0}
 .contact-grid{display:grid;gap:54px;grid-template-columns:minmax(0,.74fr) minmax(340px,.86fr)}
 .contact-card{background:#fff;border:1px solid var(--rule);box-shadow:0 24px 80px rgba(10,26,47,.08);padding:clamp(28px,4vw,48px)}
@@ -64,7 +70,6 @@ input:focus,textarea:focus,select:focus{border-color:var(--red);box-shadow:0 0 0
 .btn{background:var(--red);border:1px solid var(--red);color:#fff;cursor:pointer;display:inline-flex;font-size:15px;font-weight:800;justify-content:center;letter-spacing:.04em;min-height:52px;min-width:190px;padding:14px 24px;text-transform:uppercase;transition:background 180ms var(--ease),border-color 180ms var(--ease),transform 180ms var(--ease)}
 .btn:hover{background:#a31926;border-color:#a31926}
 .btn:active{transform:translateY(1px)}
-.form-note{color:var(--ink2);font-size:14px;line-height:1.55}
 .form-honey{left:-9999px;position:absolute;top:auto}
 footer{background:var(--paper);border-top:1px solid var(--rule);padding:96px 0 48px}
 .footer-grid{display:grid;gap:24px;grid-template-columns:4fr 2fr 2fr 2fr 2fr}
@@ -77,8 +82,8 @@ footer{background:var(--paper);border-top:1px solid var(--rule);padding:96px 0 4
 .footer-wl{margin:96px 0 24px}
 .footer-legal{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
 @media(max-width:1180px){.site-header{grid-template-columns:150px 1fr auto}.desktop-nav{display:none}.nav-action{justify-self:end}.mobile-menu-toggle{display:inline-flex}}
-@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
-@media(max-width:620px){body{font-size:16px}.site-header{gap:6px;grid-template-columns:minmax(118px,1fr) auto;padding:8px 11px}.brand{height:34px;width:146px}.nav-action{display:none}.mobile-menu{padding-left:20px;padding-right:20px;padding-top:58px}.contact-hero{padding:124px 0 72px}.contact-section{padding:72px 0}.form-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.footer-mark{grid-column:1/3}}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}.cover-media{min-height:320px}}
+@media(max-width:620px){body{font-size:16px}.site-header{gap:6px;grid-template-columns:minmax(118px,1fr) auto;padding:8px 11px}.brand{height:34px;width:146px}.nav-action{display:none}.mobile-menu{padding-left:20px;padding-right:20px;padding-top:58px}.contact-hero{padding:118px 0 68px}.contact-hero:after{display:none}.contact-cover{gap:34px}.cover-media{min-height:250px}.contact-section{padding:72px 0}.form-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.footer-mark{grid-column:1/3}}
 </style>
 </head>
 <body>
@@ -98,10 +103,11 @@ footer{background:var(--paper);border-top:1px solid var(--rule);padding:96px 0 4
 </header>
 <main id="main">
   <section class="contact-hero">
-    <div class="wrap">
-      <p class="eyebrow">Contact CMN Naval USA</p>
-      <h1>Start the right conversation.</h1>
-      <p>Use this form for government affairs, shipyard partnerships, platform briefings, logistics coordination, and executive inquiries.</p>
+    <div class="wrap contact-cover">
+      <figure class="cover-media" aria-label="BR71 corvette underway">
+        <img src="../assets/fleet/firefly/br71-firefly.png" alt="BR71 corvette underway with naval system annotations">
+        <figcaption class="cover-caption"><strong>BR71</strong><span>Blue-water combatant platform</span></figcaption>
+      </figure>
     </div>
   </section>
   <section class="contact-section" aria-label="Contact form">
@@ -110,11 +116,6 @@ footer{background:var(--paper);border-top:1px solid var(--rule);padding:96px 0 4
         <p class="eyebrow">Inquiry routing</p>
         <h2 id="contact-title">Government, industry, and mission partners.</h2>
         <p>The message will include the topic selected and the page link that brought you here, so the CMN Naval USA team can route the inquiry cleanly.</p>
-        <div class="context-meta">
-          <div><span>Topic</span><strong data-topic-label>General Inquiry</strong></div>
-          <div><span>Source Page</span><strong data-source-label>Direct visit</strong></div>
-          <div><span>Recipient</span><strong>camilo@pacificsqr.com</strong></div>
-        </div>
       </aside>
       <form class="contact-card" action="https://formsubmit.co/camilo@pacificsqr.com" method="POST" data-contact-form>
         <input type="hidden" name="_subject" value="CMN Naval USA inquiry">
@@ -163,7 +164,6 @@ footer{background:var(--paper);border-top:1px solid var(--rule);padding:96px 0 4
         </div>
         <div class="form-actions">
           <button class="btn" type="submit">Send Inquiry</button>
-          <p class="form-note" data-form-note>Submissions are sent to camilo@pacificsqr.com.</p>
         </div>
       </form>
     </div>
@@ -192,7 +192,6 @@ footer{background:var(--paper);border-top:1px solid var(--rule);padding:96px 0 4
   var sourceLabel = document.querySelector("[data-source-label]");
   var form = document.querySelector("[data-contact-form]");
   var topicSelect = document.getElementById("topic");
-  var note = document.querySelector("[data-form-note]");
   function clean(value){ return String(value || "").replace(/\s+/g, " ").trim(); }
   topic = clean(topic);
   source = clean(source);
@@ -216,7 +215,7 @@ footer{background:var(--paper);border-top:1px solid var(--rule);padding:96px 0 4
       });
     }
   }
-  if(sent && note){ note.textContent = "Thank you. Your inquiry has been submitted."; }
+  if(sent){ document.body.classList.add("form-sent"); }
   var header = document.querySelector("[data-header]");
   var desktopNav = document.querySelector(".desktop-nav");
   var navAction = document.querySelector(".nav-action");
